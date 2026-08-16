@@ -74,7 +74,7 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
             
-            <!-- Left: Hamburger Icon & Official Brand Logo (Attachment 2) -->
+            <!-- Left: Hamburger Icon & Official Brand Logo -->
             <div class="flex items-center gap-3">
                 <button onclick="openDrawer()" class="p-2 rounded-xl text-slate-700 hover:text-indigo-900 hover:bg-slate-100 transition focus:outline-none" aria-label="Open Navigation Menu">
                     <i class="fa-solid fa-bars text-xl sm:text-2xl"></i>
@@ -309,7 +309,7 @@
     <!-- Main Content Container -->
     <main id="sec-gallery" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
         
-        <!-- News & Honors Section (Placed FIRST) -->
+        <!-- News & Honors Section -->
         <section id="sec-news" class="mb-16 bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-200 gap-4">
                 <div>
@@ -1125,7 +1125,7 @@
             }
         };
 
-        // Complete Default Products Data (Chinese Original)
+        // Complete Default Products Data
         const defaultProductsData = [
             {
                 id: "p1", name: "100% 純蠶絲漸層藍染絲巾", category: "配件",
@@ -1195,7 +1195,7 @@
             }
         ];
 
-        // Complete Product Translations Dictionary for ALL 6 Languages (p1 - p6)
+        // Product Translations Dictionary for ALL 6 Languages
         const productTranslations = {
             p1: {
                 en: { name: "100% Pure Silk Gradient Indigo Scarf", category: "Accessories", shortDesc: "Pinkoi #1 Best Seller! Crafted from 100% pure silk, capturing Taiping's mountain mist.", concept: "【Concept】Inspired by the morning mist and mountain streams in Taiping, Taichung. Dyed with 100% natural plant fermented indigo without chemical dyes.", process: "【Process】Crafted by local master artisans using tie-dye techniques, immersed in room-temperature natural indigo vats over 12 times.", timing: "【Occasion】Ideal for spring/autumn warmth, art exhibitions, business exchanges, or elegant international gifts.", detail: "【Details】Material: 100% Pure Silk. Size: 180 x 50 cm. Features: Handcrafted natural plant dye, each wave pattern is unique.", fullTranscript: "Welcome to appreciate Taiping Blue's top seller, the 100% Silk Gradient Indigo Scarf. Inspired by Taiping's morning mist and mountain streams, master artisans select 100% pure silk and immerse it over 12 times in natural indigo vats followed by solar oxidation. Light, silky, and elegant." },
@@ -1304,7 +1304,7 @@
             const langSelect = document.getElementById('lang-select');
             if (langSelect) langSelect.value = langKey;
 
-            // 3. Re-render products grid with translated titles and categories
+            // 3. Re-render products grid
             filterCategory(currentCategory);
 
             // 4. Update open modal if active
@@ -2064,6 +2064,31 @@
                 };
             }
         };
+    </script>
+
+    <!-- AOZORA Indigo AI Consultant Integration -->
+    <div id="aozora-indigo-ai-consultant-root"></div>
+    <script>
+      (function() {
+        // 建立浮動 AI 客服視窗
+        var iframe = document.createElement('iframe');
+        iframe.id = 'indigo-ai-chat-widget';
+        iframe.src = 'https://ais-dev-4yoswqba7gpgxkhan3giwo-621155603156.asia-northeast1.run.app';
+        iframe.style.position = 'fixed';
+        iframe.style.bottom = '20px';
+        iframe.style.right = '20px';
+        iframe.style.width = '420px';
+        iframe.style.height = '680px';
+        iframe.style.maxWidth = '92vw';
+        iframe.style.maxHeight = '90vh';
+        iframe.style.border = 'none';
+        iframe.style.borderRadius = '16px';
+        iframe.style.boxShadow = '0 20px 40px rgba(26, 43, 76, 0.25)';
+        iframe.style.zIndex = '999999';
+        iframe.style.transition = 'all 0.3s ease';
+        iframe.allow = 'clipboard-write';
+        document.body.appendChild(iframe);
+      })();
     </script>
 </body>
 </html>
