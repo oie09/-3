@@ -91,6 +91,25 @@
             background-color: #1e1b4b;
             border-radius: 9999px;
         }
+
+        /* Floating AI Robot Styles & Animations */
+        @keyframes float-robot {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .animate-float-robot {
+            animation: float-robot 4s ease-in-out infinite;
+        }
+        @keyframes typing-dots {
+            0%, 20% { opacity: 0.2; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-4px); }
+            80%, 100% { opacity: 0.2; transform: translateY(0); }
+        }
+        .typing-dot {
+            animation: typing-dots 1.4s infinite ease-in-out;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-indigo-600 selection:text-white">
@@ -122,22 +141,20 @@
                 <a href="#" onclick="scrollToSection('hero-carousel'); return false;" class="flex items-center gap-2 sm:gap-3 group">
                     <div class="h-10 sm:h-12 px-3 py-1 bg-[#0965B2] rounded-lg shadow-md flex items-center justify-center group-hover:scale-105 transition-transform border border-sky-600/30">
                         <svg viewBox="0 0 180 85" class="h-8 sm:h-9 w-auto" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Top Braid Rope Banner (Official TAIPING BLUE Logo Pattern) -->
-                            <path d="M 16 26 C 18 14, 38 16, 44 26 C 36 28, 24 28, 16 26 Z 
-                                     M 39 26 C 41 14, 61 16, 67 26 C 59 28, 47 28, 39 26 Z 
-                                     M 62 26 C 64 14, 84 16, 90 26 C 82 28, 70 28, 62 26 Z 
-                                     M 85 26 C 87 14, 107 16, 113 26 C 105 28, 93 28, 85 26 Z 
-                                     M 108 26 C 110 14, 130 16, 136 26 C 128 28, 116 28, 108 26 Z 
-                                     M 131 26 C 133 14, 153 16, 159 26 C 151 28, 139 28, 131 26 Z" fill="#ffffff"/>
+                            <!-- Official TAIPING BLUE Logo Top Twisted Rope Pattern -->
+                            <path d="M 20 28 C 18 16, 30 14, 50 18 C 42 26, 30 29, 20 28 Z 
+                                     M 46 18 C 44 14, 56 14, 76 18 C 68 26, 56 29, 46 18 Z 
+                                     M 72 18 C 70 14, 82 14, 102 18 C 94 26, 82 29, 72 18 Z 
+                                     M 98 18 C 96 14, 108 14, 128 18 C 120 26, 108 29, 98 18 Z 
+                                     M 124 18 C 122 14, 134 14, 160 23 C 150 27, 136 29, 124 18 Z" fill="#ffffff"/>
                             <text x="90" y="46" font-family="'Noto Serif TC', serif" font-weight="800" font-size="19" fill="#ffffff" text-anchor="middle" letter-spacing="6">太平藍</text>
                             <text x="90" y="58" font-family="sans-serif" font-weight="700" font-size="7.5" fill="#ffffff" text-anchor="middle" letter-spacing="2.5">TAIPING BLUE</text>
-                            <!-- Bottom Braid Rope Banner -->
-                            <path d="M 16 70 C 18 58, 38 60, 44 70 C 36 72, 24 72, 16 70 Z 
-                                     M 39 70 C 41 58, 61 60, 67 70 C 59 72, 47 72, 39 70 Z 
-                                     M 62 70 C 64 58, 84 60, 90 70 C 82 72, 70 72, 62 70 Z 
-                                     M 85 70 C 87 58, 107 60, 113 70 C 105 72, 93 72, 85 70 Z 
-                                     M 108 70 C 110 58, 130 60, 136 70 C 128 72, 116 72, 108 70 Z 
-                                     M 131 70 C 133 58, 153 60, 159 70 C 151 72, 139 72, 131 70 Z" fill="#ffffff"/>
+                            <!-- Official TAIPING BLUE Logo Bottom Twisted Rope Pattern -->
+                            <path d="M 20 68 C 18 56, 30 54, 50 58 C 42 66, 30 69, 20 68 Z 
+                                     M 46 58 C 44 54, 56 54, 76 58 C 68 66, 56 69, 46 58 Z 
+                                     M 72 58 C 70 54, 82 54, 102 58 C 94 66, 82 69, 72 58 Z 
+                                     M 98 58 C 96 54, 108 54, 128 58 C 120 66, 108 69, 98 58 Z 
+                                     M 124 58 C 122 54, 134 54, 160 63 C 150 67, 136 69, 124 58 Z" fill="#ffffff"/>
                         </svg>
                     </div>
                 </a>
@@ -216,10 +233,10 @@
                     <div class="flex items-center gap-3">
                         <div class="h-10 px-2.5 py-1 bg-[#0965B2] rounded-lg shadow flex items-center justify-center border border-sky-400/30">
                             <svg viewBox="0 0 180 85" class="h-8 w-auto" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M 16 26 C 18 14, 38 16, 44 26 C 36 28, 24 28, 16 26 Z M 39 26 C 41 14, 61 16, 67 26 C 59 28, 47 28, 39 26 Z M 62 26 C 64 14, 84 16, 90 26 C 82 28, 70 28, 62 26 Z M 85 26 C 87 14, 107 16, 113 26 C 105 28, 93 28, 85 26 Z M 108 26 C 110 14, 130 16, 136 26 C 128 28, 116 28, 108 26 Z M 131 26 C 133 14, 153 16, 159 26 C 151 28, 139 28, 131 26 Z" fill="#ffffff"/>
+                                <path d="M 20 28 C 18 16, 30 14, 50 18 C 42 26, 30 29, 20 28 Z M 46 18 C 44 14, 56 14, 76 18 C 68 26, 56 29, 46 18 Z M 72 18 C 70 14, 82 14, 102 18 C 94 26, 82 29, 72 18 Z M 98 18 C 96 14, 108 14, 128 18 C 120 26, 108 29, 98 18 Z M 124 18 C 122 14, 134 14, 160 23 C 150 27, 136 29, 124 18 Z" fill="#ffffff"/>
                                 <text x="90" y="46" font-family="'Noto Serif TC', serif" font-weight="800" font-size="19" fill="#ffffff" text-anchor="middle" letter-spacing="6">太平藍</text>
                                 <text x="90" y="58" font-family="sans-serif" font-weight="700" font-size="7.5" fill="#ffffff" text-anchor="middle" letter-spacing="2.5">TAIPING BLUE</text>
-                                <path d="M 16 70 C 18 58, 38 60, 44 70 C 36 72, 24 72, 16 70 Z M 39 70 C 41 58, 61 60, 67 70 C 59 72, 47 72, 39 70 Z M 62 70 C 64 58, 84 60, 90 70 C 82 72, 70 72, 62 70 Z M 85 70 C 87 58, 107 60, 113 70 C 105 72, 93 72, 85 70 Z M 108 70 C 110 58, 130 60, 136 70 C 128 72, 116 72, 108 70 Z M 131 70 C 133 58, 153 60, 159 70 C 151 72, 139 72, 131 70 Z" fill="#ffffff"/>
+                                <path d="M 20 68 C 18 56, 30 54, 50 58 C 42 66, 30 69, 20 68 Z M 46 58 C 44 54, 56 54, 76 58 C 68 66, 56 69, 46 58 Z M 72 58 C 70 54, 82 54, 102 58 C 94 66, 82 69, 72 58 Z M 98 58 C 96 54, 108 54, 128 58 C 120 66, 108 69, 98 58 Z M 124 58 C 122 54, 134 54, 160 63 C 150 67, 136 69, 124 58 Z" fill="#ffffff"/>
                             </svg>
                         </div>
                         <div>
@@ -384,7 +401,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- News 1 -->
+                <!-- News Item 1 -->
                 <div class="group bg-indigo-50/50 hover:bg-indigo-100/70 p-6 rounded-2xl border border-indigo-100 hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md">
                     <div>
                         <div class="flex items-center justify-between gap-2 mb-2">
@@ -409,7 +426,7 @@
                     </a>
                 </div>
 
-                <!-- News 2 -->
+                <!-- News Item 2 -->
                 <div class="group bg-indigo-50/50 hover:bg-indigo-100/70 p-6 rounded-2xl border border-indigo-100 hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md">
                     <div>
                         <div class="flex items-center justify-between gap-2 mb-2">
@@ -434,7 +451,7 @@
                     </a>
                 </div>
 
-                <!-- News 3 -->
+                <!-- News Item 3 -->
                 <div class="group bg-indigo-50/50 hover:bg-indigo-100/70 p-6 rounded-2xl border border-indigo-100 hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md">
                     <div>
                         <div class="flex items-center justify-between gap-2 mb-2">
@@ -459,7 +476,7 @@
                     </a>
                 </div>
 
-                <!-- News 4 -->
+                <!-- News Item 4 -->
                 <div class="group bg-indigo-50/50 hover:bg-indigo-100/70 p-6 rounded-2xl border border-indigo-100 hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md">
                     <div>
                         <div class="flex items-center justify-between gap-2 mb-2">
@@ -484,7 +501,7 @@
                     </a>
                 </div>
 
-                <!-- News 5 -->
+                <!-- News Item 5 -->
                 <div class="group bg-indigo-50/50 hover:bg-indigo-100/70 p-6 rounded-2xl border border-indigo-100 hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md">
                     <div>
                         <div class="flex items-center justify-between gap-2 mb-2">
@@ -715,7 +732,7 @@
                         <input type="url" id="edit-pinkoiUrl" required class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                     <div>
-                        <label class="block font-bold text-indigo-950 mb-1" data-i18n="edit_lbl_img">作品圖片 (可直接上傳圖檔或貼上網址)</label>
+                        <label class="block font-bold text-indigo-950 mb-1" data-i18n="edit_lbl_img">作品圖片 (可上傳或貼網址)</label>
                         <div class="space-y-2">
                             <label class="flex items-center justify-center gap-2 px-3 py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-xl cursor-pointer text-indigo-900 font-bold transition shadow-sm">
                                 <i class="fa-solid fa-cloud-arrow-up text-amber-600"></i>
@@ -735,7 +752,7 @@
                             <p id="edit-img-preview-info" class="text-[11px] text-slate-500 truncate mt-0.5"></p>
                         </div>
                     </div>
-                    <button type="button" onclick="clearUploadedImage()" class="px-2.5 py-1 text-[11px] text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg font-semibold transition shrink-0" title="清除圖片">
+                    <button type="button" onclick="clearUploadedImage()" class="px-2.5 py-1 text-[11px] text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg font-semibold transition shrink-0">
                         <i class="fa-solid fa-trash-can mr-1"></i>清除
                     </button>
                 </div>
@@ -852,6 +869,84 @@
     <!-- Toast Notification Container -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
 
+    <!-- Floating AI Robot Assistant Widget (Full Multi-language Internationalization) -->
+    <div id="ai-robot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
+        
+        <!-- Chat Window Modal Popup -->
+        <div id="ai-chat-window" class="pointer-events-auto mb-4 w-[90vw] sm:w-96 h-[500px] max-h-[80vh] bg-white rounded-3xl shadow-2xl border border-indigo-100 flex flex-col overflow-hidden transition-all duration-300 transform scale-95 opacity-0 translate-y-8 hidden">
+            
+            <!-- Chat Header -->
+            <div class="bg-indigo-950 p-4 text-white flex items-center justify-between border-b border-indigo-900 shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="relative w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-200 p-0.5 shadow-md">
+                        <div class="w-full h-full bg-indigo-950 rounded-[14px] flex items-center justify-center text-amber-300">
+                            <i class="fa-solid fa-robot text-lg animate-pulse"></i>
+                        </div>
+                        <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 border-2 border-indigo-950 rounded-full"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-sm text-white flex items-center gap-1.5">
+                            <span data-i18n="ai_name">藍藍 ‧ AI 客服導覽員</span>
+                            <span class="px-1.5 py-0.2 bg-amber-400 text-indigo-950 text-[9px] font-extrabold rounded-md">Gemini</span>
+                        </h4>
+                        <p class="text-[10px] text-indigo-200" data-i18n="ai_subtitle">全天候為您解答太平藍工藝與門市問題</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-1">
+                    <button onclick="clearAiChatHistory()" class="w-7 h-7 rounded-full hover:bg-white/10 text-indigo-200 hover:text-white flex items-center justify-center transition" title="重置聊天對話">
+                        <i class="fa-solid fa-rotate-right text-xs"></i>
+                    </button>
+                    <button onclick="toggleAiChatWindow()" class="w-7 h-7 rounded-full hover:bg-white/10 text-indigo-200 hover:text-white flex items-center justify-center transition">
+                        <i class="fa-solid fa-xmark text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto custom-scrollbar space-y-3.5 bg-slate-50 text-xs">
+                <!-- Welcome Message populated dynamically according to active language -->
+            </div>
+
+            <!-- Quick Question Suggestions -->
+            <div class="px-3 py-2 bg-indigo-50/60 border-t border-indigo-100 flex items-center gap-1.5 overflow-x-auto custom-scrollbar shrink-0 text-[11px]">
+                <span class="text-indigo-900 font-bold shrink-0 text-[10px]"><i class="fa-solid fa-wand-magic-sparkles text-amber-500 mr-1"></i><span data-i18n="ai_quick_label">快捷提問:</span></span>
+                <button id="ai-q1-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-i18n="ai_q1_btn">📍 門市與據點</button>
+                <button id="ai-q2-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-i18n="ai_q2_btn">👑 經典熱銷作品</button>
+                <button id="ai-q3-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-i18n="ai_q3_btn">🎨 藍染DIY預約</button>
+                <button id="ai-q4-btn" onclick="sendQuickQuestion(this.getAttribute('data-question'))" class="px-2.5 py-1 bg-white hover:bg-indigo-900 hover:text-white text-indigo-900 border border-indigo-200 rounded-full font-medium whitespace-nowrap transition shadow-xs" data-i18n="ai_q4_btn">🏆 榮譽與新聞</button>
+            </div>
+
+            <!-- Chat Input Area -->
+            <form id="ai-chat-form" onsubmit="handleAiChatSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2 shrink-0">
+                <input type="text" id="ai-chat-input" placeholder="請問關於太平藍藍染..." class="flex-1 px-3.5 py-2.5 bg-slate-100 border border-slate-200 rounded-2xl text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition">
+                <button type="submit" id="ai-send-btn" class="w-9 h-9 rounded-2xl bg-indigo-950 hover:bg-indigo-900 text-amber-300 flex items-center justify-center shadow-md transition disabled:opacity-50">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Floating Robot Avatar Trigger Button -->
+        <div class="pointer-events-auto relative group flex items-center gap-3">
+            <!-- Speech Bubble Hint -->
+            <div id="ai-robot-hint" class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-indigo-950 text-white text-xs font-medium shadow-xl border border-indigo-700/60 animate-bounce cursor-pointer" onclick="toggleAiChatWindow()">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                <span data-i18n="ai_hint">有問題問藍藍 AI 客服！</span>
+                <i class="fa-solid fa-caret-right text-indigo-400 text-sm"></i>
+            </div>
+
+            <!-- Floating Robot Button Icon -->
+            <button onclick="toggleAiChatWindow()" aria-label="Open AI Assistant" class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-3xl bg-indigo-950 hover:bg-indigo-900 text-white shadow-2xl border-2 border-indigo-400/40 flex items-center justify-center transition-transform hover:scale-105 active:scale-95 animate-float-robot group">
+                <div class="absolute inset-0 rounded-3xl bg-amber-400/20 animate-pulse blur-md"></div>
+                <div class="relative flex flex-col items-center justify-center space-y-0.5">
+                    <i class="fa-solid fa-robot text-2xl sm:text-3xl text-amber-300 group-hover:rotate-12 transition-transform"></i>
+                    <span class="text-[9px] font-extrabold text-amber-300 tracking-wider" data-i18n="ai_badge_btn">AI 客服</span>
+                </div>
+                <!-- Active dot badge -->
+                <span class="absolute top-1 right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-indigo-950 rounded-full shadow"></span>
+            </button>
+        </div>
+    </div>
+
     <!-- Main Footer -->
     <footer class="bg-indigo-950 text-indigo-200 py-12 px-4 sm:px-6 lg:px-8 border-t border-indigo-900 text-xs">
         <div class="max-w-7xl mx-auto space-y-8">
@@ -904,6 +999,280 @@
         let onConfirmAction = null;
         let currentAudioElement = null;
 
+        let isAiChatOpen = false;
+        let isAiThinking = false;
+        let aiChatHistory = [];
+
+        const TAIPING_BLUE_SYSTEM_INSTRUCTION = `你是財團法人水源地文教基金會創辦品牌「太平藍 TAIPING BLUE」的專屬 AI 智慧親切導覽員「藍藍」(Lanlan)。
+你的任務是回答顧客關於太平藍的天然藍染作品、傳統防染工藝、門市據點、藍染DIY手作體驗、榮譽獎項及購買方式等問題。
+
+【 CRITICAL MULTILINGUAL REQUIREMENT / 跨語言服務規範 】
+- You MUST ALWAYS respond in the user's active language or the language they used to speak to you.
+- 當使用者設定為英文 (en) 時，請以英文回答；設定為日文 (ja) 時，請以日文回答；設定為法文 (fr)、韓文 (ko) 或義大利文 (it) 時，請以對應語言熱情專業地回答。
+
+【品牌知識庫背景資訊】
+- 品牌名稱：太平藍 (TAIPING BLUE)
+- 輔導營運單位：財團法人水源地文教基金會 (Young Water Foundation)
+- 起源：起源於 921 大地震後陪伴台中太平社區重建，推廣天然藍染工藝，扶植在地中高齡婦女與青年創生。
+- 工藝堅持：100% 純天然馬藍（Strobilanthes cusia）植物發酵建缸染色，完全無添加任何化學色素或化學染劑，順應四季與自然。
+- 四大傳統防染技法：
+  1. 絞染 (Tie-dye / Shibori)：活用線繩綁紮。
+  2. 縫染 (Stitching / Hand-sewn resist)：針線手縫細緻紋樣。
+  3. 型染 (Stencil Paste resist)：防染糊劑刮刷雕刻版型。
+  4. 板夾染 (Clamp resist / Wood clamp)：造型木具板夾緊扣。
+- 靈魂工序：採藍與發酵建缸 -> 四大傳統防染技法 -> 常溫藍缸低溫反覆揉捏浸染（達12次以上） -> 陽光氧化自然定色。
+- 代表熱銷作品：
+  1. 100% 純蠶絲漸層藍染絲巾（Pinkoi 熱銷冠軍，輕盈如山晨霧）。
+  2. 藍染客家桐花典藏圍巾（結合五月雪桐花型染工藝）。
+  3. 藍染氣氛和風木質桌燈（透光手染布結合實木底座）。
+  4. 粼粼Sparkling 藍染木質掛鐘（獲得「臺灣優良工藝品」認證，靜音機芯）。
+  5. 藍染風雅茶席餐墊杯墊組（茶人喜愛的禪意茶席配件）。
+  6. 藍綻水紋天然純棉抱枕、藍染風雅長袖襯衫、藍染手縫自然水纹連身洋裝、經典手作背心等。
+- 門市與據點資訊：
+  1. 頭汴坑染織工坊 (展售中心 & DIY體驗預約)：411 臺中市太平區頭汴里長龍路四段 (生態園區內)，營業時間：週一至週日 09:00 - 17:00，預約電話：(04) 2227-7826。
+  2. 財團法人水源地文教基金會會址：40444 臺中市北區育才街三巷3號3樓之4，服務時間：週一至週五 09:00 - 18:00。
+- 線上購買管道：Pinkoi 官方設計館 (https://www.pinkoi.com/store/taiping-blue) 滿 NT$ 2,000 享宅配免運。
+- 榮譽獎項：
+  - 榮獲文化部工藝中心「2023臺灣工藝獎-協作獎」。
+  - 榮獲教育部「111年度社會教育貢獻獎」。
+  - 作品《流域記憶》成功登上義大利瓦爾切利納獎 (Valcellina Award) 決選。
+  - 兩度榮獲勞動部最高等級「國家人才發展獎」。
+  - 受邀參展倫敦工藝週 (London Craft Week)、巴黎家具家飾展 (Maison & Objet) 與臺北時裝週。
+
+【回答語氣與要求】
+- 語氣：親切、熱情、具備文化底蘊且專業溫暖。適度使用語氣詞與植物/湛藍Emoji（🌿、藍、✨）。
+- 請簡明扼要、條理分明地回答。如果顧客詢問購買，請提醒可造訪 Pinkoi 官方商城。`;
+
+        function toggleAiChatWindow() {
+            const chatWin = document.getElementById('ai-chat-window');
+            const hint = document.getElementById('ai-robot-hint');
+            if (!chatWin) return;
+
+            isAiChatOpen = !isAiChatOpen;
+
+            if (isAiChatOpen) {
+                chatWin.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWin.classList.remove('scale-95', 'opacity-0', 'translate-y-8');
+                    chatWin.classList.add('scale-100', 'opacity-100', 'translate-y-0');
+                }, 10);
+                if (hint) hint.classList.add('hidden');
+                
+                // Initialize welcome message if empty
+                const msgBox = document.getElementById('ai-chat-messages');
+                if (msgBox && msgBox.children.length === 0) {
+                    renderAiWelcomeMessage();
+                }
+
+                document.getElementById('ai-chat-input')?.focus();
+            } else {
+                chatWin.classList.remove('scale-100', 'opacity-100', 'translate-y-0');
+                chatWin.classList.add('scale-95', 'opacity-0', 'translate-y-8');
+                setTimeout(() => {
+                    chatWin.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function renderAiWelcomeMessage() {
+            const msgBox = document.getElementById('ai-chat-messages');
+            if (!msgBox) return;
+
+            const welcomeHtml = i18nDict[currentLang]?.ai_welcome || i18nDict.zh.ai_welcome;
+
+            msgBox.innerHTML = `
+                <div class="flex items-start gap-2.5">
+                    <div class="w-7 h-7 rounded-xl bg-indigo-900 text-amber-300 flex items-center justify-center shrink-0 text-xs shadow-sm">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-white p-3.5 rounded-2xl rounded-tl-xs border border-slate-200 text-slate-800 leading-relaxed shadow-sm max-w-[85%] space-y-2">
+                        ${welcomeHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        function clearAiChatHistory() {
+            aiChatHistory = [];
+            renderAiWelcomeMessage();
+            showToast(i18nDict[currentLang]?.ai_reset_toast || "對話紀錄已重置", "info");
+        }
+
+        function sendQuickQuestion(questionText) {
+            const q = questionText || getQuickQuestionText(1);
+            const input = document.getElementById('ai-chat-input');
+            if (input) {
+                input.value = q;
+                document.getElementById('ai-chat-form')?.dispatchEvent(new Event('submit'));
+            }
+        }
+
+        function getQuickQuestionText(qNum) {
+            const dict = i18nDict[currentLang] || i18nDict.zh;
+            return dict[`ai_q${qNum}_text`] || i18nDict.zh[`ai_q${qNum}_text`];
+        }
+
+        async function handleAiChatSubmit(event) {
+            event.preventDefault();
+            if (isAiThinking) return;
+
+            const input = document.getElementById('ai-chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            input.value = '';
+            appendChatMessage('user', message);
+
+            // Target response language hint
+            const langNames = { zh: "Traditional Chinese (繁體中文)", en: "English", ja: "Japanese (日本語)", fr: "French (Français)", ko: "Korean (한국어)", it: "Italian (Italiano)" };
+            const targetLangName = langNames[currentLang] || "Traditional Chinese";
+
+            // Push prompt with explicit language context
+            const userPromptContent = `[Current User Interface Language: ${targetLangName}]\nUser Question: ${message}\n(Instruction: Please respond helpful and warmly in ${targetLangName}).`;
+
+            aiChatHistory.push({
+                role: 'user',
+                parts: [{ text: userPromptContent }]
+            });
+
+            isAiThinking = true;
+            const sendBtn = document.getElementById('ai-send-btn');
+            if (sendBtn) sendBtn.disabled = true;
+
+            const typingId = appendAiTypingIndicator();
+
+            try {
+                const apiKey = ""; // Canvas runtime handles API key
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: aiChatHistory,
+                    systemInstruction: {
+                        parts: [{ text: TAIPING_BLUE_SYSTEM_INSTRUCTION }]
+                    }
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                removeAiTypingIndicator(typingId);
+
+                if (!response.ok) {
+                    throw new Error(`Gemini API HTTP Error: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const replyText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (replyText) {
+                    appendChatMessage('ai', replyText);
+                    aiChatHistory.push({
+                        role: 'model',
+                        parts: [{ text: replyText }]
+                    });
+                } else {
+                    throw new Error("Invalid response format from Gemini API");
+                }
+
+            } catch (err) {
+                console.error("AI Assistant Error:", err);
+                removeAiTypingIndicator(typingId);
+                
+                // Multilingual Friendly Fallback Answers
+                const fallbacks = {
+                    zh: "抱歉，目前網路連線稍不穩定。太平藍頭汴坑染織工坊位於臺中市太平區長龍路四段，每日 09:00 - 17:00 開放參觀與 DIY 體驗（電話：04-2227-7826），歡迎您造訪 Pinkoi 官方商城選購！🌿",
+                    en: "Sorry, network connection is currently unstable. Taiping Blue Toubiankeng Workshop is located at Sec. 4, Changlong Rd., Taiping Dist., Taichung (Open daily 09:00-17:00, Tel: 04-2227-7826). Feel free to visit our Pinkoi official store! 🌿",
+                    ja: "申し訳ありません。只今ネットワーク接続が不安定です。太平藍頭汴坑藍染め工房は台中市太平区長龍路四段にございます（営業時間: 毎日 09:00 - 17:00、電話: 04-2227-7826）。Pinkoi公式ショップもぜひご利用ください！🌿",
+                    fr: "Désolé, la connexion réseau est instable. L'atelier Taiping Blue Toubiankeng est situé à Changlong Rd. Sec. 4, Taiping Dist., Taichung (Ouvert de 09h00 à 17h00, Tél : 04-2227-7826). Visitez notre boutique officielle Pinkoi ! 🌿",
+                    ko: "죄송합니다. 현재 네트워크 연결이 불안정합니다. 타이핑 블루 투비엔컹 공방은 타이중시 타이핑구 장롱로 4단에 위치해 있습니다 (매일 09:00-17:00 운영, 전화: 04-2227-7826). Pinkoi 공식 스토어도 방문해 보세요! 🌿",
+                    it: "Spiacenti, la connessione è instabile. Il laboratorio Taiping Blue Toubiankeng si trova in Sec. 4, Changlong Rd., Taiping Dist., Taichung (Aperto tutti i giorni 09:00-17:00, Tel: 04-2227-7826). Visita il nostro negozio ufficiale Pinkoi! 🌿"
+                };
+                
+                appendChatMessage('ai', fallbacks[currentLang] || fallbacks.zh);
+            } finally {
+                isAiThinking = false;
+                if (sendBtn) sendBtn.disabled = false;
+            }
+        }
+
+        function appendChatMessage(sender, text) {
+            const msgBox = document.getElementById('ai-chat-messages');
+            if (!msgBox) return;
+
+            const msgDiv = document.createElement('div');
+            
+            if (sender === 'user') {
+                msgDiv.className = "flex items-start justify-end gap-2.5";
+                const userTag = i18nDict[currentLang]?.ai_user_label || "你";
+                msgDiv.innerHTML = `
+                    <div class="bg-indigo-900 text-white p-3 rounded-2xl rounded-tr-xs leading-relaxed shadow-sm max-w-[85%] font-normal">
+                        ${escapeHtml(text)}
+                    </div>
+                    <div class="w-7 h-7 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center shrink-0 text-xs shadow-sm font-bold">
+                        ${userTag}
+                    </div>
+                `;
+            } else {
+                msgDiv.className = "flex items-start gap-2.5";
+                msgDiv.innerHTML = `
+                    <div class="w-7 h-7 rounded-xl bg-indigo-900 text-amber-300 flex items-center justify-center shrink-0 text-xs shadow-sm">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-white p-3.5 rounded-2xl rounded-tl-xs border border-slate-200 text-slate-800 leading-relaxed shadow-sm max-w-[85%] font-normal space-y-1">
+                        ${formatAiMarkdownText(text)}
+                    </div>
+                `;
+            }
+
+            msgBox.appendChild(msgDiv);
+            msgBox.scrollTop = msgBox.scrollHeight;
+        }
+
+        function appendAiTypingIndicator() {
+            const msgBox = document.getElementById('ai-chat-messages');
+            if (!msgBox) return null;
+
+            const id = `typing-${Date.now()}`;
+            const msgDiv = document.createElement('div');
+            msgDiv.id = id;
+            msgDiv.className = "flex items-start gap-2.5";
+            msgDiv.innerHTML = `
+                <div class="w-7 h-7 rounded-xl bg-indigo-900 text-amber-300 flex items-center justify-center shrink-0 text-xs shadow-sm">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-white p-3.5 rounded-2xl rounded-tl-xs border border-slate-200 text-slate-500 shadow-sm flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-indigo-600 typing-dot"></span>
+                    <span class="w-2 h-2 rounded-full bg-indigo-600 typing-dot"></span>
+                    <span class="w-2 h-2 rounded-full bg-indigo-600 typing-dot"></span>
+                </div>
+            `;
+            msgBox.appendChild(msgDiv);
+            msgBox.scrollTop = msgBox.scrollHeight;
+            return id;
+        }
+
+        function removeAiTypingIndicator(id) {
+            if (!id) return;
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function formatAiMarkdownText(text) {
+            let html = escapeHtml(text);
+            html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         const i18nDict = {
             zh: {
                 brand_name: "太平藍染", brand_subtitle: "天然植物發酵 ‧ 台灣工藝品牌",
@@ -949,7 +1318,7 @@
                 tab_concept: "💡 商品理念", tab_process: "🧵 如何生成", tab_timing: "✨ 使用時機", tab_detail: "📦 產品介紹",
                 btn_play: "播放完整故事導覽", btn_pause: "暫停播放導覽", btn_buy: "前往 Pinkoi 購買", btn_edit: "編輯作品",
                 edit_modal_title: "編輯藍染作品資料", edit_lbl_name: "作品名稱", edit_lbl_cat: "作品分類",
-                edit_lbl_pinkoi: "Pinkoi 商品網址", edit_lbl_img: "作品圖片 (可直接上傳圖檔或貼上網址)", edit_btn_upload_img: "選擇本地圖檔上傳", edit_lbl_shortdesc: "簡短描述", edit_lbl_concept: "💡 商品理念 (Concept)",
+                edit_lbl_pinkoi: "Pinkoi 商品網址", edit_lbl_img: "作品圖片 (可上傳或貼網址)", edit_btn_upload_img: "選擇本地圖檔上傳", edit_lbl_shortdesc: "簡短描述", edit_lbl_concept: "💡 商品理念 (Concept)",
                 edit_lbl_process: "🧵 如何生成 (Process)", edit_lbl_timing: "✨ 使用時機 (Timing)", edit_lbl_detail: "📦 產品介紹 (Detail)", edit_lbl_transcript: "🎙️ 語音導覽全文",
                 edit_btn_autogen: "自動由上述理念合成", edit_btn_cancel: "取消", edit_btn_save: "儲存修改",
                 mgr_title: "太平藍 展品導覽管理中心", mgr_desc: "您可以自由新增、編輯、刪除展品，或匯出/匯入全站設定檔",
@@ -959,7 +1328,18 @@
                 footer_contact_title: "聯絡與諮詢資訊", footer_hours: "服務時間：週一至週五 09:00 - 18:00",
                 footer_headquarter: "基金會會址：40444 臺中市北區育才街三巷3號3樓之4",
                 footer_workshop: "頭汴坑工坊：臺中市太平區頭汴里長龍路四段 (生態園區內)",
-                footer_links_title: "官方線上平臺", card_listen_guide: "聽故事導覽"
+                footer_links_title: "官方線上平臺", card_listen_guide: "聽故事導覽",
+                
+                /* AI Robot Specific Translations */
+                ai_hint: "有問題問藍藍 AI 客服！", ai_badge_btn: "AI 客服",
+                ai_name: "藍藍 ‧ AI 客服導覽員", ai_subtitle: "全天候為您解答太平藍工藝與門市問題",
+                ai_welcome: "<p>您好！我是太平藍的 AI 智慧導覽員<b>「藍藍」</b> 🌿</p><p>您可以詢問我關於<b>傳統藍染工藝、商品特色、體驗DIY、全台門市地址</b>或<b>獲獎報導</b>等任何問題喔！請問今天有什麼想了解的嗎？</p>",
+                ai_quick_label: "快捷提問:",
+                ai_q1_btn: "📍 門市與據點", ai_q1_text: "請問太平藍的頭汴坑工坊門市地址與營業時間？",
+                ai_q2_btn: "👑 經典熱銷作品", ai_q2_text: "請問太平藍有哪些熱門經典作品？",
+                ai_q3_btn: "🎨 藍染DIY預約", ai_q3_text: "如何預約藍染手作 DIY 體驗行程？",
+                ai_q4_btn: "🏆 榮譽與新聞", ai_q4_text: "太平藍品牌的創立背景與獲獎新聞有哪些？",
+                ai_input_placeholder: "請問關於太平藍藍染...", ai_user_label: "你", ai_reset_toast: "對話紀錄已重置"
             },
             en: {
                 brand_name: "Taiping Blue", brand_subtitle: "Natural Plant Fermented ‧ Taiwanese Craft Brand",
@@ -1015,7 +1395,18 @@
                 footer_contact_title: "Contact & Information", footer_hours: "Office Hours: Mon - Fri 09:00 - 18:00",
                 footer_headquarter: "Foundation HQ: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City",
                 footer_workshop: "Workshop: Sec. 4, Changlong Rd., Taiping Dist., Taichung City",
-                footer_links_title: "Official Platforms", card_listen_guide: "Listen to Guide"
+                footer_links_title: "Official Platforms", card_listen_guide: "Listen to Guide",
+
+                /* AI Robot Specific Translations */
+                ai_hint: "Ask Lanlan AI Assistant!", ai_badge_btn: "AI Guide",
+                ai_name: "Lanlan ‧ AI Assistant & Guide", ai_subtitle: "24/7 assistance for Taiping Blue crafts and stores",
+                ai_welcome: "<p>Hello! I am <b>Lanlan</b>, your AI Guide for Taiping Blue 🌿</p><p>Feel free to ask me about <b>traditional indigo crafts, product details, DIY workshops, store locations</b> or <b>our honors and news</b>! How can I help you today?</p>",
+                ai_quick_label: "Quick Questions:",
+                ai_q1_btn: "📍 Stores & Workshop", ai_q1_text: "What are the address and opening hours of Toubiankeng Workshop?",
+                ai_q2_btn: "👑 Best Selling Items", ai_q2_text: "What are the most popular best-selling items at Taiping Blue?",
+                ai_q3_btn: "🎨 DIY Workshop Booking", ai_q3_text: "How can I book a hands-on indigo DIY workshop experience?",
+                ai_q4_btn: "🏆 Brand Honors & Press", ai_q4_text: "Tell me about Taiping Blue's brand origin and awards.",
+                ai_input_placeholder: "Ask about Taiping Blue...", ai_user_label: "You", ai_reset_toast: "Chat history reset successfully"
             },
             ja: {
                 brand_name: "太平藍", brand_subtitle: "天然植物発酵 ‧ 台湾工芸ブランド",
@@ -1071,7 +1462,18 @@
                 footer_contact_title: "お問い合わせ", footer_hours: "受付時間：月〜金 09:00 - 18:00",
                 footer_headquarter: "基金会本部：台中市北区育才街三巷3号3F-4",
                 footer_workshop: "頭汴坑工房：台中市太平区長龍路四段",
-                footer_links_title: "公式プラットフォーム", card_listen_guide: "音声ガイド"
+                footer_links_title: "公式プラットフォーム", card_listen_guide: "音声ガイド",
+
+                /* AI Robot Specific Translations */
+                ai_hint: "AIガイド藍藍に質問！", ai_badge_btn: "AI ガイド",
+                ai_name: "藍藍 ‧ AIコンシェルジュ", ai_subtitle: "太平藍の工芸や店舗について24時間お答えします",
+                ai_welcome: "<p>こんにちは！太平藍のAIコンシェルジュ<b>「藍藍（ランラン）」</b>です 🌿</p><p><b>伝統藍染め工芸、人気作品、DIY手染め体験、工房へのアクセス</b>や<b>受賞ニュース</b>など、何でもお気軽にお尋ねください！</p>",
+                ai_quick_label: "おすすめの質問:",
+                ai_q1_btn: "📍 工房とアクセス", ai_q1_text: "頭汴坑藍染め工房の住所と営業時間を教えてください。",
+                ai_q2_btn: "👑 ベストセラー作品", ai_q2_text: "太平藍の代表的な人気・おすすめ作品は何ですか？",
+                ai_q3_btn: "🎨 藍染体験予約", ai_q3_text: "藍染めDIY手作り体験の予約方法を教えてください。",
+                ai_q4_btn: "🏆 受賞・メディアニュース", ai_q4_text: "太平藍ブランドの設立背景と受賞歴について教えてください。",
+                ai_input_placeholder: "太平藍の藍染めについて質問...", ai_user_label: "あなた", ai_reset_toast: "チャット履歴をリセットしました"
             },
             fr: {
                 brand_name: "Taiping Blue", brand_subtitle: "Fermentation Naturelle ‧ Artisanat Taïwanais",
@@ -1127,7 +1529,18 @@
                 footer_contact_title: "Contact & Informations", footer_hours: "Heures de bureau : Lun - Ven 09:00 - 18:00",
                 footer_headquarter: "Siège de la Fondation : 3F-4, No. 3, Ln. 3, Yucai St., Taichung",
                 footer_workshop: "Atelier : Sec. 4, Changlong Rd., Taiping Dist., Taichung",
-                footer_links_title: "Plateformes Officielles", card_listen_guide: "Écouter le Guide"
+                footer_links_title: "Plateformes Officielles", card_listen_guide: "Écouter le Guide",
+
+                /* AI Robot Specific Translations */
+                ai_hint: "Posez vos questions à l'IA Lanlan !", ai_badge_btn: "Guide IA",
+                ai_name: "Lanlan ‧ Assistant IA & Guide", ai_subtitle: "Disponible 24/7 pour vos questions sur l'artisanat et boutiques",
+                ai_welcome: "<p>Bonjour ! Je suis <b>Lanlan</b>, votre guide IA pour Taiping Blue 🌿</p><p>N'hésitez pas à me poser des questions sur <b>l'artisanat de l'indigo, les produits, les ateliers DIY, nos boutiques</b> ou <b>nos prix et actualités</b> ! Comment puis-je vous aider aujourd'hui ?</p>",
+                ai_quick_label: "Questions Rapides :",
+                ai_q1_btn: "📍 Boutiques & Atelier", ai_q1_text: "Quels sont l'adresse et les horaires d'ouverture de l'atelier Toubiankeng ?",
+                ai_q2_btn: "👑 Meilleures Ventes", ai_q2_text: "Quels sont les articles phares et best-sellers de Taiping Blue ?",
+                ai_q3_btn: "🎨 Ateliers DIY", ai_q3_text: "Comment réserver un atelier d'initiation à la teinture à l'indigo ?",
+                ai_q4_btn: "🏆 Distinctions & Presse", ai_q4_text: "Parlez-moi de l'histoire et des récompenses reçues par Taiping Blue.",
+                ai_input_placeholder: "Posez une question sur Taiping Blue...", ai_user_label: "Vous", ai_reset_toast: "Historique de chat réinitialisé"
             },
             ko: {
                 brand_name: "타이핑 블루", brand_subtitle: "천연 식물 발효 ‧ 대만 공예 브랜드",
@@ -1183,7 +1596,18 @@
                 footer_contact_title: "문의 안내", footer_hours: "운영시간: 월~금 09:00 - 18:00",
                 footer_headquarter: "재단 본부: 타이중시 북구 위차이가 3항 3호 3층-4",
                 footer_workshop: "공방: 타이중시 타이핑구 장롱로 4단",
-                footer_links_title: "공식 플랫폼", card_listen_guide: "도슨트 듣기"
+                footer_links_title: "공식 플랫폼", card_listen_guide: "도슨트 듣기",
+
+                /* AI Robot Specific Translations */
+                ai_hint: "AI 가이드 란란에게 질문하기!", ai_badge_btn: "AI 도슨트",
+                ai_name: "란란 ‧ AI 도슨트", ai_subtitle: "24시간 타이핑 블루 공예 및 매장 안내",
+                ai_welcome: "<p>안녕하세요! 타이핑 블루의 AI 도슨트 <b>「란란」</b>입니다 🌿</p><p><b>전통 쪽염 공예, 대표 작품, DIY 체험, 매장 위치</b>나 <b>수상 내역</b> 등 궁금하신 점을 편하게 질문해 주세요!</p>",
+                ai_quick_label: "빠른 질문:",
+                ai_q1_btn: "📍 매장 및 공방", ai_q1_text: "투비엔컹 쪽염 공방의 주소와 영업시간을 알려주세요.",
+                ai_q2_btn: "👑 대표 인기 작품", ai_q2_text: "타이핑 블루의 대표 베스트셀러 작품은 무엇인가요?",
+                ai_q3_btn: "🎨 쪽염 DIY 체험", ai_q3_text: "쪽염 DIY 손수건 체험 예약은 어떻게 하나요?",
+                ai_q4_btn: "🏆 브랜드 스토리", ai_q4_text: "타이핑 블루 브랜드의 탄생 배경과 주요 수상 실적은 무엇인가요?",
+                ai_input_placeholder: "타이핑 블루에 대해 물어보세요...", ai_user_label: "나", ai_reset_toast: "대화 기록이 초기화되었습니다"
             },
             it: {
                 brand_name: "Taiping Blue", brand_subtitle: "Fermentazione Naturale ‧ Artigianato di Taiwan",
@@ -1239,7 +1663,18 @@
                 footer_contact_title: "Contatti e Informazioni", footer_hours: "Orari ufficio: Lun - Ven 09:00 - 18:00",
                 footer_headquarter: "Sede Fondazione: 3F-4, No. 3, Ln. 3, Yucai St., Taichung",
                 footer_workshop: "Laboratorio: Sec. 4, Changlong Rd., Taiping Dist., Taichung",
-                footer_links_title: "Piattaforme Ufficiali", card_listen_guide: "Guida Audio"
+                footer_links_title: "Piattaforme Ufficiali", card_listen_guide: "Guida Audio",
+
+                /* AI Robot Specific Translations */
+                ai_hint: "Chiedi all'Assistente AI Lanlan!", ai_badge_btn: "Guida AI",
+                ai_name: "Lanlan ‧ Assistente AI & Guida", ai_subtitle: "Disponibile 24/7 per informazioni su artigianato e negozi",
+                ai_welcome: "<p>Ciao! Sono <b>Lanlan</b>, la tua Guida AI per Taiping Blue 🌿</p><p>Chiedimi pure informazioni sull'<b>artigianato dell'indaco, i prodotti, i laboratori DIY, i nostri negozi</b> o <b>i premi e le notizie</b>! Come posso aiutarti oggi?</p>",
+                ai_quick_label: "Domande Rapide:",
+                ai_q1_btn: "📍 Negozi e Laboratorio", ai_q1_text: "Quali sono l'indirizzo e gli orari di apertura del laboratorio Toubiankeng?",
+                ai_q2_btn: "👑 Prodotti Più Venduti", ai_q2_text: "Quali sono i prodotti simbolo più venduti di Taiping Blue?",
+                ai_q3_btn: "🎨 Prenota Laboratorio DIY", ai_q3_text: "Come posso prenotare un'esperienza di laboratorio fai-da-te all'indaco?",
+                ai_q4_btn: "🏆 Premi e Riconoscimenti", ai_q4_text: "Raccontami la storia e i premi ricevuti da Taiping Blue.",
+                ai_input_placeholder: "Fai una domanda su Taiping Blue...", ai_user_label: "Tu", ai_reset_toast: "Cronologia chat ripristinata"
             }
         };
 
@@ -1345,72 +1780,6 @@
             }
         ];
 
-        const productTranslations = {
-            p1: {
-                en: { name: "100% Pure Silk Gradient Indigo Scarf", category: "Accessories", shortDesc: "Pinkoi #1 Best Seller! Crafted from 100% pure silk, capturing Taiping's mountain mist.", concept: "【Concept】Inspired by the morning mist and mountain streams in Taiping, Taichung. Dyed with 100% natural plant fermented indigo without chemical dyes.", process: "【Process】Crafted by local master artisans using tie-dye techniques, immersed in room-temperature natural indigo vats over 12 times.", timing: "【Occasion】Ideal for spring/autumn warmth, art exhibitions, business exchanges, or elegant international gifts.", detail: "【Details】Material: 100% Pure Silk. Size: 180 x 50 cm. Features: Handcrafted natural plant dye, each wave pattern is unique.", fullTranscript: "Welcome to appreciate Taiping Blue's top seller, the 100% Silk Gradient Indigo Scarf. Inspired by Taiping's morning mist and mountain streams, master artisans select 100% pure silk and immerse it over 12 times in natural indigo vats followed by solar oxidation. Light, silky, and elegant." },
-                ja: { name: "100%純絹グラデーション藍染めシルクスカーフ", category: "アクセサリー", shortDesc: "Pinkoi人気NO.1！100%純絹使用。頭汴坑の朝靄のような美しいグラデーション。", concept: "【コンセプト】台中太平の朝靄と清流からインスピレーションを得た100%天然藍発酵染め。", process: "【制作工程】職人が純絹を絞り防染し、常温藍液に12回以上手揉み浸染、日光酸化で定着させます。", timing: "【着用シーン】春秋の防寒、美術展覧会、ビジネス交流、上質な贈り物に最適。", detail: "【詳細】素材：100%天然絹。サイズ：180 x 50 cm。特徴：世界に一つだけのグラデーション。", fullTranscript: "太平藍で一番人気を誇る『100%純絹グラデーション藍染めシルクスカーフ』へようこそ。100%天然絹を使い、12回以上の手揉み浸染と日光酸化で仕上げました。" },
-                fr: { name: "Écharpe en Soie Pure Nuancée Indigo", category: "Accessoires", shortDesc: "Best-seller #1 sur Pinkoi ! 100% soie pure, évoquant la brume matinale de Taiping.", concept: "【Concept】Inspiré par la brume matinale des montagnes de Taiping. Teinture à l'indigo 100% naturel sans produits chimiques.", process: "【Fabrication】Noué à la main et immergé plus de 12 fois dans des cuves d'indigo à température ambiante.", timing: "【Occasion】Parfait pour le printemps/automne, les galeries d'art et les cadeaux diplomatiques.", detail: "【Détails】Matériau : 100% Soie pure. Taille : 180 x 50 cm. Pièce unique faite à la main.", fullTranscript: "Bienvenue dans l'univers de notre écharpe en soie pure nuancée indigo, pièce maîtresse de Taiping Blue." },
-                ko: { name: "100% 순실크 그라데이션 쪽염 스카프", category: "패션 잡화", shortDesc: "Pinkoi 베스트셀러 1위! 100% 순실크 소재, 산속 아침 안개 같은 푸른 빛.", concept: "【상품 철학】타이중 타이핑의 아침 안개와 산골 시냇물에서 영감을 얻은 100% 천연 쪽발효 염색.", process: "【제작 과정】장인이 순실크에 홀치기 방염 후 상온의 쪽염조에서 12회 이상 주물러 염색.", timing: "【활용 시기】간절기 체온 유지, 전시회 참석, 품격 있는 VIP 선물로 추천.", detail: "【제품 상세】소재: 100% 천연 순실크. 규격: 180 x 50 cm. 세상에 하나뿐인 오리지널 물결 문양.", fullTranscript: "타이핑 블루의 대표작인 '100% 순실크 그라데이션 쪽염 스카프'입니다. 12회 이상의 손염색과 태양 광선 착색을 거쳤습니다." },
-                it: { name: "Sciarpa Sfumata in Pura Seta all'Indaco", category: "Accessori", shortDesc: "Best-seller #1 su Pinkoi! Realizzata in 100% pura seta sfumata.", concept: "【Concetto】Ispirata alla nebbia mattutina delle montagne di Taiping. Tintura 100% naturale senza agenti chimici.", process: "【Processo】Legata a mano e immersa oltre 12 volte in vasche di indaco a temperatura ambiente.", timing: "【Occasioni】Perfetta per le stagioni intermedie, eventi d'arte e regali aziendali di prestigio.", detail: "【Dettagli】Materiale: 100% Pura Seta. Dimensioni: 180 x 50 cm. Ogni pezzo è unico.", fullTranscript: "Benvenuti a scoprire la sciarpa sfumata in pura seta all'indaco, il capo più amato di Taiping Blue." }
-            },
-            p2: {
-                en: { name: "Indigo Hakka Tung Blossom Scarf", category: "Accessories", shortDesc: "Signature work! Combining Hakka Tung blossom motifs with stencil resist techniques.", concept: "【Concept】Drawing from Hakka Tung blossoms symbolizing purity and resilience, breathing contemporary life into traditional heritage.", process: "【Process】Selected cotton-linen blend fabric, carved Tung blossom stencils applied with paste resist, repeatedly dyed in fermented indigo.", timing: "【Occasion】Perfect for everyday elegant wear, cultural festivals, or unique souvenirs for overseas friends.", detail: "【Details】Material: Natural Cotton-Linen Blend. Size: 175 x 45 cm. Craftsmanship: Stencil Paste Resist.", fullTranscript: "Introducing Young Water Foundation's signature creation, the Indigo Hakka Tung Blossom Scarf, blending Hakka culture with fine indigo craft." },
-                ja: { name: "客家油桐花 藍染めコレクションスカーフ", category: "アクセサリー", shortDesc: "水源地文教基金会の代表作！客家油桐花模様と伝統型染め防染工芸の融合。", concept: "【コンセプト】客家集落のシンボルである油桐花をモチーフに、台湾客家文化の記憶を現在に生かします。", process: "【制作工程】肌触りの良い綿麻混紡生地を使用し、型染防染糊で油桐花型を彫刻し、常温藍液で反覆浸染。", timing: "【着用シーン】日常のコーディネート、文化イベント、海外のご友人への台湾工芸ギフトに。", detail: "【詳細】素材：天然綿麻混紡。サイズ：175 x 45 cm。技法：型染め防染。", fullTranscript: "水源地文教基金会の人気作『客家油桐花 藍染めコレクションスカーフ』をご案内いたします。" },
-                fr: { name: "Écharpe Indigo Motif Fleurs de Tung Hakka", category: "Accessoires", shortDesc: "Chef-d'œuvre de la Fondation ! Alliant motifs de fleurs de Tung et pochoirs traditionnels.", concept: "【Concept】Inspiré par les fleurs de Tung Hakka symbolisant la résilience, revisitant l'héritage culturel taïwanais.", process: "【Fabrication】Mélange de coton et lin, application de pâte de réserve au pochoir et bains d'indigo répétés.", timing: "【Occasion】Parfait pour le quotidien raffiné, les festivals culturels et les cadeaux haut de gamme.", detail: "【Détails】Matériau : Coton-Lin naturel. Taille : 175 x 45 cm. Technique : Pochoir traditionnel.", fullTranscript: "Découvrez notre écharpe emblématique aux motifs de fleurs de Tung, union parfaite entre culture Hakka et élégance." },
-                ko: { name: "쪽염 객가 동화 컬렉션 스카프", category: "패션 잡화", shortDesc: "영워터 재단의 대표작! 객가 오동나무 꽃 문양과 전통 형염 방염 공예의 만남.", concept: "【상품 철학】객가 마을의 순결과 강인함을 상징하는 동화 꽃문양에서 영감을 받아 문화 유산을 현대에 재해석.", process: "【제작 과정】친환경 면마 혼방 원단에 형염 방염풀을 발라 동화 꽃판을 새긴 후 쪽염조에서 반복 염색.", timing: "【활용 시기】일상적인 스타일링, 문화 행사 참석, 대만 문화가 담긴 국외 귀빈 선물용.", detail: "【제품 상세】소재: 천연 면마 혼방. 규격: 175 x 45 cm. 공예: 형염 방염 기법.", fullTranscript: "영워터 재단의 인기 작품인 '쪽염 객가 동화 컬렉션 스카프'를 소개합니다." },
-                it: { name: "Sciarpa all'Indaco con Motivo Fiori di Tung Hakka", category: "Accessori", shortDesc: "Opera simbolo della Fondazione! Unisce motivi Hakka e tecnica stencil tradizionale.", concept: "【Concetto】Ispirata ai fiori di Tung Hakka, trasmette la resilienza e l'eleganza della cultura tradizionale.", process: "【Processo】Tessuto traspirante in cotone e lino, incisione a stencil con pasta di riserva e immersioni in indaco.", timing: "【Occasioni】Adatta per il guardaroba quotidiano raffinato, eventi culturali e regali internazionali.", detail: "【Dettagli】Materiale: Misto Coton Lino Naturale. Dimensioni: 175 x 45 cm. Tecnica: Stencil a Pasta.", fullTranscript: "Ecco la sciarpa all'indaco con motivo fiori di Tung Hakka, connubio di storia e design contemporaneo." }
-            },
-            p3: {
-                en: { name: "Indigo Atmosphere Japanese Wood Wooden Desk Lamp", category: "Decor", shortDesc: "Emitting warm hand-dyed wave shadows, combining natural indigo shade and solid wood base.", concept: "【Concept】Transforming the starry mountain night and tranquil streams into warm indoor lighting for soul relaxation.", process: "【Process】Cotton translucent fabric stitched and dyed into rich indigo, wrapped over flame-retardant lampshades on wooden bases.", timing: "【Occasion】Perfect for bedroom nightstands, cozy living room corners, reading studies, or cafe ambiance.", detail: "【Details】Material: Natural Indigo Cotton Fabric, Solid Wood Base. Voltage: 110V-220V Universal.", fullTranscript: "Discover the breathtaking Indigo Japanese Wooden Desk Lamp, creating serene lighting waves in your peaceful living space." },
-                ja: { name: "藍染め和風木製テーブルランプ", category: "インテリア", shortDesc: "手染めの温かい水波模様の光影。天然藍染めランプシェードと無垢材ベースの融合。", concept: "【コンセプト】頭汴坑の夜の星空と静寂な清流のイメージを温かい室内光へ変え、心を洗う癒しの空間を演出。", process: "【制作工程】透光性のある純綿布を藍染めし、防燃ランプシェードに張り、無垢材ベースと暖色LEDを組み合わせました。", timing: "【着用シーン】寝室のベッドサイドランプ、リビングの雰囲気作り、書斎やカフェのインテリアに。", detail: "【詳細】素材：天然藍染め純綿布、無垢材ベース。仕様：110V-220V対応、調光可能。", fullTranscript: "お部屋に癒しをもたらす『藍染め和風木製テーブルランプ』をご紹介いたします。" },
-                fr: { name: "Lampe de Table Japonisante en Bois et Indigo", category: "Décoration", shortDesc: "Diffusion de lumières et d'ombres poétiques, combinant abat-jour indigo et socle en bois massif.", concept: "【Concept】Transformer la nuit étoilée de Taiping en une lumière chaleureuse apaisante pour l'esprit.", process: "【Fabrication】Tissu de coton cousu et teint à l'indigo, fixé sur un abat-jour ignifugé avec socle en bois.", timing: "【Occasion】Idéal pour les lampes de chevet, les coins de salon cocooning, salons de thé ou bureaux.", detail: "【Détails】Matériau : Coton teint à l'indigo, Socle en Bois Massif. Tension : 110V-220V.", fullTranscript: "Admirez la poésie lumineuse de notre lampe de table en bois et indigo naturel." },
-                ko: { name: "쪽염 은은한 일식 목재 스탠드 조명", category: "리빙 홈데코", shortDesc: "따스한 수묵 물결 빛그림자. 천연 쪽염 갓과 원목 받침대의 기품 있는 조화.", concept: "【상품 철학】투비엔컹 산속의 밤하늘과 별빛을 가정 내 따스한 빛으로 담아 마음을 정화하는 분위기 연출.", process: "【제작 과정】투광 면원단에 수염색 후 특수 난연 갓에 씌워 원목 베이스와 웜톤 LED 램프로 제작.", timing: "【활용 시기】침실 침대 곁 무드등, 거실 구석 포인트 조명, 북카페 및 서재 무드등.", detail: "【제품 상세】소재: 천연 쪽염 면원단, 천연 원목 받침대. 전압: 110V-220V 겸용.", fullTranscript: "아늑한 고요함을 선사하는 '쪽염 은은한 일식 목재 스탠드 조명'입니다." },
-                it: { name: "Lampada da Tavolo in Legno e Indaco Stile Giapponese", category: "Arredo Casa", shortDesc: "Diffonde ombre e luci soffuse con paralume in indaco e base in legno massello.", concept: "【Concetto】Trasforma la quiete delle montagne e delle stelle di Taiping in una luce calda e rilassante.", process: "【Processo】Tessuto di cotone legato e tinto a mano montato su paralume ignifugo e base in legno.", timing: "【Occasioni】Perfetta per comodini da notte, angoli salotto, studi di lettura e caffetterie d'arte.", detail: "【Dettagli】Materiale: Cotone Tinto all'Indaco, Legno Massello. Tensione: 110V-220V.", fullTranscript: "Ecco la meravigliosa lampada da tavolo in legno e indaco naturale per la casa." }
-            },
-            p4: {
-                en: { name: "Sparkling Indigo Wooden Wall Clock", category: "Decor", shortDesc: "Taiwan Excellent Craft Certified! Natural indigo cloth embedded into a warm wooden clock dial.", concept: "【Concept】Transforming static time into dynamic beauty like sunlit water ripples, symbolizing everlasting community life.", process: "【Process】Master artisans use shibori tie-dye to create distinct ripple patterns, set into wooden dials with silent sweep movements.", timing: "【Occasion】Ideal for living room accent walls, housewarming gifts, or natural aesthetic office spaces.", detail: "【Details】Material: Natural Indigo Cotton Cloth, Solid Wood Frame, Silent Quartz Movement. Diameter: 30 cm.", fullTranscript: "You are looking at Taiwan Excellent Craft Certified Sparkling Indigo Wooden Wall Clock, fusing time with indigo art." },
-                ja: { name: "キラキラSparkling 藍染め木製掛け時計", category: "インテリア", shortDesc: "台湾優良工芸品認証！天然藍染め布を温もりある木製文字盤に凝縮。", concept: "【コンセプト】静止した時間を、太陽に照らされる水面のように光り輝く動的な美しさへと転化させます。", process: "【制作工程】職人が絞り染めで層のある波紋を染め上げ、精密木工で木製文字盤に組み込み、静音ムーブメントを搭載。", timing: "【着用シーン】リビングのメイン壁飾り、新築祝いの贈り物、ナチュラルテイストのカフェ装飾に。", detail: "【詳細】素材：天然藍染め純綿布、無垢材フレーム、静音掃秒ムーブメント。直径：30cm。", fullTranscript: "台湾優良工芸品認証を獲得した『キラキラSparkling 藍染め木製掛け時計』でございます。" },
-                fr: { name: "Horloge Murale en Bois et Indigo Scintillant", category: "Décoration", shortDesc: "Certifié Taiwan Excellent Craft ! Tissu indigo enchâssé dans un cadran en bois massif.", concept: "【Concept】Transformer le temps figé en une beauté dynamique rappelant les reflets du soleil sur l'eau.", process: "【Fabrication】Teinture shibori aux motifs de vagues enchâssée avec précision dans un cadran en bois silençieux.", timing: "【Occasion】Parfait pour le salon principal, cadeaux de crémaillère ou cafés au design naturel.", detail: "【Détails】Matériau : Coton teinté à l'indigo, Cadre en bois massif. Diamètre : 30 cm.", fullTranscript: "Découvrez notre horloge murale scintillante, certifiée par le label Taiwan Excellent Craft." },
-                ko: { name: "반짝반짝 Sparkling 쪽염 목재 벽시계", category: "리빙 홈데코", shortDesc: "대만 우수 공예품 인증! 천연 쪽염 원단을 포근한 원목 시계판에 접목.", concept: "【상품 철학】정적인 시간을 햇살이 수면에 부딪히는 동적인 아름다움으로 변환, 지속 가능한 삶을 상징.", process: "【제작 과정】장인이 홀치기 기법으로 잔물결 문양을 염색한 후 정밀 목공으로 원목 프레임에 조립.", timing: "【활용 시기】거실 메인 벽면 인테리어, 집들이 축하 선물, 자연 친화적 공간 디자인.", detail: "【제품 상세】소재: 천연 쪽염 면원단, 원목 프레임, 무소음 소음기어. 지름: 30 cm.", fullTranscript: "대만 우수 공예품 인증을 받은 '반짝반짝 Sparkling 쪽염 목재 벽시계'입니다." },
-                it: { name: "Orologio da Parete in Legno e Indaco Scintillante", category: "Arredo Casa", shortDesc: "Certificato Taiwan Excellent Craft! Tessuto all'indaco incastonato in un quadrante in legno.", concept: "【Concetto】Rende il tempo un'esperienza dinamica come i riflessi del sole sull'acqua di torrente.", process: "【Processo】Tintura shibori a onde incastonata nel legno con movimento al quarzo silenzioso.", timing: "【Occasioni】Perfetto per pareti di salotti, regali di inaugurazione casa e spazi dal gusto naturale.", detail: "【Dettagli】Materiale: Cotone Tinto all'Indaco, Cornice in Legno Massello. Diametro: 30 cm.", fullTranscript: "Vi presentiamo l'orologio da parete in legno e indaco, premiato con il marchio di eccellenza di Taiwan." }
-            },
-            p5: {
-                en: { name: "Indigo Elegance Tea Runner & Coaster Set", category: "Decor", shortDesc: "Tea masters' favorite! Natural clamp resist and tie-dye patterns bring Zen aesthetics to your dining table.", concept: "【Concept】Embodying the harmony between Taiwanese tea culture and indigo craftsmanship for mindful slow living.", process: "【Process】Crafted using wooden clamp resist and stitching techniques, heavy cotton fabric dipped repeatedly in fermented indigo.", timing: "【Occasion】Tea tasting ceremonies, home dining decor, tea art gatherings, or thoughtful housewarming gifts.", detail: "【Details】Includes: Placemats x 2 (40x30cm), Coasters x 2 (10x10cm). Material: 100% Absorbent Cotton.", fullTranscript: "Beloved by tea lovers, the Indigo Elegance Tea Runner Set elevates every cup of tea into Eastern Zen aesthetic." },
-                ja: { name: "藍染め風雅茶席ランチョンマット＆コースターセット", category: "インテリア", shortDesc: "茶道家に大人気！板締め染めと絞り染めの模様が、日常の食卓と茶席に東洋の禅の美を添えます。", concept: "【コンセプト】台湾茶文化と藍染め工芸の調和した融合を体現し、一煎のお茶と共に心落ち着く時間を演出。", process: "【制作工程】木製夾具による板締め防染と縫い染めを行い、高密度純綿布を数度にわたり藍建て液に浸染。", timing: "【着用シーン】お茶会、家庭のテーブルコーディネート、茶道愛好家の集い、新居祝いの品に。", detail: "【詳細】セット内容：ランチョンマットx2(40x30cm)、コースターx2(10x10cm)。素材：100%吸水綿。", fullTranscript: "茶道やライフスタイル愛好家に愛される『藍染め風雅茶席ランチョンマット＆コースターセット』です。" },
-                fr: { name: "Ensemble Chemin de Table et Sous-Verres Indigo", category: "Décoration", shortDesc: "Le favori des maîtres de thé ! Des motifs faits main apportent l'esthétique Zen Orientale à votre table.", concept: "【Concept】Incarnation de l'harmonie entre la culture du thé taïwanaise et la teinture à l'indigo naturel.", process: "【Fabrication】Technique de serrage de bois et coutures manuelles appliquées sur coton épais absorbant.", timing: "【Occasion】Cérémonies du thé, décoration de table repas, réunions d'amateurs d'art de vivre.", detail: "【Détails】Inclus : Chemins de table x2 (40x30cm), Sous-verres x2 (10x10cm). 100% Coton.", fullTranscript: "Découvrez notre élégant ensemble de thé en indigo, créateur d'ambiance zen et poétique." },
-                ko: { name: "쪽염 풍류 다도 매트 및 컵받침 세트", category: "리빙 홈데코", shortDesc: "다도인들의 최애 아이템! 천연 판협염 문양이 일상 식탁과 다도 자리에 동양적인 선의 미학 연출.", concept: "【상품 철학】대만 차 문화와 쪽염 공예의 조화로운 결합을 통해 차 한 잔과 함께하는 느림의 미학 실현.", process: "【제작 과정】목재 조형 틀을 활용한 판협 방염 및 바느질 염색 후 고밀도 면원단에 수차례 쪽염.", timing: "【활용 시기】다회 시음, 가정 식탁 인테리어, 다도 동호회 모임, 품격 있는 입주 선물.", detail: "【제품 상세】구성: 식탁 매트 x 2 (40x30cm), 컵받침 x 2 (10x10cm). 소재: 100% 면.", fullTranscript: "다도와 홈 스타일링 애호가들에게 사랑받는 '쪽염 풍류 다도 매트 및 컵받침 세트'입니다." },
-                it: { name: "Set Runner da Tè e Sottobicchieri all'Indaco", category: "Arredo Casa", shortDesc: "Il preferito dei maestri del tè! I motivi a riserva donano un'estetica Zen orientale alla tavola.", concept: "【Concetto】Esprime la perfetta armonia tra la cultura del tè di Taiwan e l'arte della tintura all'indaco.", process: "【Processo】Tecnica di blocco in legno e cuciture a mano su cotone ad alta densità asportabile.", timing: "【Occasioni】Cerimonie del tè, decorazione tavola di casa e regali di inaugurazione di gusto.", detail: "【Dettagli】Include: Runner x2 (40x30cm), Sottobicchieri x2 (10x10cm). 100% Cotone Assorbente.", fullTranscript: "Ecco il raffinato set per il tè in indaco naturale, perfetto per momenti di relax e meditazione." }
-            },
-            p6: {
-                en: { name: "Water Ripples Natural Cotton Indigo Cushion", category: "Decor", shortDesc: "Hakka stitched resist pattern, heavy-weight cotton touch for a healing natural atmosphere.", concept: "【Concept】Inspired by mountain stream ripples, bringing a healing touch of nature into busy modern lives.", process: "【Process】Heavy-weight cotton hand-stitched by local community mothers, immersed repeatedly in room-temp vats.", timing: "【Occasion】Living room sofas, bedroom headboards, reading armchairs, adding harmonious indigo aesthetics.", detail: "【Details】Material: 100% Heavy-Weight Cotton, High-Resilience Insert. Size: 45 x 45 cm. Washable Cover.", fullTranscript: "Bring natural comfort into your living space with the Water Ripples Cotton Indigo Cushion." },
-                ja: { name: "藍咲き波紋 天然純綿クッション", category: "インテリア", shortDesc: "客家伝統の縫い染め模様。高密度純綿のしっかりとした肌触りでナチュラルな癒しの空間を。", concept: "【コンセプト】客家の山川の波紋からインスピレーションを得て、忙しい現代の都市生活に自然の静けさを届けます。", process: "【制作工程】高密度純綿生地に下絵を描き、地元の女性職人が一針一針縫い防染し、藍液で反覆浸染。", timing: "【着用シーン】リビングのソファ、寝室のベッド、1人掛け読書椅子に添えて上質なインテリアに。", detail: "【詳細】素材：100%高密度純綿布、高弾性クッション芯。サイズ：45 x 45 cm。カバー洗濯可。", fullTranscript: "お部屋に癒しの空気感を添える『藍咲き波紋 天然純綿クッション』のご紹介です。" },
-                fr: { name: "Coussin en Coton Indigoté Motifs Odonates", category: "Décoration", shortDesc: "Motifs traditionnels Hakka cousus à la main, coton pur épais pour une ambiance apaisante.", concept: "【Concept】Inspiré par les ruisseaux de Taiping, apportant la sérénité de la nature dans nos intérieurs.", process: "【Fabrication】Coton lourd cousu point par point par les artisanes de la communauté et teinté à froid.", timing: "【Occasion】Sur les canapés de salon, lits de chambre à coucher ou fauteuils de lecture.", detail: "【Détails】Matériau : 100% Coton lourd. Housse déhoussable et lavable. Taille : 45 x 45 cm.", fullTranscript: "Apportez une touche de sérénité naturelle à votre intérieur grâce à ce coussin indigoté fait main." },
-                ko: { name: "푸른 물결 천연 면 쪽염 쿠션", category: "리빙 홈데코", shortDesc: "객가 전통 바느질 염색 문양, 도톰한 순면의 감촉으로 자연 친화적인 힐링 분위기 연출.", concept: "【상품 철학】객가의 산골 시냇물 물결에서 영감을 얻어 바쁜 현대 도시인들에게 자연의 고요함을 전달.", process: "【제작 과정】고밀도 면원단에 수놓듯 바느질 방염 후 쪽염조에 수차례 침염하여 고유의 엠보싱 연출.", timing: "【활용 시기】거실 소파, 침실 침대 헤드, 1인용 읽기 의자에 포인트 쿠션으로 배치.", detail: "【제품 상세】소재: 100% 면원단, 고탄성 쿠션솜. 규격: 45 x 45 cm. 지퍼 분리 세탁 가능.", fullTranscript: "집안에 따스한 자연의 온기를 채워주는 '푸른 물결 천연 면 쪽염 쿠션'입니다." },
-                it: { name: "Cuscino in Cotone all'Indaco con Motivo a Onde", category: "Arredo Casa", shortDesc: "Cuciture a mano tradizionali Hakka su cotone pesante per un'atmosfera naturale e rilassante.", concept: "【Concetto】Ispirato ai rinfrescanti rami di torrente di Taiping, porta la quiete della natura nella vita moderna.", process: "【Processo】Cotone pesante cucito punto per punto dalle artigiane locali e immerso nelle vasche d'indaco.", timing: "【Occasioni】Perfetto per divani del salotto, testate del letto o poltrone da lettura.", detail: "【Dettagli】Materiale: 100% Cotone Pesante. Fodera sfoderabile e lavabile. Dimensioni: 45 x 45 cm.", fullTranscript: "Arricchisci i tuoi spazi di casa con il cuscino in cotone tinto all'indaco naturale." }
-            },
-            p7: {
-                en: { name: "Indigo Craft Long Sleeve Shirt", category: "Apparel", shortDesc: "Selected skin-friendly cotton fabric, dyed naturally with fermented indigo.", concept: "【Concept】Infusing traditional indigo resist techniques into contemporary apparel, exhibiting an elegant literary aesthetic.", process: "【Process】Master artisans hand-stitch resist patterns on pure cotton, repeatedly immersed in indigo vats over 12 times.", timing: "【Occasion】Suitable for daily refined styling, art gallery visits, business casual meetings, and celebrations.", detail: "【Details】Material: 100% Combed Pure Cotton. Sizes: M / L / XL. Features: Natural plant fermentation hand-dyed.", fullTranscript: "Presenting the Indigo Craft Long Sleeve Shirt, made from 100% combed cotton and hand-dyed for a deep, cultured aesthetic." },
-                ja: { name: "藍染め風雅長袖シャツ", category: "服飾", shortDesc: "肌触りの良い純綿生地を使用。天然藍染めで仕上げた上質なシャツ。", concept: "【コンセプト】伝統の藍染め防染工芸を現代の仕立て服へ注ぎ込み、洗練された知的で風雅な装いを提案します。", process: "【制作工程】職人が純綿生地に下絵を描いて手縫い防染し、常温藍液で12回以上浸染を重ねました。", timing: "【着用シーン】日常の上質なコーディネート、美術展の観賞、ビジネスカジュアル、各種イベントに。", detail: "【詳細】素材：100%コーマ純綿。サイズ：M/L/XL。特徴：植物発酵手染め、通気性抜群。", fullTranscript: "『藍染め風雅長袖シャツ』をご案内いたします。厳選された純綿布を使い、職人が手作業で染め上げた上品な一着です。" },
-                fr: { name: "Chemise Artisanale Indigo à Manches Longues", category: "Vêtements", shortDesc: "Coton doux teinté à l'indigo naturel fermenté aux élégantes nuances.", concept: "【Concept】Informer l'artisanat traditionnel dans une coupe contemporaine pour exprimer une élégance intellectuelle.", process: "【Fabrication】Coutures manuelles sur coton pur et plus de 12 immersions successives en cuve d'indigo.", timing: "【Occasion】Idéal pour les tenues quotidiennes raffinées, visites de galeries, rendez-vous d'affaires.", detail: "【Détails】Matériau : 100% Coton peigné. Tailles : M / L / XL. Teinture végétale naturelle faite à la main.", fullTranscript: "Découvrez notre chemise artisanale à manches longues teintée à l'indigo naturel, alliant confort et élégance." },
-                ko: { name: "쪽염 풍류 공예 긴소매 셔츠", category: "공예 의류", shortDesc: "친환경 순면 원단에 천연 쪽발효 수염색을 더한 유니크한 셔츠.", concept: "【상품 철학】전통 쪽염 방염 기법을 모던한 재단 옷에 담아 청아하고 기품 있는 모던 아티스틱 스타일 연출.", process: "【제작 과정】장인이 순면 원단에 수바느질 방염을 한 후 쪽염조에서 12회 이상 반복 손염색.", timing: "【활용 시기】일상적인 스타일링, 미술관 및 전시회 참관, 비즈니스 캐주얼 모임.", detail: "【제품 상세】소재: 100% 코마사 순면. 사이즈: M / L / XL. 특징: 천연 식물 발효 손염색.", fullTranscript: "품격 있는 스타일을 선사하는 '쪽염 풍류 공예 긴소매 셔츠'를 소개합니다." },
-                it: { name: "Camicia Artigianale ad Indaco a Maniche Lunghe", category: "Abbigliamento", shortDesc: "Cotone naturale tinto a mano all'indaco per un'eleganza senza tempo.", concept: "【Concetto】Fonde l'arte della tintura tradizionale con il design moderno per uno stile intellettuale e raffinato.", process: "【Processo】Cuciture a mano su cotone pettinato ed oltre 12 immersioni graduali nelle vasche d'indaco.", timing: "【Occasioni】Adatta per occasioni formali e informali, visite a mostre d'arte e incontri speciali.", detail: "【Dettagli】Materiale: 100% Cotone Pettinato. Taglie: M / L / XL. Tintura vegetale artigianale.", fullTranscript: "Ecco la camicia artigianale a maniche lunghe tinta all'indaco naturale, simbolo di stile e raffinatezza." }
-            },
-            p8: {
-                en: { name: "Indigo Hand-Stitched Water Ripple Dress", category: "Apparel", shortDesc: "Hakka stitched resist technique with natural flowing blue gradient.", concept: "【Concept】Inspired by stream ripples in mountain forests, capturing the dynamic fluid beauty of nature in clothing.", process: "【Process】Hand-stitched and folded by master artisans, repeatedly dipped into natural indigo vats to yield soft wave lines.", timing: "【Occasion】Spring/summer dates, vacation travel, cultural tea gatherings, and art exhibitions.", detail: "【Details】Material: Natural Cotton-Linen Blend. Size: Free Size. Features: Comfortable flattering silhouette.", fullTranscript: "Welcome to admire the Indigo Hand-Stitched Water Ripple Dress, featuring flowing indigo waves on a natural silhouette." },
-                ja: { name: "藍染め手縫い天然波紋ワンピース", category: "服飾", shortDesc: "客家伝統の縫い染め。頭汴坑の清流のような美しいグラデーション。", concept: "【コンセプト】山間の清流と木漏れ日から着想を得て、大自然の流動的な美しさをドレスのシルエットへ映し出しました。", process: "【制作工程】職人が生地を折り畳んで細かく手縫い防染し、常温の藍液で揉み込むことで世界に一つの波紋を描きます。", timing: "【着用シーン】初夏のお出かけ、旅行、お茶会、アートギャラリーの巡演に。", detail: "【詳細】素材：天然綿麻混紡。サイズ：フリーサイズ。特徴：ゆったりとした美しい着心地。", fullTranscript: "『藍染め手縫い天然波紋ワンピース』をご覧ください。裾に広がる藍色の波紋が清流のように涼やかでエレガントです。" },
-                fr: { name: "Robe Longue Indigo aux Motifs Ondoyants", category: "Vêtements", shortDesc: "Technique de réserve cousue main aux nuances d'indigo rappelant les ruisseaux.", concept: "【Concept】Inspiré par les cascades et ruisseaux de Taiping, capturant la beauté fluide de la nature.", process: "【Fabrication】Pliage et coutures à la main suivis de multiples bains dans nos cuves d'indigo naturel.", timing: "【Occasion】Rendez-vous estivaux, voyages, réunions de thé et galeries d'art.", detail: "【Détails】Matériau : Mélange Coton-Lin naturel. Taille : Taille Unique. Coupe fluide et confortable.", fullTranscript: "Découvrez notre robe longue aux motifs ondoyants faits main, célébrant la beauté fluide de l'indigo." },
-                ko: { name: "쪽염 수바느질 물결 원피스", category: "공예 의류", shortDesc: "객가 전통 바느질 방염으로 표현한 시냇물 같은 청량한 물결 그라데이션.", concept: "【상품 철학】투비엔컹 산골 시냇물의 은은한 물결과 자연의 생동감을 드레스 실루엣에 담아낸 디자인.", process: "【제작 과정】장인이 디테일하게 수바느질로 주름을 잡아 방염한 후 쪽염조에 반복 침염하여 나만의 물결 완성.", timing: "【활용 시기】봄/여름 나들이, 여행, 문화 다회 모임, 미술관 참관.", detail: "【제품 상세】소재: 천연 면마 혼방. 규격: 프리 사이즈. 편안하고 스타일리시한 핏.", fullTranscript: "우아함과 자연스러운 멋을 더해주는 '쪽염 수바느질 물결 원피스'입니다." },
-                it: { name: "Abito Lungo in Cotone all'Indaco con Motivo a Onde", category: "Abbigliamento", shortDesc: "Cuciture a mano tradizionali Hakka e sfumature di indaco naturale.", concept: "【Concetto】Ispirato ai rinfrescanti torrenti di montagna, cattura la dinamica bellezza della natura.", process: "【Processo】Piegatura e cucitura artigianale a mano, seguita da ripetute immersioni nelle vasche di indaco.", timing: "【Occasioni】Perfetto per uscite estive, viaggi, cerimonie del tè ed mostre d'arte.", detail: "【Dettagli】Materiale: Misto Cotone e Lino Naturale. Taglia Unica. Vestibilità comoda e fluida.", fullTranscript: "Ecco l'abito lungo in cotone con motivo a onde tinto all'indaco naturale." }
-            },
-            p9: {
-                en: { name: "Indigo Classic Handcrafted Vest", category: "Apparel", shortDesc: "Layering essential! Clamp and tie-dye resist patterns with Eastern artistic style.", concept: "【Concept】Blending traditional Hakka garment heritage with modern sleeveless cuts for timeless artisan style.", process: "【Process】Crafted using heavy-weight pure cotton, wooden clamp resist and hand kneading for durable texture.", timing: "【Occasion】Multi-style layering, craft market strolls, tea gatherings, and casual occasions.", detail: "【Details】Material: Heavy-Weight Cotton. Sizes: M / L. Features: Classic blue-white patterns, durable wear.", fullTranscript: "Discover the Indigo Classic Handcrafted Vest, an Eastern Zen aesthetic piece that elevates any layered outfit." },
-                ja: { name: "藍染めクラシック手作ベスト", category: "服飾", shortDesc: "レイヤードに最適！板締めと絞り染めが映える東洋風工芸ベスト。", concept: "【コンセプト】客家の伝統衣装の真髄と現代のノースリーブカットを融合させ、時代を超えた職人スタイルを提案。", process: "【制作工程】しっかりとした高密度純綿を使用し、板締め防染と手揉み浸染を重ねて重厚な質感に仕上げました。", timing: "【着用シーン】重ね着コーディネート、クラフト市、お茶会、カジュアルなお出かけに。", detail: "【詳細】素材：高密度純綿。サイズ：M/L。特徴：伝統の藍白模様、耐久性に優れた一着。", fullTranscript: "『藍染めクラシック手作ベスト』のご紹介です。東洋の禅の美意識と職人技が光る、重ね着に欠かせない一着です。" },
-                fr: { name: "Gilet Artisanal Indigo Style Oriental", category: "Vêtements", shortDesc: "L'incontournable du superposé ! Motif fait main style Zen.", concept: "【Concept】Alliance entre le patrimoine vestimentaire Hakka et les coupes modernes sans manches.", process: "【Fabrication】Coton lourd, technique de serrage de bois et malaxage manuel en cuve pour une texture robuste.", timing: "【Occasion】Tenues superposées, marchés d'artisanat, réunions de thé et sorties décontractées.", detail: "【Détails】Matériau : Coton lourd. Tailles : M / L. Motifs traditionnels bleus et blancs résistants.", fullTranscript: "Découvrez notre gilet artisanal au style oriental, l'élément parfait pour rehausser votre style." },
-                ko: { name: "쪽염 클래식 공예 조끼", category: "공예 의류", shortDesc: "레이어드 필수템! 판협염과 홀치기 문양이 오리엔탈한 아티스틱 감성 연출.", concept: "【상품 철학】객가 전통 의복의 깊이와 현대적인 민소매 핏을 조합하여 시즌을 넘나드는 장인 스타일 구현.", process: "【제작 과정】도톰한 고밀도 순면 원단에 목재 틀 판협 방염과 손주무름 침염으로 견고한 질감 연출.", timing: "【활용 시기】다양한 스타일의 레이어드 착장, 공예 마켓 탐방, 다도 모임, 일상 외출.", detail: "【제품 상세】소재: 고밀도 순면. 사이즈: M / L. 특징: 클래식 쪽빛 문양, 내구성 강함.", fullTranscript: "동양적 선의 아름다움과 장인 정신이 담긴 '쪽염 클래식 공예 조끼'입니다." },
-                it: { name: "Gilet Artigianale all'Indaco Stile Orientale", category: "Abbigliamento", shortDesc: "Perfetto per un look a strati dal gusto orientale e zen.", concept: "【Concetto】Combina l'eredità dell'abbigliamento Hakka con un taglio smanicato moderno ed elegante.", process: "【Processo】Cotone pesante lavorato con blocchi di legno e tinto a mano per una struttura resistente.", timing: "【Occasioni】Abbinamenti a strati, passeggiate ai mercati d'arte, incontri di tè e tempo libero.", detail: "【Dettagli】Materiale: Cotone Pesante. Taglie: M / L. Motivi blu e bianco resistenti nel tempo.", fullTranscript: "Ecco il gilet artigianale tinto all'indaco naturale, ideale per arricchire i tuoi outfit con un tocco zen." }
-            }
-        };
-
         let productsData = loadProductsData();
 
         function loadProductsData() {
@@ -1470,7 +1839,6 @@
         function filterCategory(category, scrollToGallery = false) {
             currentCategory = category || 'all';
 
-            // Nav buttons
             const navButtons = document.querySelectorAll('.nav-item-btn[data-category]');
             navButtons.forEach(btn => {
                 if (btn.getAttribute('data-category') === currentCategory) {
@@ -1484,7 +1852,6 @@
                 }
             });
 
-            // Filter pills
             const filterButtons = document.querySelectorAll('.filter-btn[data-category]');
             filterButtons.forEach(btn => {
                 if (btn.getAttribute('data-category') === currentCategory) {
@@ -1494,7 +1861,6 @@
                 }
             });
 
-            // Drawer category buttons
             const drawerCatBtns = document.querySelectorAll('.drawer-cat-btn[data-category]');
             drawerCatBtns.forEach(btn => {
                 if (btn.getAttribute('data-category') === currentCategory) {
@@ -1514,10 +1880,10 @@
         function changeLanguage(langKey) {
             currentLang = langKey;
             
-            // Dynamic Language Font Class Update
             document.documentElement.lang = langKey === 'zh' ? 'zh-TW' : langKey;
             document.body.className = document.body.className.replace(/\blang-\w+/g, '').trim() + ` lang-${langKey}`;
 
+            // Update all static data-i18n elements
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(elem => {
                 const key = elem.getAttribute('data-i18n');
@@ -1525,6 +1891,24 @@
                     elem.innerHTML = i18nDict[langKey][key];
                 }
             });
+
+            // Dynamic updates for AI Robot elements
+            const aiInput = document.getElementById('ai-chat-input');
+            if (aiInput) {
+                aiInput.placeholder = i18nDict[langKey]?.ai_input_placeholder || i18nDict.zh.ai_input_placeholder;
+            }
+
+            // Update Quick Question Buttons Data Attributes
+            const dict = i18nDict[langKey] || i18nDict.zh;
+            for (let i = 1; i <= 4; i++) {
+                const qBtn = document.getElementById(`ai-q${i}-btn`);
+                if (qBtn) {
+                    qBtn.setAttribute('data-question', dict[`ai_q${i}_text`]);
+                }
+            }
+
+            // Refresh AI Welcome Message if chat box is active or uninitiated
+            renderAiWelcomeMessage();
 
             const langSelect = document.getElementById('lang-select');
             if (langSelect) langSelect.value = langKey;
@@ -2332,7 +2716,6 @@
             return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%230f172a"/><path d="M 0 200 Q 150 100 300 200 T 600 200 L 600 400 L 0 400 Z" fill="%231e1b4b" opacity="0.8"/><path d="M 0 250 Q 150 180 300 250 T 600 250 L 600 400 L 0 400 Z" fill="%23312e81" opacity="0.6"/><text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" fill="%23fef08a" font-family="sans-serif" font-size="28" font-weight="bold">${label}</text><text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" fill="%23a5b4fc" font-family="sans-serif" font-size="16">太平藍天然植物手作工藝</text></svg>`;
         }
 
-        // Initialize App on Window Load
         window.onload = function() {
             changeLanguage('zh');
             filterCategory('all', false);
