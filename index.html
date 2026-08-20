@@ -9,19 +9,45 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <!-- Google Fonts Multi-language Import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Serif+TC:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sunflower:wght@300;500;700&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --font-zh: 'Noto Serif TC', 'Noto Sans TC', serif;
+            --font-ja: 'Zen Maru Gothic', sans-serif;
+            --font-en: 'Playfair Display', Georgia, serif;
+            --font-ko: 'Sunflower', sans-serif;
+            --font-fr: 'Bodoni Moda', Georgia, serif;
+            --font-it: 'Bodoni Moda', 'Playfair Display', serif;
+        }
+
         body {
-            font-family: 'Noto Sans TC', sans-serif;
+            font-family: var(--font-zh);
             background-color: #f8fafc;
+            transition: font-family 0.3s ease;
         }
+
+        /* Language Specific Dynamic Typography */
+        html[lang="zh"] body, body.lang-zh { font-family: var(--font-zh); }
+        html[lang="ja"] body, body.lang-ja { font-family: var(--font-ja); }
+        html[lang="en"] body, body.lang-en { font-family: var(--font-en); }
+        html[lang="ko"] body, body.lang-ko { font-family: var(--font-ko); }
+        html[lang="fr"] body, body.lang-fr { font-family: var(--font-fr); }
+        html[lang="it"] body, body.lang-it { font-family: var(--font-it); }
+
         .font-serif {
-            font-family: 'Noto Serif TC', serif;
+            font-family: inherit;
         }
+        html[lang="zh"] .font-serif, body.lang-zh .font-serif { font-family: 'Noto Serif TC', serif; }
+        html[lang="ja"] .font-serif, body.lang-ja .font-serif { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; }
+        html[lang="en"] .font-serif, body.lang-en .font-serif { font-family: 'Playfair Display', serif; }
+        html[lang="ko"] .font-serif, body.lang-ko .font-serif { font-family: 'Sunflower', sans-serif; font-weight: 700; }
+        html[lang="fr"] .font-serif, body.lang-fr .font-serif { font-family: 'Bodoni Moda', serif; }
+        html[lang="it"] .font-serif, body.lang-it .font-serif { font-family: 'Bodoni Moda', serif; }
+
         .bg-indigo-gradient {
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #1e3a8a 100%);
         }
@@ -96,20 +122,22 @@
                 <a href="#" onclick="scrollToSection('hero-carousel'); return false;" class="flex items-center gap-2 sm:gap-3 group">
                     <div class="h-10 sm:h-12 px-3 py-1 bg-[#0965B2] rounded-lg shadow-md flex items-center justify-center group-hover:scale-105 transition-transform border border-sky-600/30">
                         <svg viewBox="0 0 180 85" class="h-8 sm:h-9 w-auto" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M 12 20 C 19 10, 32 10, 39 20 C 31 25, 19 25, 12 20 Z 
-                                     M 37 20 C 44 10, 57 10, 64 20 C 56 25, 44 25, 37 20 Z 
-                                     M 62 20 C 69 10, 82 10, 89 20 C 81 25, 69 25, 62 20 Z 
-                                     M 87 20 C 94 10, 107 10, 114 20 C 106 25, 94 25, 87 20 Z 
-                                     M 112 20 C 119 10, 132 10, 139 20 C 131 25, 119 25, 112 20 Z 
-                                     M 137 20 C 144 10, 157 10, 164 20 C 156 25, 144 25, 137 20 Z" fill="#ffffff"/>
+                            <!-- Top Braid Rope Banner (Official TAIPING BLUE Logo Pattern) -->
+                            <path d="M 16 26 C 18 14, 38 16, 44 26 C 36 28, 24 28, 16 26 Z 
+                                     M 39 26 C 41 14, 61 16, 67 26 C 59 28, 47 28, 39 26 Z 
+                                     M 62 26 C 64 14, 84 16, 90 26 C 82 28, 70 28, 62 26 Z 
+                                     M 85 26 C 87 14, 107 16, 113 26 C 105 28, 93 28, 85 26 Z 
+                                     M 108 26 C 110 14, 130 16, 136 26 C 128 28, 116 28, 108 26 Z 
+                                     M 131 26 C 133 14, 153 16, 159 26 C 151 28, 139 28, 131 26 Z" fill="#ffffff"/>
                             <text x="90" y="46" font-family="'Noto Serif TC', serif" font-weight="800" font-size="19" fill="#ffffff" text-anchor="middle" letter-spacing="6">太平藍</text>
                             <text x="90" y="58" font-family="sans-serif" font-weight="700" font-size="7.5" fill="#ffffff" text-anchor="middle" letter-spacing="2.5">TAIPING BLUE</text>
-                            <path d="M 12 68 C 19 58, 32 58, 39 68 C 31 73, 19 73, 12 68 Z 
-                                     M 37 68 C 44 58, 57 58, 64 68 C 56 73, 44 73, 37 68 Z 
-                                     M 62 68 C 69 58, 82 58, 89 68 C 81 73, 69 73, 62 68 Z 
-                                     M 87 68 C 94 58, 107 58, 114 68 C 106 73, 94 73, 87 68 Z 
-                                     M 112 68 C 119 10, 132 10, 139 20 C 131 25, 119 25, 112 20 Z 
-                                     M 137 68 C 144 58, 157 58, 164 68 C 156 73, 144 73, 137 68 Z" fill="#ffffff"/>
+                            <!-- Bottom Braid Rope Banner -->
+                            <path d="M 16 70 C 18 58, 38 60, 44 70 C 36 72, 24 72, 16 70 Z 
+                                     M 39 70 C 41 58, 61 60, 67 70 C 59 72, 47 72, 39 70 Z 
+                                     M 62 70 C 64 58, 84 60, 90 70 C 82 72, 70 72, 62 70 Z 
+                                     M 85 70 C 87 58, 107 60, 113 70 C 105 72, 93 72, 85 70 Z 
+                                     M 108 70 C 110 58, 130 60, 136 70 C 128 72, 116 72, 108 70 Z 
+                                     M 131 70 C 133 58, 153 60, 159 70 C 151 72, 139 72, 131 70 Z" fill="#ffffff"/>
                         </svg>
                     </div>
                 </a>
@@ -188,10 +216,10 @@
                     <div class="flex items-center gap-3">
                         <div class="h-10 px-2.5 py-1 bg-[#0965B2] rounded-lg shadow flex items-center justify-center border border-sky-400/30">
                             <svg viewBox="0 0 180 85" class="h-8 w-auto" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M 12 20 C 19 10, 32 10, 39 20 C 31 25, 19 25, 12 20 Z M 37 20 C 44 10, 57 10, 64 20 C 56 25, 44 25, 12 20 Z M 62 20 C 69 10, 82 10, 89 20 C 81 25, 69 25, 62 20 Z M 87 20 C 94 10, 107 10, 114 20 C 106 25, 94 25, 87 20 Z M 112 20 C 119 10, 132 10, 139 20 C 131 25, 119 25, 112 20 Z M 137 20 C 144 10, 157 10, 164 20 C 156 25, 144 25, 137 20 Z" fill="#ffffff"/>
+                                <path d="M 16 26 C 18 14, 38 16, 44 26 C 36 28, 24 28, 16 26 Z M 39 26 C 41 14, 61 16, 67 26 C 59 28, 47 28, 39 26 Z M 62 26 C 64 14, 84 16, 90 26 C 82 28, 70 28, 62 26 Z M 85 26 C 87 14, 107 16, 113 26 C 105 28, 93 28, 85 26 Z M 108 26 C 110 14, 130 16, 136 26 C 128 28, 116 28, 108 26 Z M 131 26 C 133 14, 153 16, 159 26 C 151 28, 139 28, 131 26 Z" fill="#ffffff"/>
                                 <text x="90" y="46" font-family="'Noto Serif TC', serif" font-weight="800" font-size="19" fill="#ffffff" text-anchor="middle" letter-spacing="6">太平藍</text>
                                 <text x="90" y="58" font-family="sans-serif" font-weight="700" font-size="7.5" fill="#ffffff" text-anchor="middle" letter-spacing="2.5">TAIPING BLUE</text>
-                                <path d="M 12 68 C 19 58, 32 58, 39 68 C 31 73, 19 73, 12 68 Z M 37 68 C 44 58, 57 58, 64 68 C 56 73, 44 73, 37 68 Z M 62 68 C 69 58, 82 58, 89 68 C 81 73, 69 73, 62 68 Z M 87 68 C 94 58, 107 58, 114 68 C 106 73, 94 73, 87 68 Z M 112 68 C 119 10, 132 10, 139 20 C 131 25, 119 25, 112 20 Z M 137 68 C 144 58, 157 58, 164 68 C 156 73, 144 73, 137 68 Z" fill="#ffffff"/>
+                                <path d="M 16 70 C 18 58, 38 60, 44 70 C 36 72, 24 72, 16 70 Z M 39 70 C 41 58, 61 60, 67 70 C 59 72, 47 72, 39 70 Z M 62 70 C 64 58, 84 60, 90 70 C 82 72, 70 72, 62 70 Z M 85 70 C 87 58, 107 60, 113 70 C 105 72, 93 72, 85 70 Z M 108 70 C 110 58, 130 60, 136 70 C 128 72, 116 72, 108 70 Z M 131 70 C 133 58, 153 60, 159 70 C 151 72, 139 72, 131 70 Z" fill="#ffffff"/>
                             </svg>
                         </div>
                         <div>
@@ -1486,6 +1514,10 @@
         function changeLanguage(langKey) {
             currentLang = langKey;
             
+            // Dynamic Language Font Class Update
+            document.documentElement.lang = langKey === 'zh' ? 'zh-TW' : langKey;
+            document.body.className = document.body.className.replace(/\blang-\w+/g, '').trim() + ` lang-${langKey}`;
+
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(elem => {
                 const key = elem.getAttribute('data-i18n');
@@ -2302,6 +2334,7 @@
 
         // Initialize App on Window Load
         window.onload = function() {
+            changeLanguage('zh');
             filterCategory('all', false);
 
             if ('speechSynthesis' in window) {
