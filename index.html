@@ -12,7 +12,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -282,7 +282,7 @@
                             <span class="text-amber-300">登上國際舞台的台灣天然手染工藝</span>
                         </h2>
                         <p class="text-indigo-100 text-xs sm:text-sm leading-relaxed max-w-2xl font-light" data-i18n="hero_desc">
-                            起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍發酵染色，揉合客家紋樣與現代生活美學。
+                            起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍與植物發酵染色，運用絞染、縫染、型染與板夾染等四傳統防染技法，揉合客家紋樣與現代美學。
                         </p>
                         <div class="pt-2 flex flex-wrap gap-3">
                             <button onclick="toggleTourMode()" class="px-5 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-indigo-950 font-bold text-xs sm:text-sm shadow-lg transition flex items-center gap-2">
@@ -687,9 +687,29 @@
                         <input type="url" id="edit-pinkoiUrl" required class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                     <div>
-                        <label class="block font-bold text-indigo-950 mb-1" data-i18n="edit_lbl_img">作品圖片 URL</label>
-                        <input type="url" id="edit-img" required class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                        <label class="block font-bold text-indigo-950 mb-1" data-i18n="edit_lbl_img">作品圖片 (可直接上傳圖檔或貼上網址)</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center justify-center gap-2 px-3 py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-xl cursor-pointer text-indigo-900 font-bold transition shadow-sm">
+                                <i class="fa-solid fa-cloud-arrow-up text-amber-600"></i>
+                                <span id="file-upload-label" data-i18n="edit_btn_upload_img">選擇本地圖檔上傳</span>
+                                <input type="file" id="edit-img-file" accept="image/*" onchange="handleImageUpload(event)" class="hidden">
+                            </label>
+                            <input type="text" id="edit-img" required placeholder="或貼上圖片 URL / Data" oninput="handleImageUrlInput(this.value)" class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                        </div>
                     </div>
+                </div>
+
+                <div id="edit-img-preview-container" class="hidden p-3 bg-indigo-50/60 border border-indigo-100 rounded-2xl flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-3 overflow-hidden">
+                        <img id="edit-img-preview" src="" alt="Preview" class="w-14 h-14 object-cover rounded-xl border border-slate-200 shadow-sm shrink-0">
+                        <div class="text-xs text-slate-600 overflow-hidden">
+                            <p class="font-bold text-indigo-950">📷 圖片預覽</p>
+                            <p id="edit-img-preview-info" class="text-[11px] text-slate-500 truncate mt-0.5"></p>
+                        </div>
+                    </div>
+                    <button type="button" onclick="clearUploadedImage()" class="px-2.5 py-1 text-[11px] text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg font-semibold transition shrink-0" title="清除圖片">
+                        <i class="fa-solid fa-trash-can mr-1"></i>清除
+                    </button>
                 </div>
 
                 <div>
@@ -901,7 +921,7 @@
                 tab_concept: "💡 商品理念", tab_process: "🧵 如何生成", tab_timing: "✨ 使用時機", tab_detail: "📦 產品介紹",
                 btn_play: "播放完整故事導覽", btn_pause: "暫停播放導覽", btn_buy: "前往 Pinkoi 購買", btn_edit: "編輯作品",
                 edit_modal_title: "編輯藍染作品資料", edit_lbl_name: "作品名稱", edit_lbl_cat: "作品分類",
-                edit_lbl_pinkoi: "Pinkoi 商品網址", edit_lbl_img: "作品圖片 URL", edit_lbl_shortdesc: "簡短描述", edit_lbl_concept: "💡 商品理念 (Concept)",
+                edit_lbl_pinkoi: "Pinkoi 商品網址", edit_lbl_img: "作品圖片 (可直接上傳圖檔或貼上網址)", edit_btn_upload_img: "選擇本地圖檔上傳", edit_lbl_shortdesc: "簡短描述", edit_lbl_concept: "💡 商品理念 (Concept)",
                 edit_lbl_process: "🧵 如何生成 (Process)", edit_lbl_timing: "✨ 使用時機 (Timing)", edit_lbl_detail: "📦 產品介紹 (Detail)", edit_lbl_transcript: "🎙️ 語音導覽全文",
                 edit_btn_autogen: "自動由上述理念合成", edit_btn_cancel: "取消", edit_btn_save: "儲存修改",
                 mgr_title: "太平藍 展品導覽管理中心", mgr_desc: "您可以自由新增、編輯、刪除展品，或匯出/匯入全站設定檔",
@@ -957,7 +977,7 @@
                 tab_concept: "💡 Concept", tab_process: "🧵 Craft Process", tab_timing: "✨ Occasion", tab_detail: "📦 Details",
                 btn_play: "Play Story Guide", btn_pause: "Pause Guide", btn_buy: "Buy on Pinkoi", btn_edit: "Edit Craft",
                 edit_modal_title: "Edit Craft Details", edit_lbl_name: "Craft Name", edit_lbl_cat: "Category",
-                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "Image URL", edit_lbl_shortdesc: "Short Description", edit_lbl_concept: "💡 Concept",
+                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "Craft Image (Upload image or paste URL)", edit_btn_upload_img: "Upload Local Image", edit_lbl_shortdesc: "Short Description", edit_lbl_concept: "💡 Concept",
                 edit_lbl_process: "🧵 Process", edit_lbl_timing: "✨ Occasion", edit_lbl_detail: "📦 Detail", edit_lbl_transcript: "🎙️ TTS Transcript",
                 edit_btn_autogen: "Auto Generate Transcript", edit_btn_cancel: "Cancel", edit_btn_save: "Save Changes",
                 mgr_title: "Exhibition Management Center", mgr_desc: "Add, edit, delete craft items, or export/import website data backup.",
@@ -1013,7 +1033,7 @@
                 tab_concept: "💡 コンセプト", tab_process: "🧵 制作工程", tab_timing: "✨ 着用シーン", tab_detail: "📦 商品詳細",
                 btn_play: "フルストーリーを聴く", btn_pause: "一時停止", btn_buy: "Pinkoiで購入", btn_edit: "作品編集",
                 edit_modal_title: "藍染作品情報の編集", edit_lbl_name: "作品名", edit_lbl_cat: "カテゴリー",
-                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "画像 URL", edit_lbl_shortdesc: "概要説明", edit_lbl_concept: "💡 コンセプト",
+                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "画像 (アップロードまたはURL入力)", edit_btn_upload_img: "ローカル画像アップロード", edit_lbl_shortdesc: "概要説明", edit_lbl_concept: "💡 コンセプト",
                 edit_lbl_process: "🧵 制作工程", edit_lbl_timing: "✨ 着用シーン", edit_lbl_detail: "📦 詳細仕様", edit_lbl_transcript: "🎙️ 音声台本",
                 edit_btn_autogen: "台本自動生成", edit_btn_cancel: "キャンセル", edit_btn_save: "保存",
                 mgr_title: "太平藍 展示品管理センター", mgr_desc: "作品の追加、編集、削除、バックアップデータの出力・入力を行えます。",
@@ -1069,7 +1089,7 @@
                 tab_concept: "💡 Concept", tab_process: "🧵 Fabrication", tab_timing: "✨ Occasion", tab_detail: "📦 Détails",
                 btn_play: "Écouter l'Histoire", btn_pause: "Mettre en Pause", btn_buy: "Acheter sur Pinkoi", btn_edit: "Modifier",
                 edit_modal_title: "Modifier les Détails de l'Œuvre", edit_lbl_name: "Nom de l'Œuvre", edit_lbl_cat: "Catégorie",
-                edit_lbl_pinkoi: "Lien Pinkoi", edit_lbl_img: "URL Image", edit_lbl_shortdesc: "Description Courte", edit_lbl_concept: "💡 Concept",
+                edit_lbl_pinkoi: "Lien Pinkoi", edit_lbl_img: "Image (Téléverser ou URL)", edit_btn_upload_img: "Importer Image Locale", edit_lbl_shortdesc: "Description Courte", edit_lbl_concept: "💡 Concept",
                 edit_lbl_process: "🧵 Fabrication", edit_lbl_timing: "✨ Occasion", edit_lbl_detail: "📦 Détails", edit_lbl_transcript: "🎙️ Transcription",
                 edit_btn_autogen: "Générer Transcription", edit_btn_cancel: "Annuler", edit_btn_save: "Enregistrer",
                 mgr_title: "Centre de Gestion des Œuvres", mgr_desc: "Ajoutez, modifiez, supprimez ou sauvegardez vos œuvres d'artisanat.",
@@ -1122,10 +1142,10 @@
                 stores_subtitle: "Store Locator & Workshop", stores_title: "전국 매장 및 투비엔컹 공방 안내",
                 store1_title: "투비엔컹 염직 공방 (전시판매센터)", store1_addr: "주소: 타이중시 타이핑구 투비엔리 장롱로 4단", store1_time: "영업시간: 월~일 09:00 - 17:00",
                 store2_title: "영워터 재단 본부", store2_addr: "주소: 타이중시 북구 위차이가 3항 3호 3층-4", store2_time: "운영시간: 월~금 09:00 - 18:00",
-                tab_concept: "💡 상품 철학", tab_process: "🧵 제작 과정", tab_timing: "✨ 활용 시기", tab_detail: "📦 상세 스펙",
+                tab_concept: "💡 상품 철학", tab_process: "🧵 제작 과정", tab_timing: "✨ 활용 시기", tab_detail: "📦 제품 상세",
                 btn_play: "스토리 도슨트 재생", btn_pause: "일시 정지", btn_buy: "Pinkoi에서 구매", btn_edit: "작품 수정",
                 edit_modal_title: "쪽염 작품 정보 수정", edit_lbl_name: "작품명", edit_lbl_cat: "카테고리",
-                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "이미지 URL", edit_lbl_shortdesc: "간단 설명", edit_lbl_concept: "💡 상품 철학",
+                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "이미지 (업로드 또는 URL 입력)", edit_btn_upload_img: "로컬 이미지 업로드", edit_lbl_shortdesc: "간단 설명", edit_lbl_concept: "💡 상품 철학",
                 edit_lbl_process: "🧵 제작 과정", edit_lbl_timing: "✨ 활용 시기", edit_lbl_detail: "📦 상세 스펙", edit_lbl_transcript: "🎙️ 대본",
                 edit_btn_autogen: "대본 자동 생성", edit_btn_cancel: "취소", edit_btn_save: "저장",
                 mgr_title: "전시품 관리 센터", mgr_desc: "작품 등록, 수정, 삭제 및 데이터 백업을 관리합니다.",
@@ -1181,7 +1201,7 @@
                 tab_concept: "💡 Concetto", tab_process: "🧵 Processo", tab_timing: "✨ Occasioni", tab_detail: "📦 Dettagli",
                 btn_play: "Ascolta la Storia", btn_pause: "Pausa", btn_buy: "Acquista su Pinkoi", btn_edit: "Modifica",
                 edit_modal_title: "Modifica Dettagli dell'Opera", edit_lbl_name: "Nome Opera", edit_lbl_cat: "Categoria",
-                edit_lbl_pinkoi: "URL Pinkoi", edit_lbl_img: "URL Immagine", edit_lbl_shortdesc: "Breve Descrizione", edit_lbl_concept: "💡 Concetto",
+                edit_lbl_pinkoi: "URL Pinkoi", edit_lbl_img: "Immagine (Carica o URL)", edit_btn_upload_img: "Carica Immagine Locale", edit_lbl_shortdesc: "Breve Descrizione", edit_lbl_concept: "💡 Concetto",
                 edit_lbl_process: "🧵 Processo", edit_lbl_timing: "✨ Occasioni", edit_lbl_detail: "📦 Dettagli", edit_lbl_transcript: "🎙️ Trascrizione",
                 edit_btn_autogen: "Genera Trascrizione", edit_btn_cancel: "Annulla", edit_btn_save: "Salva",
                 mgr_title: "Centro di Gestione Espositiva", mgr_desc: "Aggiungi, modifica, elimina o esporta/importa i dati delle opere.",
@@ -1331,7 +1351,7 @@
                 ja: { name: "藍染め風雅茶席ランチョンマット＆コースターセット", category: "インテリア", shortDesc: "茶道家に大人気！板締め染めと絞り染めの模様が、日常の食卓と茶席に東洋の禅の美を添えます。", concept: "【コンセプト】台湾茶文化と藍染め工芸の調和した融合を体現し、一煎のお茶と共に心落ち着く時間を演出。", process: "【制作工程】木製夾具による板締め防染と縫い染めを行い、高密度純綿布を数度にわたり藍建て液に浸染。", timing: "【着用シーン】お茶会、家庭のテーブルコーディネート、茶道愛好家の集い、新居祝いの品に。", detail: "【詳細】セット内容：ランチョンマットx2(40x30cm)、コースターx2(10x10cm)。素材：100%吸水綿。", fullTranscript: "茶道やライフスタイル愛好家に愛される『藍染め風雅茶席ランチョンマット＆コースターセット』です。" },
                 fr: { name: "Ensemble Chemin de Table et Sous-Verres Indigo", category: "Décoration", shortDesc: "Le favori des maîtres de thé ! Des motifs faits main apportent l'esthétique Zen Orientale à votre table.", concept: "【Concept】Incarnation de l'harmonie entre la culture du thé taïwanaise et la teinture à l'indigo naturel.", process: "【Fabrication】Technique de serrage de bois et coutures manuelles appliquées sur coton épais absorbant.", timing: "【Occasion】Cérémonies du thé, décoration de table repas, réunions d'amateurs d'art de vivre.", detail: "【Détails】Inclus : Chemins de table x2 (40x30cm), Sous-verres x2 (10x10cm). 100% Coton.", fullTranscript: "Découvrez notre élégant ensemble de thé en indigo, créateur d'ambiance zen et poétique." },
                 ko: { name: "쪽염 풍류 다도 매트 및 컵받침 세트", category: "리빙 홈데코", shortDesc: "다도인들의 최애 아이템! 천연 판협염 문양이 일상 식탁과 다도 자리에 동양적인 선의 미학 연출.", concept: "【상품 철학】대만 차 문화와 쪽염 공예의 조화로운 결합을 통해 차 한 잔과 함께하는 느림의 미학 실현.", process: "【제작 과정】목재 조형 틀을 활용한 판협 방염 및 바느질 염색 후 고밀도 면원단에 수차례 쪽염.", timing: "【활용 시기】다회 시음, 가정 식탁 인테리어, 다도 동호회 모임, 품격 있는 입주 선물.", detail: "【제품 상세】구성: 식탁 매트 x 2 (40x30cm), 컵받침 x 2 (10x10cm). 소재: 100% 면.", fullTranscript: "다도와 홈 스타일링 애호가들에게 사랑받는 '쪽염 풍류 다도 매트 및 컵받침 세트'입니다." },
-                it: { name: "Set Runner da Tè e Sottobicchieri all'Indaco", category: "Arredo Casa", shortDesc: "Il preferito dei maestri del tè! I motifs a riserva donano un'estetica Zen orientale alla tavola.", concept: "【Concetto】Esprime la perfetta armonia tra la cultura del tè di Taiwan e l'arte della tintura all'indaco.", process: "【Processo】Tecnica di blocco in legno e cuciture a mano su cotone ad alta densità asportabile.", timing: "【Occasioni】Cerimonie del tè, decorazione tavola di casa e regali di inaugurazione di gusto.", detail: "【Dettagli】Include: Runner x2 (40x30cm), Sottobicchieri x2 (10x10cm). 100% Cotone Assorbente.", fullTranscript: "Ecco il raffinato set per il tè in indaco naturale, perfetto per momenti di relax e meditazione." }
+                it: { name: "Set Runner da Tè e Sottobicchieri all'Indaco", category: "Arredo Casa", shortDesc: "Il preferito dei maestri del tè! I motivi a riserva donano un'estetica Zen orientale alla tavola.", concept: "【Concetto】Esprime la perfetta armonia tra la cultura del tè di Taiwan e l'arte della tintura all'indaco.", process: "【Processo】Tecnica di blocco in legno e cuciture a mano su cotone ad alta densità asportabile.", timing: "【Occasioni】Cerimonie del tè, decorazione tavola di casa e regali di inaugurazione di gusto.", detail: "【Dettagli】Include: Runner x2 (40x30cm), Sottobicchieri x2 (10x10cm). 100% Cotone Assorbente.", fullTranscript: "Ecco il raffinato set per il tè in indaco naturale, perfetto per momenti di relax e meditazione." }
             },
             p6: {
                 en: { name: "Water Ripples Natural Cotton Indigo Cushion", category: "Decor", shortDesc: "Hakka stitched resist pattern, heavy-weight cotton touch for a healing natural atmosphere.", concept: "【Concept】Inspired by mountain stream ripples, bringing a healing touch of nature into busy modern lives.", process: "【Process】Heavy-weight cotton hand-stitched by local community mothers, immersed repeatedly in room-temp vats.", timing: "【Occasion】Living room sofas, bedroom headboards, reading armchairs, adding harmonious indigo aesthetics.", detail: "【Details】Material: 100% Heavy-Weight Cotton, High-Resilience Insert. Size: 45 x 45 cm. Washable Cover.", fullTranscript: "Bring natural comfort into your living space with the Water Ripples Cotton Indigo Cushion." },
@@ -1970,6 +1990,60 @@
             }
         }
 
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (!file.type.startsWith('image/')) {
+                showToast("請選擇有效的圖檔 (JPG, PNG, WEBP 等)", "error");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const dataUrl = e.target.result;
+                document.getElementById('edit-img').value = dataUrl;
+                updateImagePreviewUI(dataUrl, file.name);
+                showToast("圖檔選擇成功！", "success");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function handleImageUrlInput(url) {
+            updateImagePreviewUI(url, url ? '使用者輸入之網址' : '');
+        }
+
+        function updateImagePreviewUI(srcUrl, fileName = '') {
+            const previewImg = document.getElementById('edit-img-preview');
+            const previewContainer = document.getElementById('edit-img-preview-container');
+            const previewInfo = document.getElementById('edit-img-preview-info');
+            const uploadLabel = document.getElementById('file-upload-label');
+
+            if (srcUrl) {
+                if (previewImg) previewImg.src = srcUrl;
+                if (previewContainer) previewContainer.classList.remove('hidden');
+                if (previewInfo) {
+                    previewInfo.textContent = fileName || (srcUrl.startsWith('data:') ? '已上傳之本地圖檔' : srcUrl);
+                }
+                if (uploadLabel && fileName) {
+                    uploadLabel.textContent = `已選擇: ${fileName}`;
+                }
+            } else {
+                if (previewContainer) previewContainer.classList.add('hidden');
+                if (uploadLabel) {
+                    uploadLabel.textContent = i18nDict[currentLang]?.edit_btn_upload_img || "選擇本地圖檔上傳";
+                }
+            }
+        }
+
+        function clearUploadedImage() {
+            document.getElementById('edit-img').value = '';
+            const fileInput = document.getElementById('edit-img-file');
+            if (fileInput) fileInput.value = '';
+            updateImagePreviewUI('');
+            showToast("已清除圖片", "info");
+        }
+
         function openEditorModal(productId) {
             const p = productsData.find(item => item.id === productId);
             if (!p) return;
@@ -1985,6 +2059,11 @@
             document.getElementById('edit-timing').value = p.timing || '';
             document.getElementById('edit-detail').value = p.detail || '';
             document.getElementById('edit-fullTranscript').value = p.fullTranscript || '';
+
+            const fileInput = document.getElementById('edit-img-file');
+            if (fileInput) fileInput.value = '';
+
+            updateImagePreviewUI(p.img || '');
 
             document.getElementById('editor-modal').classList.remove('hidden');
         }
@@ -2044,13 +2123,18 @@
             document.getElementById('edit-name').value = '全新手作藍染作品';
             document.getElementById('edit-category').value = '配件';
             document.getElementById('edit-pinkoiUrl').value = 'https://www.pinkoi.com/store/taiping-blue';
-            document.getElementById('edit-img').value = 'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=800&q=80';
+            const defaultImg = 'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=800&q=80';
+            document.getElementById('edit-img').value = defaultImg;
             document.getElementById('edit-shortDesc').value = '採用傳統天然馬藍染色，展現優雅湛藍紋路。';
             document.getElementById('edit-concept').value = '【商品理念】堅持純天然發酵染色，展現永續環保生態。';
             document.getElementById('edit-process').value = '【如何生成】由在地工藝師反覆低溫浸染12次以上並經太陽定色。';
             document.getElementById('edit-timing').value = '【使用適宜時機】日常生活、藝術場合或作為禮贈。';
             document.getElementById('edit-detail').value = '【產品介紹】天然植物染，質地優良。';
             document.getElementById('edit-fullTranscript').value = '歡迎欣賞太平藍的全新作品。由工藝師親手浸染與定色，呈現獨一無二的湛藍風格。';
+
+            const fileInput = document.getElementById('edit-img-file');
+            if (fileInput) fileInput.value = '';
+            updateImagePreviewUI(defaultImg);
 
             document.getElementById('editor-modal').classList.remove('hidden');
         }
