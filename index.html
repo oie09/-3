@@ -1446,7 +1446,7 @@
                 const stored = localStorage.getItem('taiping_blue_products_integrated_v2');
                 if (stored) {
                     const parsed = JSON.parse(stored);
-                    if (Array.isArray(parsed) && parsed.length >= 3) return parsed;
+                    if (Array.isArray(parsed) && parsed.length >= 1) return parsed;
                 }
             } catch (e) {
                 console.error("Failed to load products from localStorage:", e);
@@ -1457,8 +1457,11 @@
         function saveProductsData(data) {
             try {
                 localStorage.setItem('taiping_blue_products_integrated_v2', JSON.stringify(data));
+                return true;
             } catch (e) {
                 console.error("Failed to save products to localStorage:", e);
+                showToast(currentLang === 'zh' ? "⚠️ 儲存失敗：本地儲存空間已滿，請使用適當尺寸的圖片" : "⚠️ Save failed: LocalStorage quota exceeded.", "error");
+                return false;
             }
         }
 
@@ -1945,20 +1948,62 @@
 
         function getSmartKnowledgeAnswer(message, lang) {
             const lowerMsg = message.toLowerCase();
+            const selectedLang = lang || currentLang || 'zh';
 
-            if (lowerMsg.includes('門市') || lowerMsg.includes('據點') || lowerMsg.includes('地址') || lowerMsg.includes('營業時間') || lowerMsg.includes('電話') || lowerMsg.includes('工坊') || lowerMsg.includes('store') || lowerMsg.includes('address')) {
-                return "📍 **太平藍 門市與工坊據點資訊**：\n\n1. **頭汴坑染織工坊 (展售與DIY體驗中心)**\n- **地址**：411 臺中市太平區頭汴里長龍路四段 (生態園區內)\n- **營業時間**：週一至週日 09:00 - 17:00\n- **電話**：(04) 2227-7826\n\n2. **財團法人水源地文教基金會總部**\n- **地址**：40444 臺中市北區育才街三巷3號3樓之4 (週一至週五 09:00-18:00)\n\n歡迎造訪頭汴坑體驗天然藍染手作樂趣！🌿";
+            const answers = {
+                zh: {
+                    stores: "📍 **太平藍 門市與工坊據點資訊**：\n\n1. **頭汴坑染織工坊 (展售與DIY體驗中心)**\n- **地址**：411 臺中市太平區頭汴里長龍路四段 (生態園區內)\n- **營業時間**：週一至週日 09:00 - 17:00\n- **電話**：(04) 2227-7826\n\n2. **財團法人水源地文教基金會總部**\n- **地址**：40444 臺中市北區育才街三巷3號3樓之4 (週一至週五 09:00-18:00)\n\n歡迎造訪頭汴坑體驗天然藍染手作樂趣！🌿",
+                    products: "👑 **太平藍 經典熱銷作品推薦**：\n\n1. **100% 純蠶絲漸層藍染絲巾** (Pinkoi 銷量冠軍，輕盈如山晨霧)\n2. **藍染客家桐花典藏圍巾** (傳統型染工藝，朵朵白桐綻放)\n3. **粼粼Sparkling 藍染木質掛鐘** (榮獲「臺灣優良工藝品」認證)\n4. **藍染氣氛和風木質桌燈** (實木搭配透光手染布)\n\n您可於本館線上展區點擊作品聆聽故事，或造訪 **Pinkoi 官方設計館**（滿 NT$ 2,000 享宅配免運）購買！🛍️",
+                    diy: "🎨 **太平藍天然藍染手作 DIY 體驗預約**：\n\n- **地點**：台中市太平區頭汴坑染織工坊 (生態園區內)\n- **熱門體驗**：手作藍染方巾、小水紋方巾、典藏長巾、手提袋等。\n- **預約專線**：**(04) 2227-7826**\n\n歡迎提前電話預約，由專業工藝師親自指導建缸與綁紮染體驗！🌿",
+                    default: "感謝您的提問！我是太平藍 AI 導覽員「藍藍」🌿\n\n太平藍（TAIPING BLUE）堅持 100% 天然馬藍植物發酵染色。\n您可以詢問我關於：\n1. 📍 **門市據點與藍染 DIY 預約**\n2. 👑 **經典熱銷藍染作品選購**\n3. 🌿 **植物染洗滌保養指南**\n\n請問今天有什麼想了解的嗎？"
+                },
+                en: {
+                    stores: "📍 **TAIPING BLUE Stores & Workshop Info**:\n\n1. **Toubiankeng Dyeing & Weaving Workshop (Gallery & DIY Center)**\n- **Address**: Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Hours**: Mon - Sun 09:00 - 17:00\n- **Phone**: +886-4-2227-7826\n\n2. **Young Water Foundation HQ**\n- **Address**: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City (Mon - Fri 09:00-18:00)\n\nWelcome to visit Toubiankeng and experience natural indigo DIY! 🌿",
+                    products: "👑 **TAIPING BLUE Best-Selling Recommendations**:\n\n1. **100% Pure Silk Gradient Indigo Scarf** (#1 Top Seller on Pinkoi, light as mountain mist)\n2. **Indigo Hakka Tung Blossom Scarf** (Traditional stencil dye craft, blooming white blossoms)\n3. **Sparkling Indigo Wooden Wall Clock** (Certified as \"Taiwan Good Craft\")\n4. **Indigo Ambient Japanese Wooden Desk Lamp** (Solid wood with light-transmitting hand-dyed cloth)\n\nClick any item in our online gallery to listen to its story, or visit our **Pinkoi Official Store** (Free shipping over NT$ 2,000)! 🛍️",
+                    diy: "🎨 **TAIPING BLUE Natural Indigo DIY Workshop Booking**:\n\n- **Location**: Toubiankeng Workshop, Taiping Dist., Taichung City\n- **Popular Activities**: Indigo Handkerchiefs, Pattern Scarves, Tote Bags, etc.\n- **Booking Hotline**: **+886-4-2227-7826**\n\nAdvance phone booking recommended! Master artisans will guide you step-by-step! 🌿",
+                    default: "Thank you for asking! I am Lanlan, your AI Guide for Taiping Blue 🌿\n\nTaiping Blue insists on 100% natural plant-fermented indigo dyeing.\nYou can ask me about:\n1. 📍 **Store Locations & DIY Workshop Booking**\n2. 👑 **Popular & Best-Selling Craft Products**\n3. 🌿 **Washing & Maintenance Tips**\n\nHow can I assist you today?"
+                },
+                ja: {
+                    stores: "📍 **太平藍 店舗・工房のご案内**:\n\n1. **頭汴坑染色工房 (展示・販売＆DIY体験センター)**\n- **住所**: 臺中市太平區頭汴里長龍路四段 (生態園區內)\n- **営業時間**: 月〜日 09:00 - 17:00\n- **電話**: (04) 2227-7826\n\n2. **財團法人水源地文教基金會 本部**\n- **住所**: 臺中市北區育才街三巷3號3樓之4 (月〜金 09:00-18:00)\n\n頭汴坑で天然藍染めの魅力をご体験ください！🌿",
+                    products: "👑 **太平藍 ベストセラー作品のおすすめ**:\n\n1. **100%純シルクグラデーション藍染シルクスカーフ** (Pinkoi売上No.1、山霧のように軽やか)\n2. **藍染客家油桐花コレクションマフラー** (伝統型染め技法、白桐の花が咲き誇る)\n3. **粼粼Sparkling 藍染木製掛け時計** (「臺灣優良工藝品」認定)\n4. **藍染和風木製デスクランプ** (天然木と透光手染め布の融合)\n\n当館のオンライン展示エリアで作品をクリックして物語を聴くか、**Pinkoi公式ショップ**（NT$ 2,000以上で送料無料）でお買い求めいただけます！🛍️",
+                    diy: "🎨 **太平藍 天然藍染めDIY体験予約**:\n\n- **場所**: 頭汴坑染色工房 (台中市太平区)\n- **人気コース**: 藍染ハンカチ、絞り染めスカーフ、トートバッグなど\n- **予約電話**: **(04) 2227-7826**\n\n職人が親切に指導いたします。お気軽にお問い合わせください！🌿",
+                    default: "ご質問ありがとうございます！太平藍のAIガイド「藍藍（ランラン）」です 🌿\n\n太平藍は100%天然の植物発酵藍染めにこだわっています。\n以下の内容についてお尋ねいただけます：\n1. 📍 **店舗案内・DIY体験のご予約**\n2. 👑 **人気ベストセラー作品のおすすめ**\n3. 🌿 **藍染めのお手入れ方法**\n\n本日はどのようなご案内をいたしましょうか？"
+                },
+                fr: {
+                    stores: "📍 **Informations Boutiques & Atelier TAIPING BLUE** :\n\n1. **Atelier de Teinture de Toubiankeng (Galerie & Centre DIY)**\n- **Adresse** : Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Horaires** : Lun - Dim 09:00 - 17:00\n- **Tél** : +886-4-2227-7826\n\n2. **Siège de la Fondation Young Water**\n- **Adresse** : 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City (Lun - Ven 09:00-18:00)\n\nBienvenue à l'Atelier Toubiankeng pour une expérience DIY unique ! 🌿",
+                    products: "👑 **Recommandations des meilleures ventes TAIPING BLUE** :\n\n1. **Écharpe en soie pure 100% dégradée indigo** (N°1 des ventes sur Pinkoi, légère comme la brume)\n2. **Écharpe fleurs de tung Hakka en indigo** (Artisanat au pochoir traditionnel)\n3. **Horloge murale en bois étincelante indigo** (Certifiée \"Taiwan Good Craft\")\n4. **Lampe de bureau japonaise en bois indigo** (Bois massif et tissu teint à la main)\n\nCliquez sur n'importe quelle œuvre dans la galerie pour écouter son histoire, ou visitez notre **Boutique Officielle Pinkoi** (Livraison gratuite dès NT$ 2 000) ! 🛍️",
+                    diy: "🎨 **Réservation d'Atelier DIY de Teinture Indigo Naturelle** :\n\n- **Lieu** : Atelier Toubiankeng, Taiping Dist., Taichung City\n- **Activités** : Mouchoirs teints, écharpes à motifs, sacs en toile, etc.\n- **Téléphone** : **+886-4-2227-7826**\n\nRéservation recommandée par téléphone. Nos maîtres artisans vous guideront ! 🌿",
+                    default: "Merci pour votre question ! Je suis Lanlan, votre guide virtuel AI pour Taiping Blue 🌿\n\nTaiping Blue utilise 100% d'indigo naturel fermenté.\nVous pouvez me poser des questions sur :\n1. 📍 **Les boutiques et ateliers DIY**\n2. 👑 **Les créations phares et meilleures ventes**\n3. 🌿 **Les conseils d'entretien du tissu**\n\nComment puis-je vous aider aujourd'hui ?"
+                },
+                ko: {
+                    stores: "📍 **타이핑 블루 매장 및 공방 안내**:\n\n1. **토변갱 염색 공방 (전시 및 DIY 체험 센터)**\n- **주소**: 臺中市太平區頭汴里長龍路四段 (생태공원 내)\n- **운영시간**: 월~일 09:00 - 17:00\n- **전화**: (04) 2227-7826\n\n2. **재단법인 수원지 문화교육재단 본부**\n- **주소**: 臺中市北區育才街三巷3號3樓之4 (월~금 09:00-18:00)\n\n토변갱 공방에서 천연 쪽염색 DIY 체험을 즐겨보세요! 🌿",
+                    products: "👑 **타이핑 블루 베스트셀러 대표 작품 추천**:\n\n1. **100% 천연 실크 그라데이션 쪽염색 스카프** (Pinkoi 판매 1위, 산안개처럼 가벼움)\n2. **쪽염색 객가 동화 컬렉션 머플러** (전통 형염 공예, 하얀 동백꽃의 피어남)\n3. **Sparkling 쪽염색 목재 벽시계** ('대만 우수 공예품' 인증)\n4. **쪽염색 무드 일본식 목재 탁상등** (원목과 투광 손염색 천의 조화)\n\n온라인 전시관에서 작품을 클릭해 음성 도슨트를 듣거나 **Pinkoi 공식 스토어**(NT$ 2,000 이상 무료 배송)에서 구매하실 수 있습니다! 🛍️",
+                    diy: "🎨 **타이핑 블루 천연 쪽염색 DIY 체험 프로그램 예약**:\n\n- **장소**: 타이중시 타이핑구 토변갱 염색 공방\n- **인기 프로그램**: 쪽염색 손수건, 패턴 스카프, 에코백 등\n- **예약 문의**: **(04) 2227-7826**\n\n미리 전화로 예약하시면 전문 공예사가 친절하게 안내해 드립니다! 🌿",
+                    default: "질문해 주셔서 감사합니다! 타이핑 블루 AI 가이드 '란란'입니다 🌿\n\n타이핑 블루는 100% 천연 쪽 발효 염색을 고집합니다.\n다음 내용에 대해 질문하실 수 있습니다:\n1. 📍 **매장 위치 및 DIY 체험 예약**\n2. 👑 **베스트셀러 인기 작품 추천**\n3. 🌿 **천연 쪽염색 세탁 및 관리법**\n\n오늘 어떤 도움이 필요하신가요?"
+                },
+                it: {
+                    stores: "📍 **Informations Punti Vendita e Laboratorio TAIPING BLUE**:\n\n1. **Laboratorio di Tintura Toubiankeng (Galleria e Centro DIY)**\n- **Indirizzo**: Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Orari**: Lun - Dom 09:00 - 17:00\n- **Tel**: +886-4-2227-7826\n\n2. **Sede Fondazione Young Water**\n- **Indirizzo**: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City (Lun - Ven 09:00-18:00)\n\nTi aspettiamo al Laboratorio Toubiankeng per un'esperienza DIY unica! 🌿",
+                    products: "👑 **Consigli sulle migliori vendite TAIPING BLUE**:\n\n1. **Sciarpa in seta pura 100% sfumata all'indigo** (N. 1 delle vendite su Pinkoi, leggera come la nebbia)\n2. **Sciarpa Fiori di Tung Hakka all'indigo** (Artigianato stencil tradizionale)\n3. **Orologio da parete in legno scintillante all'indigo** (Certificato \"Taiwan Good Craft\")\n4. **Lampada da tavolo giapponese in legno e indigo** (Legno massello e tessuto tinto a mano)\n\nClicca su qualsiasi opera nella galleria per ascoltarne la storia, o visita il nostro **Shop Ufficiale Pinkoi** (Spedizione gratuita sopra NT$ 2.000)! 🛍️",
+                    diy: "🎨 **Prenotazione Workshop DIY di Tintura all'Indigo Naturale**:\n\n- **Luogo**: Laboratorio Toubiankeng, Taiping Dist., Taichung City\n- **Attività**: Fazzoletti tinti, sciarpe decorate, borse in tela, ecc.\n- **Telefono**: **+886-4-2227-7826**\n\nPrenotazione telefonica consigliata. I nostri maestri artigiani ti guideranno! 🌿",
+                    default: "Grazie per la tua domanda! Sono Lanlan, la tua guida virtuale AI per Taiping Blue 🌿\n\nTaiping Blue utilizza 100% indigo naturale a fermentazione vegetale.\nPuoi chiedermi informazioni su:\n1. 📍 **Punti vendita e prenotazione workshop DIY**\n2. 👑 **Prodotti più venduti e consigliati**\n3. 🌿 **Guida al lavaggio e manutenzione**\n\nCome posso aiutarti oggi?"
+                }
+            };
+
+            const langDict = answers[selectedLang] || answers.zh;
+
+            if (lowerMsg.includes('門市') || lowerMsg.includes('據點') || lowerMsg.includes('地址') || lowerMsg.includes('營業時間') || lowerMsg.includes('電話') || lowerMsg.includes('工坊') || lowerMsg.includes('store') || lowerMsg.includes('address') || lowerMsg.includes('店舗') || lowerMsg.includes('주소') || lowerMsg.includes('magazzino')) {
+                return langDict.stores;
             }
 
-            if (lowerMsg.includes('熱銷') || lowerMsg.includes('作品') || lowerMsg.includes('商品') || lowerMsg.includes('推薦') || lowerMsg.includes('絲巾') || lowerMsg.includes('圍巾') || lowerMsg.includes('掛鐘')) {
-                return "👑 **太平藍 經典熱銷作品推薦**：\n\n1. **100% 純蠶絲漸層藍染絲巾** (Pinkoi 銷量冠軍，輕盈如山晨霧)\n2. **藍染客家桐花典藏圍巾** (傳統型染工藝，朵朵白桐綻放)\n3. **粼粼Sparkling 藍染木質掛鐘** (榮獲「臺灣優良工藝品」認證)\n4. **藍染氣氛和風木質桌燈** (實木搭配透光手染布)\n\n您可於本館線上展區點擊作品聆聽故事，或造訪 **Pinkoi 官方設計館**（滿 NT$ 2,000 享宅配免運）購買！🛍️";
+            if (lowerMsg.includes('熱銷') || lowerMsg.includes('作品') || lowerMsg.includes('商品') || lowerMsg.includes('推薦') || lowerMsg.includes('絲巾') || lowerMsg.includes('圍巾') || lowerMsg.includes('掛鐘') || lowerMsg.includes('sell') || lowerMsg.includes('popular') || lowerMsg.includes('product') || lowerMsg.includes('おすすめ') || lowerMsg.includes('상품') || lowerMsg.includes('meilleur')) {
+                return langDict.products;
             }
 
-            if (lowerMsg.includes('diy') || lowerMsg.includes('體驗') || lowerMsg.includes('預約') || lowerMsg.includes('手作')) {
-                return "🎨 **太平藍天然藍染手作 DIY 體驗預約**：\n\n- **地點**：台中市太平區頭汴坑染織工坊 (生態園區內)\n- **熱門體驗**：手作藍染方巾、小水紋方巾、典藏長巾、手提袋等。\n- **預約專線**：**(04) 2227-7826**\n\n歡迎提前電話預約，由專業工藝師親自指導建缸與綁紮染體驗！🌿";
+            if (lowerMsg.includes('diy') || lowerMsg.includes('體驗') || lowerMsg.includes('預約') || lowerMsg.includes('手作') || lowerMsg.includes('workshop') || lowerMsg.includes('book') || lowerMsg.includes('体験') || lowerMsg.includes('予約') || lowerMsg.includes('체험') || lowerMsg.includes('예약')) {
+                return langDict.diy;
             }
 
-            return `感謝您的提問！我是太平藍 AI 導覽員「藍藍」🌿\n\n太平藍（TAIPING BLUE）堅持 100% 天然馬藍植物發酵染色。\n您可以詢問我關於：\n1. 📍 **門市據點與藍染 DIY 預約**\n2. 👑 **經典熱銷藍染作品選購**\n3. 🌿 **植物染洗滌保養指南**\n\n請問今天有什麼想了解的嗎？`;
+            return langDict.default;
         }
 
         function appendChatMessage(sender, text) {
@@ -2064,6 +2109,12 @@
             document.getElementById('edit-detail').value = p.detail || '';
             document.getElementById('edit-fullTranscript').value = p.fullTranscript || '';
 
+            if (p.img) {
+                handleImageUrlInput(p.img);
+            } else {
+                clearUploadedImage();
+            }
+
             document.getElementById('editor-modal').classList.remove('hidden');
         }
 
@@ -2097,11 +2148,25 @@
                 productsData.unshift(updatedP);
             }
 
-            saveProductsData(productsData);
+            const isSaved = saveProductsData(productsData);
+            if (!isSaved) return;
+
+            // Sync active product modal immediately if open
+            if (activeProduct && activeProduct.id === updatedP.id) {
+                activeProduct = getProductContent(updatedP, currentLang);
+                const modalImg = document.getElementById('modal-img');
+                if (modalImg) modalImg.src = updatedP.img || getIndigoSvgFallback(updatedP.name);
+                const modalTitle = document.getElementById('modal-title');
+                if (modalTitle) modalTitle.textContent = updatedP.name;
+                const modalSub = document.getElementById('modal-subtitle');
+                if (modalSub) modalSub.textContent = updatedP.shortDesc;
+                switchModalTab(activeTab);
+            }
+
             filterCategory(currentCategory);
             closeEditorModal();
             renderManagerProductList();
-            showToast("作品資料已成功儲存！", "success");
+            showToast(currentLang === 'zh' ? "作品資料與圖片已成功連動儲存！" : "Product & image saved successfully!", "success");
         }
 
         function openManagerModal() {
@@ -2132,8 +2197,11 @@
                     <td class="p-3 font-bold text-indigo-950">${p.name}</td>
                     <td class="p-3"><span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-full text-[10px]">${p.category}</span></td>
                     <td class="p-3 text-right space-x-1">
-                        <button class="edit-btn px-2.5 py-1 rounded-lg bg-indigo-100 hover:bg-indigo-200 text-indigo-900 font-bold transition">
+                        <button class="edit-btn px-2.5 py-1 rounded-lg bg-indigo-100 hover:bg-indigo-200 text-indigo-900 font-bold transition" title="編輯">
                             <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="delete-btn px-2.5 py-1 rounded-lg bg-rose-100 hover:bg-rose-200 text-rose-800 font-bold transition" title="刪除">
+                            <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </td>
                 `;
@@ -2143,19 +2211,180 @@
                     openEditorModal(rawP.id);
                 });
 
+                tr.querySelector('.delete-btn').addEventListener('click', () => {
+                    deleteProduct(rawP.id);
+                });
+
                 listContainer.appendChild(tr);
             });
+        }
+
+        function deleteProduct(productId) {
+            if (productsData.length <= 1) {
+                showToast(currentLang === 'zh' ? "無法刪除：展館中需至少保留一項作品" : "Cannot delete: Exhibition requires at least one product.", "error");
+                return;
+            }
+            productsData = productsData.filter(p => p.id !== productId);
+            saveProductsData(productsData);
+            filterCategory(currentCategory);
+            renderManagerProductList();
+            showToast(currentLang === 'zh' ? "作品已成功刪除！" : "Product deleted successfully!", "info");
+        }
+
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            showToast(currentLang === 'zh' ? "📷 正在壓縮並最佳化圖片..." : "📷 Compressing & optimizing image...", "info");
+
+            compressAndResizeImage(file, 800, 800, 0.75, function(compressedDataUrl) {
+                document.getElementById('edit-img').value = compressedDataUrl;
+                handleImageUrlInput(compressedDataUrl, file.name);
+                showToast(currentLang === 'zh' ? "✨ 圖片已成功壓縮並連動！" : "✨ Image compressed and linked successfully!", "success");
+            });
+        }
+
+        function compressAndResizeImage(file, maxWidth, maxHeight, quality, callback) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    let width = img.width;
+                    let height = img.height;
+                    if (width > maxWidth || height > maxHeight) {
+                        if (width / height > maxWidth / maxHeight) {
+                            height = Math.round((height * maxWidth) / width);
+                            width = maxWidth;
+                        } else {
+                            width = Math.round((width * maxHeight) / height);
+                            height = maxHeight;
+                        }
+                    }
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+                    callback(compressedDataUrl);
+                };
+                img.onerror = function() {
+                    showToast(currentLang === 'zh' ? "⚠️ 無法讀取此圖片檔案" : "⚠️ Unable to read image file", "error");
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function handleImageUrlInput(val, fileName = '') {
+            const previewContainer = document.getElementById('edit-img-preview-container');
+            const previewImg = document.getElementById('edit-img-preview');
+            const previewInfo = document.getElementById('edit-img-preview-info');
+
+            if (!val || val.trim() === '') {
+                previewContainer.classList.add('hidden');
+                return;
+            }
+
+            previewImg.src = val.trim();
+            previewImg.onerror = function() {
+                previewInfo.textContent = currentLang === 'zh' ? "⚠️ 無法載入此圖片網址" : "⚠️ Unable to load image URL";
+            };
+            previewImg.onload = function() {
+                previewInfo.textContent = fileName || (val.startsWith('data:') ? 'Base64 Local Image (Compressed)' : 'External Image URL');
+            };
+
+            previewContainer.classList.remove('hidden');
+        }
+
+        function clearUploadedImage() {
+            document.getElementById('edit-img').value = '';
+            document.getElementById('edit-img-file').value = '';
+            document.getElementById('edit-img-preview-container').classList.add('hidden');
+        }
+
+        function autoGenerateTranscript() {
+            const name = document.getElementById('edit-name').value.trim();
+            const concept = document.getElementById('edit-concept').value.trim();
+            const process = document.getElementById('edit-process').value.trim();
+            
+            if (!name && !concept) {
+                showToast(currentLang === 'zh' ? "請先填寫作品名稱或理念" : "Please enter a title or concept first.", "error");
+                return;
+            }
+
+            const text = `歡迎欣賞太平藍經典作品『${name || '藍染藝品'}』。${concept} 製作過程中，${process} 邀請您細細品味這份來自台灣頭汴坑的天然手染溫情。`;
+            document.getElementById('edit-fullTranscript').value = text;
+            showToast(currentLang === 'zh' ? "已成功自動合成導覽全文！" : "Transcript auto-generated!", "success");
+        }
+
+        function createNewProduct() {
+            document.getElementById('edit-id').value = `p_${Date.now()}`;
+            document.getElementById('edit-name').value = '';
+            document.getElementById('edit-category').value = '配件';
+            document.getElementById('edit-pinkoiUrl').value = 'https://www.pinkoi.com/store/taiping-blue';
+            document.getElementById('edit-img').value = '';
+            document.getElementById('edit-shortDesc').value = '';
+            document.getElementById('edit-concept').value = '';
+            document.getElementById('edit-process').value = '';
+            document.getElementById('edit-timing').value = '';
+            document.getElementById('edit-detail').value = '';
+            document.getElementById('edit-fullTranscript').value = '';
+            
+            clearUploadedImage();
+            document.getElementById('editor-modal').classList.remove('hidden');
+        }
+
+        function exportProductsJson() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(productsData, null, 2));
+            const dlAnchorElem = document.createElement('a');
+            dlAnchorElem.setAttribute("href", dataStr);
+            dlAnchorElem.setAttribute("download", `taiping_blue_backup_${Date.now()}.json`);
+            dlAnchorElem.click();
+            showToast(currentLang === 'zh' ? "備份檔已開始下載" : "Backup JSON downloading...", "success");
+        }
+
+        function importProductsJson(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const imported = JSON.parse(e.target.result);
+                    if (Array.isArray(imported) && imported.length > 0) {
+                        productsData = imported;
+                        saveProductsData(productsData);
+                        filterCategory(currentCategory);
+                        renderManagerProductList();
+                        showToast(currentLang === 'zh' ? "作品備份成功匯入！" : "JSON imported successfully!", "success");
+                    } else {
+                        showToast(currentLang === 'zh' ? "格式無效：需為作品陣列" : "Invalid JSON structure.", "error");
+                    }
+                } catch (err) {
+                    showToast(currentLang === 'zh' ? "JSON 解析失敗" : "JSON parse error.", "error");
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function resetProductsData() {
+            productsData = [...defaultProductsData];
+            saveProductsData(productsData);
+            filterCategory(currentCategory);
+            renderManagerProductList();
+            showToast(currentLang === 'zh' ? "已重置為預設作品列表" : "Reset to default products.", "info");
         }
 
         function toggleTourMode() {
             if (isTourMode) {
                 isTourMode = false;
                 stopGlobalAudio();
-                showToast("Tour mode stopped.", "info");
+                showToast(currentLang === 'zh' ? "巡禮導覽已終止" : "Tour stopped.", "info");
             } else {
                 isTourMode = true;
                 tourIndex = 0;
-                showToast("Starting audio tour...", "success");
+                showToast(currentLang === 'zh' ? "開始全區語音巡禮..." : "Starting audio tour...", "success");
                 startTourStep(tourIndex);
             }
         }
