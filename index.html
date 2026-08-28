@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAIPING BLUE 太平藍 | 天然植物發酵 ‧ 互動式語音導覽商城</title>
+    <title>TAIPING BLUE 太平藍 | 天然植物發酵 ‧ 多國語音導覽典藏商城</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -112,7 +112,7 @@
         .typing-dot:nth-child(3) { animation-delay: 0.4s; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-indigo-600 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-indigo-600 selection:text-white lang-zh">
 
     <!-- Top Announcement Bar -->
     <div class="bg-indigo-950 text-amber-300 text-xs py-2 px-4 border-b border-indigo-900 overflow-hidden relative z-50">
@@ -156,15 +156,15 @@
                     <span class="block font-bold text-slate-800 group-hover:text-indigo-900 transition-colors" data-i18n="nav_cat_all_title">全系列作品</span>
                     <span class="block text-[10px] text-slate-400 group-hover:text-indigo-700 uppercase tracking-widest transition-colors" data-i18n="nav_cat_all_sub">ALL</span>
                 </button>
-                <button onclick="filterCategory('配件', true)" class="nav-item-btn transition py-1 text-center group" data-category="配件">
+                <button onclick="filterCategory('Accessories', true)" class="nav-item-btn transition py-1 text-center group" data-category="Accessories">
                     <span class="block font-bold text-slate-800 group-hover:text-indigo-900 transition-colors" data-i18n="nav_cat_acc_title">穿搭配件</span>
                     <span class="block text-[10px] text-slate-400 group-hover:text-indigo-700 uppercase tracking-widest transition-colors" data-i18n="nav_cat_acc_sub">ACCESSORIES</span>
                 </button>
-                <button onclick="filterCategory('家飾', true)" class="nav-item-btn transition py-1 text-center group" data-category="家飾">
+                <button onclick="filterCategory('Decor', true)" class="nav-item-btn transition py-1 text-center group" data-category="Decor">
                     <span class="block font-bold text-slate-800 group-hover:text-indigo-900 transition-colors" data-i18n="nav_cat_decor_title">生活家飾</span>
                     <span class="block text-[10px] text-slate-400 group-hover:text-indigo-700 uppercase tracking-widest transition-colors" data-i18n="nav_cat_decor_sub">DECOR</span>
                 </button>
-                <button onclick="filterCategory('服飾', true)" class="nav-item-btn transition py-1 text-center group" data-category="服飾">
+                <button onclick="filterCategory('Apparel', true)" class="nav-item-btn transition py-1 text-center group" data-category="Apparel">
                     <span class="block font-bold text-slate-800 group-hover:text-indigo-900 transition-colors" data-i18n="nav_cat_apparel_title">工藝服飾</span>
                     <span class="block text-[10px] text-slate-400 group-hover:text-indigo-700 uppercase tracking-widest transition-colors" data-i18n="nav_cat_apparel_sub">APPAREL</span>
                 </button>
@@ -182,12 +182,12 @@
                 </button>
             </nav>
 
-            <!-- Right Controls & Language Switcher -->
+            <!-- Right Controls & Language Switcher (Defaulting to Traditional Chinese) -->
             <div class="flex items-center gap-2 sm:gap-3">
                 <div class="flex items-center gap-1 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-1">
                     <i class="fa-solid fa-globe text-indigo-800 text-xs"></i>
                     <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-transparent text-indigo-950 font-bold text-xs focus:outline-none cursor-pointer">
-                        <option value="zh">🇹🇼 中文</option>
+                        <option value="zh" selected>🇹🇼 中文</option>
                         <option value="en">🇺🇸 English</option>
                         <option value="ja">🇯🇵 日本語</option>
                         <option value="fr">🇫🇷 Français</option>
@@ -198,7 +198,7 @@
 
                 <button id="start-tour-btn" onclick="toggleTourMode()" class="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-indigo-950 hover:bg-indigo-900 text-white text-xs font-semibold transition shadow-md">
                     <i class="fa-solid fa-headset text-amber-300 animate-pulse"></i>
-                    <span id="tour-btn-text" class="hidden sm:inline" data-i18n="btn_tour_start">全區語音導覽</span>
+                    <span id="tour-btn-text" class="hidden sm:inline" data-i18n="btn_tour_start">開啟全區語音導覽</span>
                 </button>
 
                 <a href="https://www.pinkoi.com/store/taiping-blue" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold transition shadow-sm">
@@ -248,15 +248,15 @@
                         <span class="flex items-center gap-2.5"><i class="fa-solid fa-border-all w-5 text-indigo-800"></i><span data-i18n="cat_all">全系列作品 ALL</span></span>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
                     </button>
-                    <button onclick="filterCategory('配件', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="配件">
+                    <button onclick="filterCategory('Accessories', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="Accessories">
                         <span class="flex items-center gap-2.5"><i class="fa-solid fa-hat-wizard w-5 text-indigo-800"></i><span data-i18n="cat_acc">穿搭配件 ACCESSORIES</span></span>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
                     </button>
-                    <button onclick="filterCategory('家飾', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="家飾">
+                    <button onclick="filterCategory('Decor', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="Decor">
                         <span class="flex items-center gap-2.5"><i class="fa-solid fa-couch w-5 text-indigo-800"></i><span data-i18n="cat_decor">生活家飾 DECOR</span></span>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
                     </button>
-                    <button onclick="filterCategory('服飾', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="服飾">
+                    <button onclick="filterCategory('Apparel', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="Apparel">
                         <span class="flex items-center gap-2.5"><i class="fa-solid fa-shirt w-5 text-indigo-800"></i><span data-i18n="cat_apparel">工藝服飾 APPAREL</span></span>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
                     </button>
@@ -293,7 +293,7 @@
                     <i class="fa-solid fa-bag-shopping"></i> <span data-i18n="btn_pinkoi">Pinkoi 官方設計館</span>
                 </a>
                 <a href="https://www.facebook.com/Taipingblue/?locale=zh_TW" target="_blank" class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-blue-600 text-white font-semibold transition hover:bg-blue-700">
-                    <i class="fa-brands fa-facebook"></i> <span data-i18n="btn_fb">Facebook 官方粉專</span>
+                    <i class="fa-brands fa-facebook"></i> <span data-i18n="btn_fb">FB 官方粉專</span>
                 </a>
                 <a href="https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D" target="_blank" class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-200 text-slate-700 font-semibold transition hover:bg-slate-300">
                     <i class="fa-solid fa-globe"></i> <span data-i18n="btn_youngwater">水源地官網</span>
@@ -303,72 +303,33 @@
     </div>
 
     <!-- Hero Banner Section -->
-    <section class="relative bg-indigo-gradient text-white overflow-hidden shadow-md">
-        <div id="hero-carousel" class="relative min-h-[380px] sm:min-h-[460px] flex items-center">
-            <div class="hero-slide active w-full px-4 sm:px-8 lg:px-12 py-12 transition-opacity duration-700 opacity-100">
-                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-7 space-y-4 sm:space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400 text-indigo-950 text-xs font-bold shadow-md">
-                            <i class="fa-solid fa-sparkles"></i> 
-                            <span data-i18n="hero_badge">來自台中太平頭汴坑的青綠與湛藍 ‧ 台灣天然手染美學</span>
-                        </div>
-                        <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight tracking-wide" data-i18n="hero_title">
-                            取之於藍，青勝於藍<br>
-                            <span class="text-amber-300">登上國際舞台的台灣天然手染工藝</span>
-                        </h2>
-                        <p class="text-indigo-100 text-xs sm:text-sm leading-relaxed max-w-2xl font-light" data-i18n="hero_desc">
-                            起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍與植物發酵染色，運用絞染、縫染、型染與板夾染等四傳統防染技法，揉合客家紋樣與現代美學。
-                        </p>
-                        <div class="pt-2 flex flex-wrap gap-3">
-                            <button onclick="toggleTourMode()" class="px-5 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-indigo-950 font-bold text-xs sm:text-sm shadow-lg transition flex items-center gap-2">
-                                <i class="fa-solid fa-circle-play text-indigo-950"></i>
-                                <span data-i18n="hero_btn_explore">開始語音巡禮導覽</span>
-                            </button>
-                            <a href="https://www.pinkoi.com/store/taiping-blue" target="_blank" class="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 text-xs sm:text-sm font-semibold transition flex items-center gap-2">
-                                <i class="fa-solid fa-bag-shopping text-pink-400"></i>
-                                <span data-i18n="btn_pinkoi">Pinkoi 官方商城</span>
-                            </a>
-                        </div>
+    <section class="relative bg-indigo-gradient text-white overflow-hidden shadow-md bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(10, 15, 29, 0.82) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(10, 15, 29, 0.88) 100%), url('Gemini_Generated_Image_trz48trz48trz48t.jpg');">
+        <div id="hero-carousel" class="relative min-h-[400px] sm:min-h-[480px] flex items-center justify-center">
+            <div class="hero-slide active w-full px-4 sm:px-8 lg:px-12 py-16 transition-opacity duration-700 opacity-100">
+                <div class="max-w-5xl mx-auto text-center space-y-5 sm:space-y-7">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400 text-indigo-950 text-xs sm:text-sm font-bold shadow-lg">
+                        <i class="fa-solid fa-sparkles"></i> 
+                        <span data-i18n="hero_badge">來自台中太平頭汴坑的青綠與湛藍 ‧ 台灣天然手染美學</span>
                     </div>
-
-                    <!-- Voice Guide Widget -->
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="glass-dark p-6 rounded-3xl max-w-sm w-full border border-indigo-400/30 text-center space-y-4 shadow-2xl relative">
-                            <div class="absolute -top-3 -right-3 bg-amber-400 text-indigo-950 text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
-                                <i class="fa-solid fa-wand-magic-sparkles text-indigo-950"></i>
-                                <span>Gemini AI 真人語音</span>
-                            </div>
-                            <div class="w-20 h-20 rounded-full mx-auto bg-gradient-to-tr from-indigo-500 via-amber-200 to-indigo-200 p-1 shadow-inner relative">
-                                <img id="guide-avatar-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Guide Avatar" class="w-full h-full object-cover rounded-full">
-                                <div id="voice-waves" class="hidden absolute inset-0 rounded-full border-2 border-amber-300 animate-ping opacity-75"></div>
-                            </div>
-                            <div>
-                                <h3 class="font-serif font-bold text-lg text-white" data-i18n="guide_title">太平藍 語音導覽員</h3>
-                                <p id="guide-status-text" class="text-xs text-indigo-200 mt-1" data-i18n="guide_desc">點擊展區任何作品，即為您說故事</p>
-                            </div>
-
-                            <div class="bg-indigo-950/80 p-3 rounded-2xl border border-indigo-700/60 space-y-2">
-                                <div class="flex items-center justify-between text-xs text-indigo-200">
-                                    <span class="font-medium"><i class="fa-solid fa-microphone text-amber-300 mr-1.5"></i><span data-i18n="guide_voice">導覽音色：</span></span>
-                                    <select id="voice-select" onchange="changeVoiceSetting()" class="bg-indigo-900 text-white rounded-lg px-2.5 py-1 text-xs border border-indigo-500 focus:outline-none focus:ring-1 focus:ring-amber-300">
-                                        <option value="Aoede">👩🏻 典雅女聲 ‧ 輕柔細緻 (Aoede)</option>
-                                        <option value="Kore">👩🏻‍💼 知性端莊 ‧ 專業溫和 (Kore)</option>
-                                        <option value="Zephyr">👨🏻‍💼 溫和男聲 ‧ 沉穩典雅 (Zephyr)</option>
-                                        <option value="Puck">👦🏻 活潑青年 ‧ 生動朗暢 (Puck)</option>
-                                        <option value="Fenrir">👨🏻 磁性男聲 ‧ 質感說書 (Fenrir)</option>
-                                        <option value="Charon">🧔🏻 工藝職人 ‧ 溫厚故事 (Charon)</option>
-                                    </select>
-                                </div>
-
-                                <div id="audio-playback-bar" class="hidden pt-2 border-t border-indigo-800/60 flex items-center justify-between">
-                                    <span id="playing-title" class="text-[11px] text-amber-200 font-medium truncate max-w-[180px]">準備導覽中...</span>
-                                    <button onclick="toggleGlobalAudioPlay()" class="px-3 py-1 rounded-full bg-amber-400 text-indigo-950 font-bold text-xs hover:bg-amber-300 transition flex items-center gap-1">
-                                        <i id="global-play-icon" class="fa-solid fa-pause"></i>
-                                        <span id="global-play-text">暫停</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                    
+                    <h2 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-white drop-shadow-md" data-i18n="hero_title">
+                        取之於藍，青勝於藍<br>
+                        <span class="text-amber-300">登上國際舞台的台灣天然手染<span class="inline-block">工藝</span></span>
+                    </h2>
+                    
+                    <p class="text-indigo-100 text-xs sm:text-base leading-relaxed max-w-3xl mx-auto font-light drop-shadow-sm" data-i18n="hero_desc">
+                        起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍與植物發酵染色，運用絞染、縫染、型染與板夾染等四傳統防染技法，揉合客家紋樣與現代美學。
+                    </p>
+                    
+                    <div class="pt-4 flex flex-wrap justify-center gap-4">
+                        <button onclick="toggleTourMode()" class="px-7 py-3 rounded-full bg-amber-400 hover:bg-amber-300 text-indigo-950 font-bold text-xs sm:text-sm shadow-xl hover:scale-105 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-circle-play text-indigo-950 text-base"></i>
+                            <span data-i18n="hero_btn_explore">開始語音巡禮導覽</span>
+                        </button>
+                        <a href="https://www.pinkoi.com/store/taiping-blue" target="_blank" class="px-7 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 text-xs sm:text-sm font-semibold transition hover:scale-105 shadow-md flex items-center gap-2">
+                            <i class="fa-solid fa-bag-shopping text-pink-400 text-base"></i>
+                            <span data-i18n="btn_pinkoi">Pinkoi 官方商城</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -528,9 +489,9 @@
 
                 <div class="flex items-center gap-2 flex-wrap" id="filter-container">
                     <button onclick="filterCategory('all')" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-indigo-950 text-white shadow-sm transition" data-category="all" data-i18n="cat_all">全系列作品 ALL</button>
-                    <button onclick="filterCategory('配件')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-indigo-50 transition" data-category="配件" data-i18n="cat_acc">穿搭配件 ACCESSORIES</button>
-                    <button onclick="filterCategory('家飾')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-indigo-50 transition" data-category="家飾" data-i18n="cat_decor">生活家飾 DECOR</button>
-                    <button onclick="filterCategory('服飾')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-indigo-50 transition" data-category="服飾" data-i18n="cat_apparel">工藝服飾 APPAREL</button>
+                    <button onclick="filterCategory('Accessories')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-indigo-50 transition" data-category="Accessories" data-i18n="cat_acc">穿搭配件 ACCESSORIES</button>
+                    <button onclick="filterCategory('Decor')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-indigo-50 transition" data-category="Decor" data-i18n="cat_decor">生活家飾 DECOR</button>
+                    <button onclick="filterCategory('Apparel')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-indigo-50 transition" data-category="Apparel" data-i18n="cat_apparel">工藝服飾 APPAREL</button>
                 </div>
             </div>
 
@@ -579,7 +540,7 @@
                     <h3 class="font-serif text-2xl sm:text-3xl font-bold text-indigo-950" data-i18n="stores_title">全台門市與頭汴坑工坊據點</h3>
                 </div>
                 <a href="https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D" target="_blank" class="text-xs font-bold text-indigo-900 hover:underline flex items-center gap-1">
-                    <span>前往水源地官網預約參觀</span>
+                    <span data-i18n="btn_youngwater">前往水源地官網預約參觀</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
@@ -603,7 +564,7 @@
                     </p>
                     <p class="text-xs text-slate-600 flex items-center gap-2">
                         <i class="fa-solid fa-phone text-indigo-700"></i>
-                        <span>電話：(04) 2227-7826</span>
+                        <span>電話：+886-4-2227-7826</span>
                     </p>
                 </div>
 
@@ -709,9 +670,9 @@
                     <div>
                         <label class="block font-bold text-indigo-950 mb-1" data-i18n="edit_lbl_cat">作品分類</label>
                         <select id="edit-category" class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-600">
-                            <option value="配件">配件 (Accessories)</option>
-                            <option value="家飾">家飾 (Decor)</option>
-                            <option value="服飾">服飾 (Apparel)</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Decor">Decor</option>
+                            <option value="Apparel">Apparel</option>
                         </select>
                     </div>
                 </div>
@@ -806,13 +767,10 @@
 
             <div class="flex flex-wrap items-center justify-between gap-3 bg-indigo-50/70 p-4 rounded-2xl border border-indigo-100 text-xs">
                 <button onclick="createNewProduct()" class="px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold flex items-center gap-1.5 shadow">
-                    <i class="fa-solid fa-plus"></i> <span data-i18n="btn_add_product">新增作品</span>
+                    <i class="fa-solid fa-plus"></i> <span data-i18n="btn_add_product">新增藍染作品</span>
                 </button>
 
                 <div class="flex items-center gap-2 flex-wrap">
-                    <button onclick="exportProductsJson()" class="px-3.5 py-2 rounded-xl bg-indigo-950 hover:bg-indigo-900 text-white font-semibold flex items-center gap-1">
-                        <i class="fa-solid fa-download"></i> <span data-i18n="mgr_btn_export">匯出 JSON 備份</span>
-                    </button>
                     <label class="px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold cursor-pointer flex items-center gap-1">
                         <i class="fa-solid fa-upload"></i> <span data-i18n="mgr_btn_import">匯入 JSON</span>
                         <input type="file" accept=".json" onchange="importProductsJson(event)" class="hidden">
@@ -936,7 +894,7 @@
                 <div class="md:col-span-4 space-y-2 text-indigo-300">
                     <h5 class="font-serif font-bold text-amber-300 text-xs uppercase tracking-wider mb-2" data-i18n="footer_contact_title">聯絡與諮詢資訊</h5>
                     <p class="flex items-center gap-2"><i class="fa-solid fa-clock text-amber-300/80 w-4"></i> <span data-i18n="footer_hours">服務時間：週一至週五 09:00 - 18:00</span></p>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-300/80 w-4"></i> <span>電話：(04) 2227-7826 ｜ 傳真：(04) 2227-4440</span></p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-300/80 w-4"></i> <span>電話：+886-4-2227-7826 ｜ 傳真：+886-4-2227-4440</span></p>
                     <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-300/80 w-4"></i> <span>信箱：watersource@mail2000.com.tw</span></p>
                     <p class="flex items-start gap-2 mt-1"><i class="fa-solid fa-location-dot text-amber-300/80 w-4 mt-0.5"></i> <span data-i18n="footer_headquarter">基金會會址：40444 臺中市北區育才街三巷3號3樓之4</span></p>
                     <p class="flex items-start gap-2"><i class="fa-solid fa-house-chimney-craft text-amber-300/80 w-4 mt-0.5"></i> <span data-i18n="footer_workshop">頭汴坑工坊：臺中市太平區頭汴里長龍路四段 (生態園區內)</span></p>
@@ -947,7 +905,7 @@
                     <div class="flex flex-col md:items-end gap-2">
                         <a href="https://www.youngwater.org.tw/taiping-blue-%E5%A4%AA%E5%B9%B3%E8%97%8D" target="_blank" class="inline-flex items-center gap-1.5 hover:text-amber-300 transition text-indigo-300"><i class="fa-solid fa-globe"></i> 水源地文教基金會官網</a>
                         <a href="https://www.pinkoi.com/store/taiping-blue" target="_blank" class="inline-flex items-center gap-1.5 hover:text-amber-300 transition text-pink-400"><i class="fa-solid fa-bag-shopping"></i> Pinkoi 官方設計館</a>
-                        <a href="https://www.facebook.com/Taipingblue/?locale=zh_TW" target="_blank" class="inline-flex items-center gap-1.5 hover:text-amber-300 transition text-indigo-300"><i class="fa-brands fa-facebook"></i> Facebook 官方粉絲專頁</a>
+                        <a href="https://www.facebook.com/Taipingblue/?locale=zh_TW" target="_blank" class="inline-flex items-center gap-1.5 hover:text-amber-300 transition text-indigo-300"><i class="fa-brands fa-facebook"></i> Facebook 官方粉專</a>
                     </div>
                 </div>
             </div>
@@ -960,13 +918,12 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        let currentLang = 'zh';
+        let currentLang = 'zh'; // Default language set to Traditional Chinese
         let activeProduct = null;
         let activeTab = 'concept';
         let isPlayingAudio = false;
         let isTourMode = false;
         let tourIndex = 0;
-        let currentVoice = 'Aoede';
         let currentCategory = 'all';
         let currentAudioElement = null;
 
@@ -974,7 +931,7 @@
         let isAiThinking = false;
         let aiChatHistory = [];
 
-        // Full Synchronized 6-Language Translation Dictionary
+        // Full Synchronized 6-Language Translation Dictionary (Primary: Chinese zh)
         const i18nDict = {
             zh: {
                 brand_name: "太平藍染", brand_subtitle: "天然植物發酵 ‧ 台灣工藝品牌",
@@ -988,10 +945,10 @@
                 nav_craft_title: "靈魂工序", nav_craft_sub: "CRAFT",
                 nav_stores_title: "門市據點", nav_stores_sub: "STORES",
                 drawer_sec_categories: "商品分類 CATEGORIES", drawer_sec_about: "關於與據點 ABOUT & STORES", drawer_sec_tools: "工具與設定 TOOLS",
-                btn_fb: "FB 粉絲專頁", btn_pinkoi: "Pinkoi 官方商城", btn_youngwater: "水源地官網", btn_manager: "管理與編輯",
+                btn_fb: "FB 官方粉專", btn_pinkoi: "Pinkoi 官方商城", btn_youngwater: "水源地官網", btn_manager: "管理與編輯",
                 btn_tour_start: "開啟全區語音導覽", btn_tour_stop: "結束巡禮導覽",
                 hero_badge: "來自台中太平頭汴坑的青綠與湛藍 ‧ 台灣天然手染美學",
-                hero_title: "取之於藍，青勝於藍<br><span class=\"text-amber-300\">登上國際舞台的台灣天然手染工藝</span>",
+                hero_title: "取之於藍，青勝於藍<br><span class=\"text-amber-300\">登上國際舞台的台灣天然手染<span class=\"inline-block\">工藝</span></span>",
                 hero_desc: "起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍與植物發酵染色，運用絞染、縫染、型染與板夾染等四傳統防染技法，揉合客家紋樣與現代美學。",
                 hero_btn_explore: "開始語音巡禮導覽",
                 guide_title: "太平藍 語音導覽員", guide_desc: "點擊展區任何作品，即為您說故事", guide_voice: "導覽音色：",
@@ -1168,7 +1125,7 @@
                 ai_welcome: "<p>こんにちは！太平藍のAIナビゲーター<b>「藍藍（ランラン）」</b>です 🌿</p><p><b>伝統的な藍染工芸、商品の魅力、DIY体験、店舗へのアクセス、受賞ニュース</b>など、何でもお気軽にご質問ください！</p>",
                 ai_quick_label: "よくある質問:",
                 ai_q1_btn: "📍 店舗・アクセス", ai_q1_text: "頭汴坑工房の住所と営業時間を教えてください。",
-                ai_q2_btn: "👑 人気おすすめ作品", ai_q2_text: "太平藍の一番人気の商品は何ですか？",
+                ai_q2_btn: "👑 人気おすすめ作品", ai_q2_text: "太平藍的一番人気の商品は何ですか？",
                 ai_q3_btn: "🎨 藍染DIY体験の予約", ai_q3_text: "藍染DIY体験の予約方法を教えてください。",
                 ai_q4_btn: "🏆 ブランドの歴史と受賞歴", ai_q4_text: "太平藍の設立背景と受賞歴について教えてください。",
                 ai_input_placeholder: "太平藍について質問する...", ai_user_label: "あなた", ai_reset_toast: "チャット履歴をリセットしました"
@@ -1372,18 +1329,18 @@
 
         const defaultProductsData = [
             {
-                id: "p1", name: "100% 純蠶絲漸層藍染絲巾", category: "配件",
+                id: "p1", name: "100% 純蠶絲漸層藍染絲巾", category: "Accessories",
                 pinkoiUrl: "https://www.pinkoi.com/store/taiping-blue",
                 img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Pinkoi 官方熱銷冠軍！採用100%純蠶絲，呈現如頭汴坑山晨霧般湛藍漸層。",
                 concept: "【商品理念】源於台中太平頭汴坑的晨霧與山溪靈感，運用100%純天然馬藍發酵建缸，不含任何化學染劑，將大自然的溫柔與生態永續概念揉入絲綢之中。",
                 process: "【如何生成】由在地工藝師將純蠶絲布料進行綁紮防染，浸入常溫天然藍缸中手工揉捏浸染達12次以上，最後經由溫暖陽光照耀氧化定色，洗淨後永不退色。",
-                timing: "【使用適宜時機】非常適合春秋季節保暖、出席藝術展覽、商務交流場合或作為展現品味的國際禮贈。",
+                timing: "【使用適宜時機】非常適合春秋季節保暖、出席藝術展覽、商務交流場或作為展現品味的國際禮贈。",
                 detail: "【產品介紹】材質：100% 天然純蠶絲。尺寸：180 x 50 公分。特點：天然植物染手作，每條絲巾的藍白漸層水波紋皆為世上獨一無二。",
                 fullTranscript: "歡迎欣賞太平藍熱銷第一名的『100%純蠶絲漸層藍染絲巾』。靈感源自台中太平頭汴坑山區的晨霧與清溪，工藝師選用100%純蠶絲，歷經12次以上的天然藍缸低溫揉捏浸染與陽光氧化定色。質地輕盈柔滑，展現優雅湛藍漸層，是您個人穿搭與尊榮送禮的首選。"
             },
             {
-                id: "p2", name: "藍染客家桐花典藏圍巾", category: "配件",
+                id: "p2", name: "藍染客家桐花典藏圍巾", category: "Accessories",
                 pinkoiUrl: "https://www.pinkoi.com/store/taiping-blue",
                 img: "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "水源地文教基金會代表作！融合客家油桐花圖騰與傳統型染糊劑防染工藝。",
@@ -1394,7 +1351,7 @@
                 fullTranscript: "為您介紹水源地文教基金會熱門作品『藍染客家桐花典藏圍巾』。以客家莊五月雪油桐花為靈感，結合傳統型染糊劑工藝，讓白色的油桐花活靈活現綻放在靛藍布料上，兼具文化底蘊與時尚氣質。"
             },
             {
-                id: "p3", name: "藍染氣氛和風木質桌燈", category: "家飾",
+                id: "p3", name: "藍染氣氛和風木質桌燈", category: "Decor",
                 pinkoiUrl: "https://www.pinkoi.com/store/taiping-blue",
                 img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "透出溫潤手繪水波紋光影，結合天然藍染燈罩與實木底座。",
@@ -1405,7 +1362,7 @@
                 fullTranscript: "這款是令人驚艷的『藍染氣氛和風木質桌燈』。透光布料上的天然藍染暈痕，在暖色燈光透射下呈現獨一無二的波光影致，為夜間的臥室與客房帶來一份寧靜優雅的陪伴。"
             },
             {
-                id: "p4", name: "粼粼Sparkling 藍染木質掛鐘", category: "家飾",
+                id: "p4", name: "粼粼Sparkling 藍染木質掛鐘", category: "Decor",
                 pinkoiUrl: "https://www.pinkoi.com/store/taiping-blue",
                 img: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "獲選臺灣優良工藝品認證！將天然藍染布凝結於溫潤木質鐘盤中。",
@@ -1416,7 +1373,7 @@
                 fullTranscript: "您現在看到的是獲選臺灣優良工藝品認證的『粼粼Sparkling 藍染木質掛鐘』。工藝師以獨特的絞染技法，在布料上留下如波光粼粼的湛藍紋樣，並鑲嵌於溫潤的實木框中。搭配靜音機芯，為您的生活空間注入優雅而寧靜的時間詩意。"
             },
             {
-                id: "p5", name: "藍染風雅茶席餐墊杯墊組", category: "家飾",
+                id: "p5", name: "藍染風雅茶席餐墊杯墊組", category: "Decor",
                 pinkoiUrl: "https://www.pinkoi.com/store/taiping-blue",
                 img: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "茶人最愛！天然板夾染與絞染紋路，為日常餐桌與茶席增添東方禪意美學。",
@@ -1427,7 +1384,7 @@
                 fullTranscript: "這是深受茶藝與居家生活愛好者喜愛的『藍染風雅茶席餐墊杯墊組』。透過木具板夾防染，呈現清新雅緻的藍白圖騰，擺上茶具即是一幅優美的東方風景。"
             },
             {
-                id: "p6", name: "藍綻水纹 天然純棉抱枕", category: "家飾",
+                id: "p6", name: "藍綻水纹 天然純棉抱枕", category: "Decor",
                 pinkoiUrl: "https://www.pinkoi.com/store/taiping-blue",
                 img: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "客家傳統縫染紋樣，高磅數純棉厚實觸感，營造自然療癒居家氛圍。",
@@ -1460,7 +1417,7 @@
                 return true;
             } catch (e) {
                 console.error("Failed to save products to localStorage:", e);
-                showToast(currentLang === 'zh' ? "⚠️ 儲存失敗：本地儲存空間已滿，請使用適當尺寸的圖片" : "⚠️ Save failed: LocalStorage quota exceeded.", "error");
+                showToast(currentLang === 'zh' ? "⚠️ 儲存失敗：本地儲存空間已滿" : "⚠️ Save failed: LocalStorage quota exceeded.", "error");
                 return false;
             }
         }
@@ -1584,7 +1541,7 @@
 
             const filtered = currentCategory === 'all' 
                 ? productsData 
-                : productsData.filter(p => p.category === currentCategory);
+                : productsData.filter(p => p.category === currentCategory || (currentCategory === 'Accessories' && p.category === 'Accessories') || (currentCategory === 'Decor' && p.category === 'Decor') || (currentCategory === 'Apparel' && p.category === 'Apparel'));
 
             if (filtered.length === 0) {
                 grid.innerHTML = `
@@ -1730,7 +1687,7 @@
         async function playAudioText(text, title, img) {
             stopGlobalAudio();
 
-            const cleanText = text.replace(/【[^】]+】/g, '');
+            const cleanText = text.replace(/\[[^\]]+\]/g, '').replace(/【[^】]+】/g, '');
             updateAudioUIState(true, title, img, true);
 
             try {
@@ -1742,7 +1699,7 @@
 
         function playWebSpeechFallback(cleanText, title, img) {
             if (!('speechSynthesis' in window)) {
-                showToast("Your browser does not support speech playback.", "error");
+                showToast("您的瀏覽器暫時不支援語音合成朗讀。", "error");
                 return;
             }
 
@@ -1780,22 +1737,6 @@
             updateAudioUIState(false);
         }
 
-        function toggleGlobalAudioPlay() {
-            if (window.speechSynthesis && window.speechSynthesis.speaking) {
-                if (window.speechSynthesis.paused) {
-                    window.speechSynthesis.resume();
-                    isPlayingAudio = true;
-                    updateAudioUIState(true);
-                } else {
-                    window.speechSynthesis.pause();
-                    isPlayingAudio = false;
-                    updateAudioUIState(false);
-                }
-            } else if (activeProduct) {
-                playAudioText(activeProduct.fullTranscript, activeProduct.name, activeProduct.img);
-            }
-        }
-
         function toggleModalAudioPlay() {
             if (isPlayingAudio) {
                 stopGlobalAudio();
@@ -1817,7 +1758,7 @@
 
             if (isLoading) {
                 if (playbackBar) playbackBar.classList.remove('hidden');
-                if (playingTitle) playingTitle.textContent = "AI 真人語音準備中...";
+                if (playingTitle) playingTitle.textContent = "AI 語音準備中...";
                 if (guideStatus) guideStatus.textContent = "🎙️ 正在準備語音導覽...";
                 if (modalPlayText) modalPlayText.textContent = "準備語音中...";
                 return;
@@ -1841,14 +1782,6 @@
 
                 if (modalPlayIcon) modalPlayIcon.className = "fa-solid fa-volume-high text-amber-300";
                 if (modalPlayText) modalPlayText.textContent = i18nDict[currentLang]?.btn_play || "播放完整故事導覽";
-            }
-        }
-
-        function changeVoiceSetting() {
-            const select = document.getElementById('voice-select');
-            if (select) {
-                currentVoice = select.value;
-                showToast(`Voice set to: ${select.options[select.selectedIndex].text}`, "info");
             }
         }
 
@@ -1962,44 +1895,20 @@
                     products: "👑 **TAIPING BLUE Best-Selling Recommendations**:\n\n1. **100% Pure Silk Gradient Indigo Scarf** (#1 Top Seller on Pinkoi, light as mountain mist)\n2. **Indigo Hakka Tung Blossom Scarf** (Traditional stencil dye craft, blooming white blossoms)\n3. **Sparkling Indigo Wooden Wall Clock** (Certified as \"Taiwan Good Craft\")\n4. **Indigo Ambient Japanese Wooden Desk Lamp** (Solid wood with light-transmitting hand-dyed cloth)\n\nClick any item in our online gallery to listen to its story, or visit our **Pinkoi Official Store** (Free shipping over NT$ 2,000)! 🛍️",
                     diy: "🎨 **TAIPING BLUE Natural Indigo DIY Workshop Booking**:\n\n- **Location**: Toubiankeng Workshop, Taiping Dist., Taichung City\n- **Popular Activities**: Indigo Handkerchiefs, Pattern Scarves, Tote Bags, etc.\n- **Booking Hotline**: **+886-4-2227-7826**\n\nAdvance phone booking recommended! Master artisans will guide you step-by-step! 🌿",
                     default: "Thank you for asking! I am Lanlan, your AI Guide for Taiping Blue 🌿\n\nTaiping Blue insists on 100% natural plant-fermented indigo dyeing.\nYou can ask me about:\n1. 📍 **Store Locations & DIY Workshop Booking**\n2. 👑 **Popular & Best-Selling Craft Products**\n3. 🌿 **Washing & Maintenance Tips**\n\nHow can I assist you today?"
-                },
-                ja: {
-                    stores: "📍 **太平藍 店舗・工房のご案内**:\n\n1. **頭汴坑染色工房 (展示・販売＆DIY体験センター)**\n- **住所**: 臺中市太平區頭汴里長龍路四段 (生態園區內)\n- **営業時間**: 月〜日 09:00 - 17:00\n- **電話**: (04) 2227-7826\n\n2. **財團法人水源地文教基金會 本部**\n- **住所**: 臺中市北區育才街三巷3號3樓之4 (月〜金 09:00-18:00)\n\n頭汴坑で天然藍染めの魅力をご体験ください！🌿",
-                    products: "👑 **太平藍 ベストセラー作品のおすすめ**:\n\n1. **100%純シルクグラデーション藍染シルクスカーフ** (Pinkoi売上No.1、山霧のように軽やか)\n2. **藍染客家油桐花コレクションマフラー** (伝統型染め技法、白桐の花が咲き誇る)\n3. **粼粼Sparkling 藍染木製掛け時計** (「臺灣優良工藝品」認定)\n4. **藍染和風木製デスクランプ** (天然木と透光手染め布の融合)\n\n当館のオンライン展示エリアで作品をクリックして物語を聴くか、**Pinkoi公式ショップ**（NT$ 2,000以上で送料無料）でお買い求めいただけます！🛍️",
-                    diy: "🎨 **太平藍 天然藍染めDIY体験予約**:\n\n- **場所**: 頭汴坑染色工房 (台中市太平区)\n- **人気コース**: 藍染ハンカチ、絞り染めスカーフ、トートバッグなど\n- **予約電話**: **(04) 2227-7826**\n\n職人が親切に指導いたします。お気軽にお問い合わせください！🌿",
-                    default: "ご質問ありがとうございます！太平藍のAIガイド「藍藍（ランラン）」です 🌿\n\n太平藍は100%天然の植物発酵藍染めにこだわっています。\n以下の内容についてお尋ねいただけます：\n1. 📍 **店舗案内・DIY体験のご予約**\n2. 👑 **人気ベストセラー作品のおすすめ**\n3. 🌿 **藍染めのお手入れ方法**\n\n本日はどのようなご案内をいたしましょうか？"
-                },
-                fr: {
-                    stores: "📍 **Informations Boutiques & Atelier TAIPING BLUE** :\n\n1. **Atelier de Teinture de Toubiankeng (Galerie & Centre DIY)**\n- **Adresse** : Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Horaires** : Lun - Dim 09:00 - 17:00\n- **Tél** : +886-4-2227-7826\n\n2. **Siège de la Fondation Young Water**\n- **Adresse** : 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City (Lun - Ven 09:00-18:00)\n\nBienvenue à l'Atelier Toubiankeng pour une expérience DIY unique ! 🌿",
-                    products: "👑 **Recommandations des meilleures ventes TAIPING BLUE** :\n\n1. **Écharpe en soie pure 100% dégradée indigo** (N°1 des ventes sur Pinkoi, légère comme la brume)\n2. **Écharpe fleurs de tung Hakka en indigo** (Artisanat au pochoir traditionnel)\n3. **Horloge murale en bois étincelante indigo** (Certifiée \"Taiwan Good Craft\")\n4. **Lampe de bureau japonaise en bois indigo** (Bois massif et tissu teint à la main)\n\nCliquez sur n'importe quelle œuvre dans la galerie pour écouter son histoire, ou visitez notre **Boutique Officielle Pinkoi** (Livraison gratuite dès NT$ 2 000) ! 🛍️",
-                    diy: "🎨 **Réservation d'Atelier DIY de Teinture Indigo Naturelle** :\n\n- **Lieu** : Atelier Toubiankeng, Taiping Dist., Taichung City\n- **Activités** : Mouchoirs teints, écharpes à motifs, sacs en toile, etc.\n- **Téléphone** : **+886-4-2227-7826**\n\nRéservation recommandée par téléphone. Nos maîtres artisans vous guideront ! 🌿",
-                    default: "Merci pour votre question ! Je suis Lanlan, votre guide virtuel AI pour Taiping Blue 🌿\n\nTaiping Blue utilise 100% d'indigo naturel fermenté.\nVous pouvez me poser des questions sur :\n1. 📍 **Les boutiques et ateliers DIY**\n2. 👑 **Les créations phares et meilleures ventes**\n3. 🌿 **Les conseils d'entretien du tissu**\n\nComment puis-je vous aider aujourd'hui ?"
-                },
-                ko: {
-                    stores: "📍 **타이핑 블루 매장 및 공방 안내**:\n\n1. **토변갱 염색 공방 (전시 및 DIY 체험 센터)**\n- **주소**: 臺中市太平區頭汴里長龍路四段 (생태공원 내)\n- **운영시간**: 월~일 09:00 - 17:00\n- **전화**: (04) 2227-7826\n\n2. **재단법인 수원지 문화교육재단 본부**\n- **주소**: 臺中市北區育才街三巷3號3樓之4 (월~금 09:00-18:00)\n\n토변갱 공방에서 천연 쪽염색 DIY 체험을 즐겨보세요! 🌿",
-                    products: "👑 **타이핑 블루 베스트셀러 대표 작품 추천**:\n\n1. **100% 천연 실크 그라데이션 쪽염색 스카프** (Pinkoi 판매 1위, 산안개처럼 가벼움)\n2. **쪽염색 객가 동화 컬렉션 머플러** (전통 형염 공예, 하얀 동백꽃의 피어남)\n3. **Sparkling 쪽염색 목재 벽시계** ('대만 우수 공예품' 인증)\n4. **쪽염색 무드 일본식 목재 탁상등** (원목과 투광 손염색 천의 조화)\n\n온라인 전시관에서 작품을 클릭해 음성 도슨트를 듣거나 **Pinkoi 공식 스토어**(NT$ 2,000 이상 무료 배송)에서 구매하실 수 있습니다! 🛍️",
-                    diy: "🎨 **타이핑 블루 천연 쪽염색 DIY 체험 프로그램 예약**:\n\n- **장소**: 타이중시 타이핑구 토변갱 염색 공방\n- **인기 프로그램**: 쪽염색 손수건, 패턴 스카프, 에코백 등\n- **예약 문의**: **(04) 2227-7826**\n\n미리 전화로 예약하시면 전문 공예사가 친절하게 안내해 드립니다! 🌿",
-                    default: "질문해 주셔서 감사합니다! 타이핑 블루 AI 가이드 '란란'입니다 🌿\n\n타이핑 블루는 100% 천연 쪽 발효 염색을 고집합니다.\n다음 내용에 대해 질문하실 수 있습니다:\n1. 📍 **매장 위치 및 DIY 체험 예약**\n2. 👑 **베스트셀러 인기 작품 추천**\n3. 🌿 **천연 쪽염색 세탁 및 관리법**\n\n오늘 어떤 도움이 필요하신가요?"
-                },
-                it: {
-                    stores: "📍 **Informations Punti Vendita e Laboratorio TAIPING BLUE**:\n\n1. **Laboratorio di Tintura Toubiankeng (Galleria e Centro DIY)**\n- **Indirizzo**: Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Orari**: Lun - Dom 09:00 - 17:00\n- **Tel**: +886-4-2227-7826\n\n2. **Sede Fondazione Young Water**\n- **Indirizzo**: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City (Lun - Ven 09:00-18:00)\n\nTi aspettiamo al Laboratorio Toubiankeng per un'esperienza DIY unica! 🌿",
-                    products: "👑 **Consigli sulle migliori vendite TAIPING BLUE**:\n\n1. **Sciarpa in seta pura 100% sfumata all'indigo** (N. 1 delle vendite su Pinkoi, leggera come la nebbia)\n2. **Sciarpa Fiori di Tung Hakka all'indigo** (Artigianato stencil tradizionale)\n3. **Orologio da parete in legno scintillante all'indigo** (Certificato \"Taiwan Good Craft\")\n4. **Lampada da tavolo giapponese in legno e indigo** (Legno massello e tessuto tinto a mano)\n\nClicca su qualsiasi opera nella galleria per ascoltarne la storia, o visita il nostro **Shop Ufficiale Pinkoi** (Spedizione gratuita sopra NT$ 2.000)! 🛍️",
-                    diy: "🎨 **Prenotazione Workshop DIY di Tintura all'Indigo Naturale**:\n\n- **Luogo**: Laboratorio Toubiankeng, Taiping Dist., Taichung City\n- **Attività**: Fazzoletti tinti, sciarpe decorate, borse in tela, ecc.\n- **Telefono**: **+886-4-2227-7826**\n\nPrenotazione telefonica consigliata. I nostri maestri artigiani ti guideranno! 🌿",
-                    default: "Grazie per la tua domanda! Sono Lanlan, la tua guida virtuale AI per Taiping Blue 🌿\n\nTaiping Blue utilizza 100% indigo naturale a fermentazione vegetale.\nPuoi chiedermi informazioni su:\n1. 📍 **Punti vendita e prenotazione workshop DIY**\n2. 👑 **Prodotti più venduti e consigliati**\n3. 🌿 **Guida al lavaggio e manutenzione**\n\nCome posso aiutarti oggi?"
                 }
             };
 
             const langDict = answers[selectedLang] || answers.zh;
 
-            if (lowerMsg.includes('門市') || lowerMsg.includes('據點') || lowerMsg.includes('地址') || lowerMsg.includes('營業時間') || lowerMsg.includes('電話') || lowerMsg.includes('工坊') || lowerMsg.includes('store') || lowerMsg.includes('address') || lowerMsg.includes('店舗') || lowerMsg.includes('주소') || lowerMsg.includes('magazzino')) {
+            if (lowerMsg.includes('門市') || lowerMsg.includes('據點') || lowerMsg.includes('地址') || lowerMsg.includes('營業時間') || lowerMsg.includes('電話') || lowerMsg.includes('工坊') || lowerMsg.includes('store') || lowerMsg.includes('address')) {
                 return langDict.stores;
             }
 
-            if (lowerMsg.includes('熱銷') || lowerMsg.includes('作品') || lowerMsg.includes('商品') || lowerMsg.includes('推薦') || lowerMsg.includes('絲巾') || lowerMsg.includes('圍巾') || lowerMsg.includes('掛鐘') || lowerMsg.includes('sell') || lowerMsg.includes('popular') || lowerMsg.includes('product') || lowerMsg.includes('おすすめ') || lowerMsg.includes('상품') || lowerMsg.includes('meilleur')) {
+            if (lowerMsg.includes('熱銷') || lowerMsg.includes('作品') || lowerMsg.includes('商品') || lowerMsg.includes('推薦') || lowerMsg.includes('絲巾') || lowerMsg.includes('圍巾') || lowerMsg.includes('掛鐘') || lowerMsg.includes('sell') || lowerMsg.includes('popular') || lowerMsg.includes('product')) {
                 return langDict.products;
             }
 
-            if (lowerMsg.includes('diy') || lowerMsg.includes('體驗') || lowerMsg.includes('預約') || lowerMsg.includes('手作') || lowerMsg.includes('workshop') || lowerMsg.includes('book') || lowerMsg.includes('体験') || lowerMsg.includes('予約') || lowerMsg.includes('체험') || lowerMsg.includes('예약')) {
+            if (lowerMsg.includes('diy') || lowerMsg.includes('體驗') || lowerMsg.includes('預約') || lowerMsg.includes('手作') || lowerMsg.includes('workshop') || lowerMsg.includes('book')) {
                 return langDict.diy;
             }
 
@@ -2099,7 +2008,7 @@
 
             document.getElementById('edit-id').value = p.id;
             document.getElementById('edit-name').value = p.name || '';
-            document.getElementById('edit-category').value = p.category || '配件';
+            document.getElementById('edit-category').value = p.category || 'Accessories';
             document.getElementById('edit-pinkoiUrl').value = p.pinkoiUrl || '';
             document.getElementById('edit-img').value = p.img || '';
             document.getElementById('edit-shortDesc').value = p.shortDesc || '';
@@ -2151,7 +2060,6 @@
             const isSaved = saveProductsData(productsData);
             if (!isSaved) return;
 
-            // Sync active product modal immediately if open
             if (activeProduct && activeProduct.id === updatedP.id) {
                 activeProduct = getProductContent(updatedP, currentLang);
                 const modalImg = document.getElementById('modal-img');
@@ -2166,7 +2074,7 @@
             filterCategory(currentCategory);
             closeEditorModal();
             renderManagerProductList();
-            showToast(currentLang === 'zh' ? "作品資料與圖片已成功連動儲存！" : "Product & image saved successfully!", "success");
+            showToast(currentLang === 'zh' ? "作品資料已成功儲存！" : "Product & image saved successfully!", "success");
         }
 
         function openManagerModal() {
@@ -2197,10 +2105,10 @@
                     <td class="p-3 font-bold text-indigo-950">${p.name}</td>
                     <td class="p-3"><span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-full text-[10px]">${p.category}</span></td>
                     <td class="p-3 text-right space-x-1">
-                        <button class="edit-btn px-2.5 py-1 rounded-lg bg-indigo-100 hover:bg-indigo-200 text-indigo-900 font-bold transition" title="編輯">
+                        <button class="edit-btn px-2.5 py-1 rounded-lg bg-indigo-100 hover:bg-indigo-200 text-indigo-900 font-bold transition" title="Edit">
                             <i class="fa-solid fa-pen"></i>
                         </button>
-                        <button class="delete-btn px-2.5 py-1 rounded-lg bg-rose-100 hover:bg-rose-200 text-rose-800 font-bold transition" title="刪除">
+                        <button class="delete-btn px-2.5 py-1 rounded-lg bg-rose-100 hover:bg-rose-200 text-rose-800 font-bold transition" title="Delete">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </td>
@@ -2235,12 +2143,12 @@
             const file = event.target.files[0];
             if (!file) return;
 
-            showToast(currentLang === 'zh' ? "📷 正在壓縮並最佳化圖片..." : "📷 Compressing & optimizing image...", "info");
+            showToast(currentLang === 'zh' ? "📷 正在壓縮圖片..." : "📷 Compressing image...", "info");
 
             compressAndResizeImage(file, 800, 800, 0.75, function(compressedDataUrl) {
                 document.getElementById('edit-img').value = compressedDataUrl;
                 handleImageUrlInput(compressedDataUrl, file.name);
-                showToast(currentLang === 'zh' ? "✨ 圖片已成功壓縮並連動！" : "✨ Image compressed and linked successfully!", "success");
+                showToast(currentLang === 'zh' ? "✨ 圖片已連動！" : "✨ Image compressed and linked successfully!", "success");
             });
         }
 
@@ -2269,7 +2177,7 @@
                     callback(compressedDataUrl);
                 };
                 img.onerror = function() {
-                    showToast(currentLang === 'zh' ? "⚠️ 無法讀取此圖片檔案" : "⚠️ Unable to read image file", "error");
+                    showToast(currentLang === 'zh' ? "⚠️ 無法讀取此圖片" : "⚠️ Unable to read image file", "error");
                 };
                 img.src = e.target.result;
             };
@@ -2309,19 +2217,19 @@
             const process = document.getElementById('edit-process').value.trim();
             
             if (!name && !concept) {
-                showToast(currentLang === 'zh' ? "請先填寫作品名稱或理念" : "Please enter a title or concept first.", "error");
+                showToast(currentLang === 'zh' ? "請先填寫作品名稱" : "Please enter a title or concept first.", "error");
                 return;
             }
 
             const text = `歡迎欣賞太平藍經典作品『${name || '藍染藝品'}』。${concept} 製作過程中，${process} 邀請您細細品味這份來自台灣頭汴坑的天然手染溫情。`;
             document.getElementById('edit-fullTranscript').value = text;
-            showToast(currentLang === 'zh' ? "已成功自動合成導覽全文！" : "Transcript auto-generated!", "success");
+            showToast(currentLang === 'zh' ? "已自動合成導覽全文！" : "Transcript auto-generated!", "success");
         }
 
         function createNewProduct() {
             document.getElementById('edit-id').value = `p_${Date.now()}`;
             document.getElementById('edit-name').value = '';
-            document.getElementById('edit-category').value = '配件';
+            document.getElementById('edit-category').value = 'Accessories';
             document.getElementById('edit-pinkoiUrl').value = 'https://www.pinkoi.com/store/taiping-blue';
             document.getElementById('edit-img').value = '';
             document.getElementById('edit-shortDesc').value = '';
@@ -2333,15 +2241,6 @@
             
             clearUploadedImage();
             document.getElementById('editor-modal').classList.remove('hidden');
-        }
-
-        function exportProductsJson() {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(productsData, null, 2));
-            const dlAnchorElem = document.createElement('a');
-            dlAnchorElem.setAttribute("href", dataStr);
-            dlAnchorElem.setAttribute("download", `taiping_blue_backup_${Date.now()}.json`);
-            dlAnchorElem.click();
-            showToast(currentLang === 'zh' ? "備份檔已開始下載" : "Backup JSON downloading...", "success");
         }
 
         function importProductsJson(event) {
@@ -2359,7 +2258,7 @@
                         renderManagerProductList();
                         showToast(currentLang === 'zh' ? "作品備份成功匯入！" : "JSON imported successfully!", "success");
                     } else {
-                        showToast(currentLang === 'zh' ? "格式無效：需為作品陣列" : "Invalid JSON structure.", "error");
+                        showToast(currentLang === 'zh' ? "格式無效" : "Invalid JSON structure.", "error");
                     }
                 } catch (err) {
                     showToast(currentLang === 'zh' ? "JSON 解析失敗" : "JSON parse error.", "error");
@@ -2430,7 +2329,7 @@
         }
 
         function getIndigoSvgFallback(text) {
-            const label = encodeURIComponent(text || '太平藍染');
+            const label = encodeURIComponent(text || 'TAIPING BLUE');
             return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%230f172a"/><path d="M 0 200 Q 150 100 300 200 T 600 200 L 600 400 L 0 400 Z" fill="%231e1b4b" opacity="0.8"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23fef08a" font-family="sans-serif" font-size="28" font-weight="bold">${label}</text></svg>`;
         }
 
