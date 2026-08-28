@@ -38,9 +38,7 @@
         html[lang="fr"] body, body.lang-fr { font-family: var(--font-fr); }
         html[lang="it"] body, body.lang-it { font-family: var(--font-it); }
 
-        .font-serif {
-            font-family: inherit;
-        }
+        .font-serif { font-family: inherit; }
         html[lang="zh"] .font-serif, body.lang-zh .font-serif { font-family: 'Noto Serif TC', serif; }
         html[lang="ja"] .font-serif, body.lang-ja .font-serif { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; }
         html[lang="en"] .font-serif, body.lang-en .font-serif { font-family: 'Playfair Display', serif; }
@@ -50,11 +48,6 @@
 
         .bg-indigo-gradient {
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #1e3a8a 100%);
-        }
-        .glass-dark {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
         }
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
@@ -67,13 +60,6 @@
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #312e81;
             border-radius: 8px;
-        }
-        @keyframes pulse-subtle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.85; transform: scale(1.03); }
-        }
-        .animate-pulse-subtle {
-            animation: pulse-subtle 3s infinite ease-in-out;
         }
         .drawer-slide {
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -170,7 +156,7 @@
                 </button>
             </nav>
 
-            <!-- Right Controls & Language Switcher (Defaulting to Traditional Chinese) -->
+            <!-- Right Controls & Language Switcher -->
             <div class="flex items-center gap-2 sm:gap-3">
                 <div class="flex items-center gap-1 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-1">
                     <i class="fa-solid fa-globe text-indigo-800 text-xs"></i>
@@ -236,15 +222,15 @@
                         <span class="flex items-center gap-2.5"><i class="fa-solid fa-border-all w-5 text-indigo-800"></i><span data-i18n="cat_all">全系列作品 ALL</span></span>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
                     </button>
-                    <button onclick="filterCategory('Accessories', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="Accessories">
+                    <button onclick="filterCategory('配件', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="配件">
                         <span class="flex items-center gap-2.5"><i class="fa-solid fa-hat-wizard w-5 text-indigo-800"></i><span data-i18n="cat_acc">穿搭配件 ACCESSORIES</span></span>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
                     </button>
-                    <button onclick="filterCategory('Decor', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="Decor">
+                    <button onclick="filterCategory('家飾', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="家飾">
                         <span class="flex items-center gap-2.5"><i class="fa-solid fa-couch w-5 text-indigo-800"></i><span data-i18n="cat_decor">生活家飾 DECOR</span></span>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
                     </button>
-                    <button onclick="filterCategory('Apparel', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="Apparel">
+                    <button onclick="filterCategory('服飾', true); closeDrawer();" class="drawer-cat-btn w-full text-left px-3 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-900 transition flex items-center justify-between" data-category="服飾">
                         <span class="flex items-center gap-2.5"><i class="fa-solid fa-shirt w-5 text-indigo-800"></i><span data-i18n="cat_apparel">工藝服飾 APPAREL</span></span>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
                     </button>
@@ -291,7 +277,7 @@
     </div>
 
     <!-- Hero Banner Section -->
-    <section class="relative bg-indigo-gradient text-white overflow-hidden shadow-md bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(10, 15, 29, 0.85) 0%, rgba(15, 23, 42, 0.78) 50%, rgba(10, 15, 29, 0.90) 100%), url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1920&q=80');">
+    <section class="relative bg-indigo-950 text-white overflow-hidden shadow-md bg-cover bg-center transition-all duration-500" style="background-image: linear-gradient(to right, rgba(3, 13, 34, 0.88) 0%, rgba(12, 26, 64, 0.82) 50%, rgba(16, 42, 107, 0.90) 100%), url('Gemini_Generated_Image_trz48trz48trz48t.jpg');">
         <div id="hero-carousel" class="relative min-h-[400px] sm:min-h-[480px] flex items-center justify-center">
             <div class="hero-slide active w-full px-4 sm:px-8 lg:px-12 py-16 transition-opacity duration-700 opacity-100">
                 <div class="max-w-5xl mx-auto text-center space-y-5 sm:space-y-7">
@@ -658,9 +644,9 @@
                     <div>
                         <label class="block font-bold text-indigo-950 mb-1" data-i18n="edit_lbl_cat">作品分類</label>
                         <select id="edit-category" class="w-full px-3 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-600">
-                            <option value="Accessories">Accessories</option>
-                            <option value="Decor">Decor</option>
-                            <option value="Apparel">Apparel</option>
+                            <option value="配件">穿搭配件 (Accessories)</option>
+                            <option value="家飾">生活家飾 (Decor)</option>
+                            <option value="服飾">工藝服飾 (Apparel)</option>
                         </select>
                     </div>
                 </div>
@@ -759,6 +745,9 @@
                 </button>
 
                 <div class="flex items-center gap-2 flex-wrap">
+                    <button onclick="exportProductsJson()" class="px-3.5 py-2 rounded-xl bg-indigo-900 hover:bg-indigo-950 text-white font-semibold flex items-center gap-1 shadow-xs">
+                        <i class="fa-solid fa-download"></i> <span data-i18n="mgr_btn_export">匯出 JSON 備份</span>
+                    </button>
                     <label class="px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold cursor-pointer flex items-center gap-1">
                         <i class="fa-solid fa-upload"></i> <span data-i18n="mgr_btn_import">匯入 JSON</span>
                         <input type="file" accept=".json" onchange="importProductsJson(event)" class="hidden">
@@ -917,9 +906,8 @@
 
         let isAiChatOpen = false;
         let isAiThinking = false;
-        let aiChatHistory = [];
 
-        // Full Synchronized 6-Language Translation Dictionary
+        // Synchronized 6-Language Translation Dictionary (Includes full product catalog p1~p15)
         const i18nDict = {
             zh: {
                 brand_name: "太平藍染", brand_subtitle: "天然植物發酵 ‧ 台灣工藝品牌",
@@ -936,7 +924,6 @@
                 hero_title: "取之於藍，青勝於藍<br><span class=\"text-amber-300\">登上國際舞台的台灣天然手染<span class=\"inline-block\">工藝</span></span>",
                 hero_desc: "起源於921震後陪伴社區重建的深厚溫情，「太平藍」由財團法人水源地文教基金會輔導創立，堅持純天然馬藍與植物發酵染色，運用絞染、縫染、型染與板夾染等四傳統防染技法，揉合客家紋樣與現代美學。",
                 hero_btn_explore: "開始語音巡禮導覽",
-                guide_title: "太平藍 語音導覽員", guide_desc: "點擊展區任何作品，即為您說故事", guide_voice: "導覽音色：",
                 sec_subtitle: "Taiping Blue Exhibition", sec_title: "太平藍 典藏展品導覽區", btn_add_product: "新增藍染作品",
                 cat_all: "全系列作品 ALL", cat_acc: "穿搭配件 ACCESSORIES", cat_decor: "生活家飾 DECOR", cat_apparel: "工藝服飾 APPAREL",
                 news_subtitle: "Honors & Media Coverage", news_title: "榮譽獎項與新聞報導", news_tip: "點擊報導標題即可開啟新聞報導網址", news_read_more: "閱讀完整報導",
@@ -999,7 +986,6 @@
                 hero_title: "Surpassing Pure Blue<br><span class=\"text-amber-300\">Taiwanese Natural Indigo Craft on the World Stage</span>",
                 hero_desc: "Founded by Young Water Foundation following post-earthquake community reconstruction, Taiping Blue preserves 100% natural plant-fermented indigo dyeing utilizing traditional resist techniques.",
                 hero_btn_explore: "Start Audio Tour",
-                guide_title: "Taiping Blue Audio Guide", guide_desc: "Click any item to listen to its story", guide_voice: "Guide Voice:",
                 sec_subtitle: "Taiping Blue Exhibition", sec_title: "Taiping Blue Exhibition Gallery", btn_add_product: "Add Craft Item",
                 cat_all: "All Collections ALL", cat_acc: "Accessories ACCESSORIES", cat_decor: "Home Decor DECOR", cat_apparel: "Craft Apparel APPAREL",
                 news_subtitle: "Honors & Media Coverage", news_title: "Awards & Press Coverage", news_tip: "Click news title to open full media coverage URL", news_read_more: "Read Full Article",
@@ -1025,7 +1011,7 @@
                 tab_concept: "💡 Concept", tab_process: "🧵 Craft Process", tab_timing: "✨ Occasion", tab_detail: "📦 Details",
                 btn_play: "Play Story Guide", btn_pause: "Pause Guide", btn_buy: "Buy on Pinkoi", btn_edit: "Edit Craft",
                 edit_modal_title: "Edit Craft Details", edit_lbl_name: "Craft Name", edit_lbl_cat: "Category",
-                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "Craft Image (Upload image or paste URL)", edit_btn_upload_img: "Upload Local Image", edit_lbl_shortdesc: "Short Description", edit_lbl_concept: "💡 Concept",
+                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "Craft Image", edit_btn_upload_img: "Upload Local Image", edit_lbl_shortdesc: "Short Description", edit_lbl_concept: "💡 Concept",
                 edit_lbl_process: "🧵 Process", edit_lbl_timing: "✨ Occasion", edit_lbl_detail: "📦 Detail", edit_lbl_transcript: "🎙️ TTS Transcript",
                 edit_btn_autogen: "Auto Generate Transcript", edit_btn_cancel: "Cancel", edit_btn_save: "Save Changes",
                 mgr_title: "Exhibition Management Center", mgr_desc: "Add, edit, delete craft items, or export/import website data backup.",
@@ -1039,261 +1025,310 @@
 
                 ai_hint: "Ask Lanlan AI Assistant!", ai_badge_btn: "AI Guide",
                 ai_name: "Lanlan ‧ AI Assistant & Guide", ai_subtitle: "24/7 assistance for Taiping Blue crafts and stores",
-                ai_welcome: "<p>Hello! I am <b>Lanlan</b>, your AI Guide for Taiping Blue 🌿</p><p>Feel free to ask me about <b>traditional indigo crafts, product details, DIY workshops, store locations</b> or <b>our honors and news</b>! How can I help you today?</p>",
+                ai_welcome: "<p>Hello! I am <b>Lanlan</b>, your AI Guide for Taiping Blue 🌿</p><p>Feel free to ask me about <b>traditional indigo crafts, product details, DIY workshops, store locations</b> or <b>our honors and news</b>!</p>",
                 ai_quick_label: "Quick Questions:",
                 ai_q1_btn: "📍 Stores & Workshop", ai_q1_text: "What are the address and opening hours of Toubiankeng Workshop?",
                 ai_q2_btn: "👑 Best Selling Items", ai_q2_text: "What are the most popular best-selling items at Taiping Blue?",
                 ai_q3_btn: "🎨 DIY Workshop Booking", ai_q3_text: "How can I book a hands-on indigo DIY workshop experience?",
                 ai_q4_btn: "🏆 Brand Honors & Press", ai_q4_text: "Tell me about Taiping Blue's brand origin and awards.",
-                ai_input_placeholder: "Ask about Taiping Blue...", ai_user_label: "You", ai_reset_toast: "Chat history reset successfully"
+                ai_input_placeholder: "Ask about Taiping Blue...", ai_user_label: "You", ai_reset_toast: "Chat history reset successfully",
+
+                // Full EN Product Translations
+                p1: { name: "Botanical Plant-Dyed Scarf", category: "配件", shortDesc: "Dyed with natural Sophora japonica and turmeric, featuring a warm yellow gradient and soft touch.", concept: "Made with Sophora japonica and turmeric, reflecting a warm, sunny yellow gradient.", process: "Crafted on breathable cotton-linen fabric through room-temperature immersion and solar oxidation.", timing: "Ideal for spring/autumn warmth, stylish outfit accents, or thoughtful gifting.", detail: "Material: Cotton-linen blend. Features: 100% natural plant dyeing with gentle warmth.", fullTranscript: "Welcome to the Botanical Plant-Dyed Scarf. Dyed with natural Sophora japonica and turmeric, it features a warm yellow gradient and skin-friendly comfort." },
+                p2: { name: "Indigo Square Scarf DIY Kit", category: "配件", shortDesc: "Enjoy hand-dyeing indigo craft at home! Includes natural indigo dye, cotton square scarf, and tools.", concept: "Bring Toubiankeng Workshop's indigo craft home and experience traditional resist dyeing.", process: "Includes fermented indigo powder, pure cotton scarf, wooden resist blocks, rubber bands, and step-by-step guide.", timing: "Great for parent-child activities, weekend DIY projects, or educational workshops.", detail: "Package: Natural indigo powder, cotton scarf, wooden resist tools, and instruction booklet.", fullTranscript: "Discover the Indigo Square Scarf DIY Kit. Create your unique indigo pattern at home with natural plant dyes." },
+                p3: { name: "Indigo Handkerchief (Large)", category: "配件", shortDesc: "Large pure cotton handkerchief featuring traditional tie-dyed water wave patterns. Absorbent and eco-friendly.", concept: "Embracing Hakka frugality and eco-living by replacing single-use paper towels with reusable craft cloth.", process: "Crafted using hand-bound tie-dyeing, capturing vibrant indigo wave motifs over 12 immersion cycles.", timing: "Perfect for daily pocket carry, active sports use, or elegant gift wrapping.", detail: "Material: 100% absorbent cotton. Size: Large. Craft: Traditional tie-dye.", fullTranscript: "This is the Large Indigo Handkerchief. Highly absorbent pure cotton with crisp tie-dyed patterns." },
+                p4: { name: "Indigo Silk Tie", category: "配件", shortDesc: "Gentleman's essential! Infusing traditional indigo resist dyeing into modern business wear.", concept: "Combining ancient indigo resist techniques with contemporary gentlemen's formalwear.", process: "Premium silk-blend tie fabric dyed diagonally using tie-binding methods, ironed and hand-stitched.", timing: "Ideal for business conferences, art galas, weddings, and formal occasions.", detail: "Material: Silk blend hand-dyed fabric. Specification: Standard gentleman tie.", fullTranscript: "Welcome to the Indigo Silk Tie. Combining traditional hand-dyeing with modern menswear for a sophisticated look." },
+                p5: { name: "Indigo Handkerchief (Small)", category: "配件", shortDesc: "Compact cotton handkerchief with soft blue-white cloud patterns, perfect for pocket carry.", concept: "Pocket-sized elegance to accompany your everyday routines with natural soft cotton.", process: "100% cotton dyed in Strobilanthes cusia vats, naturally oxidized and washed smooth.", timing: "Daily pocket carry, kids' school use, or delicate gift accent.", detail: "Material: 100% cotton. Size: Small portable size. Craft: Natural plant dyeing.", fullTranscript: "This is the Small Indigo Handkerchief. Compact and portable, offering soft cotton comfort." },
+                p6: { name: "Indigo Water Wave Coaster", category: "家飾", shortDesc: "Exquisite hand-dyed coaster bringing elegant indigo charm to your tea table and desk.", concept: "Capturing Toubiankeng stream ripples on a coaster, protecting surfaces with artistic flare.", process: "Thick cotton fabric stencil-printed and stitch-dyed with water motifs, color-fixed through multiple vats.", timing: "Office desks, coffee tables, reading nooks, or boutique tea rooms.", detail: "Material: Thick absorbent cotton. Features: Non-slip, heat-resistant, washable.", fullTranscript: "Presenting the Indigo Water Wave Coaster. Water wave motifs add a tranquil craft accent to your tea time." },
+                p7: { name: "Indigo Handkerchief (Medium)", category: "配件", shortDesc: "Classic medium size cotton handkerchief with traditional stitch and tie-dye motifs.", concept: "Our golden standard size blending everyday utility with hand-dyed artistic beauty.", process: "Hand-stitched resist dyeing immersed repeatedly in room-temperature indigo vats.", timing: "Daily outing, dining napkin, or accessory wrap.", detail: "Material: 100% cotton. Size: Medium. Craft: Natural indigo dyeing.", fullTranscript: "This is the Medium Indigo Handkerchief. Soft to touch, featuring intricate hand-stitched resist patterns." },
+                p8: { name: "Indigo Long Scarf", category: "配件", shortDesc: "Classic indigo long scarf with natural gradient blue-white contrast and elegant fringe.", concept: "Weaving nature's seasonal shifts into breathable cotton-linen fibers.", process: "Fine cotton-linen bound with cords and dyed through multiple natural fermentation cycles.", timing: "Autumn/winter warmth, daily styling, travel, or premium gifting.", detail: "Material: Premium cotton-linen blend. Spec: Long scarf with fringe.", fullTranscript: "Presenting the Indigo Long Scarf. Gradient indigo dyeing brings warmth and timeless elegance." },
+                p9: { name: "Indigo Table Placemat Set", category: "家飾", shortDesc: "Elegant hand-dyed placemat and coaster set, adding Oriental Zen aesthetic to home dining.", concept: "Elevating daily dining into a mindful ritual with serene indigo motifs.", process: "Heavyweight cotton dyed using clamp and stitch resist techniques, finished with hemmed borders.", timing: "Family dinners, holiday table decor, tea gatherings, or housewarming gifts.", detail: "Set: Rectangular placemat and square coaster. Material: Washable cotton.", fullTranscript: "This is the Indigo Table Placemat Set, creating a serene and warm dining experience." },
+                p10: { name: "Indigo Table Runner", category: "家飾", shortDesc: "Stretched along solid wood tables, showcasing rich gradient indigo waves for tea ceremonies.", concept: "Symbolizing a flowing river of culture, injecting vibrant indigo energy into solid wood tables.", process: "Long heavy cotton dyed with large clamp-resist and gradient immersion over 12 cycles.", timing: "Tea ceremony setups, wooden dining tables, or art space decor.", detail: "Material: Heavy hand-dyed cotton. Spec: Long table runner. Craft: Gradient clamp dye.", fullTranscript: "Welcome to the Indigo Table Runner. Gradient blue hues flow like a stream across your tea table." },
+                p11: { name: "Indigo Hakka Bucket Hat", category: "配件", shortDesc: "Featuring Hakka Tung flower stencil motifs. Durable cotton fabric providing sun shade with local craft flair.", concept: "Integrating Hakka Tung flower motifs into a bucket hat for sun protection and community heritage.", process: "Durable cotton canvas stencil-printed with rice paste resist, dyed in indigo, and tailored.", timing: "Outdoor leisure, shopping trips, community walks, or casual styling.", detail: "Material: Cotton canvas. Type: Bucket hat. Pattern: Hakka Tung flower stencil.", fullTranscript: "This is the Indigo Hakka Bucket Hat. Stencil-printed Tung flowers on durable indigo canvas." },
+                p12: { name: "Indigo 100% Silk Scarf", category: "配件", shortDesc: "100% pure silk creating morning mist-like blue gradients, lightweight and flowing.", concept: "Fusing misty mountain indigo with pure silk for ultimate feminine elegance.", process: "100% silk hand-bound and immersed in natural indigo fermentation vats, sun-oxidized.", timing: "Art exhibitions, formal galas, multi-season warmth, or luxury gifting.", detail: "Material: 100% natural silk. Features: Ultra-light, smooth, unique gradient pattern.", fullTranscript: "Introducing the Indigo 100% Silk Scarf. Pure silk with luminous gradient indigo hues." },
+                p13: { name: "Botanical Silk Scarf (Madder Pink)", category: "配件", shortDesc: "Dyed with natural madder root, presenting soft cherry blossom pink gradients.", concept: "Extracting madder root pigments to craft a soft, romantic spring pink gradient.", process: "Pure silk simmered with madder root dye, low-temperature immersed, and color-fixed.", timing: "Spring outings, date nights, air-conditioned rooms, or sweet gifting.", detail: "Material: 100% pure silk. Dye: Natural Madder Root. Feature: Soft pink gradient.", fullTranscript: "This is the Botanical Silk Scarf in Madder Pink. Natural madder root creates a soft, romantic hue." },
+                p14: { name: "Indigo Multi-Styling Bandana", category: "配件", shortDesc: "Versatile small bandana for neck knots, headband, or bag accents.", concept: "A nimble small neckerchief offering flexible wearing options for youthful energy.", process: "Soft cotton blend tie-dyed in indigo, washed, trimmed, and ironed.", timing: "Neck scarf, hairband, bag accent, or wrist accessory.", detail: "Material: Cotton blend. Spec: Multi-functional small bandana.", fullTranscript: "Introducing the Indigo Multi-Styling Bandana. Add a vibrant indigo touch to your outfit or handbag." },
+                p15: { name: "Indigo Hakka Cushion Cover", category: "家飾", shortDesc: "Stitch-dyed Hakka water wave pattern on heavy cotton with corner tassels.", concept: "Bringing natural healing energy and comforting warmth to your sofa or bed.", process: "Heavy cotton hand-stitched with wave patterns, indigo-dyed, adorned with 4 tassels.", timing: "Sofa cushions, bed headboard pillows, reading chairs, or housewarming gifts.", detail: "Material: 100% heavy cotton cover, high-elastic insert. Spec: Square removable cover.", fullTranscript: "Finally, presenting the Indigo Hakka Cushion Cover. Hand-stitched Hakka wave patterns for cozy home comfort." }
             },
             ja: {
-                brand_name: "太平藍染", brand_subtitle: "天然植物発酵 ‧ 台湾工芸ブランド",
-                top_notice_tag: "NEWS", top_notice_text: "🌿 水源地文教基金会 ‧ 100%天然ナンバンアイ発酵染色 ‧ 館内音声ガイドシステム稼働中",
-                top_free_ship: "Pinkoi公式ショップ 宅配送料無料キャンペーン実施中",
-                nav_cat_all_title: "全作品", nav_cat_all_sub: "ALL",
-                nav_news_title: "ニュース", nav_news_sub: "NEWS",
-                nav_craft_title: "伝統技法", nav_craft_sub: "CRAFT",
-                nav_stores_title: "店舗案内", nav_stores_sub: "STORES",
-                drawer_sec_categories: "商品カテゴリー CATEGORIES", drawer_sec_about: "ブランド・店舗 ABOUT & STORES", drawer_sec_tools: "ツール・設定 TOOLS",
-                btn_fb: "FB公式ページ", btn_pinkoi: "Pinkoi公式ショップ", btn_youngwater: "水源地基金会", btn_manager: "管理・編集",
-                btn_tour_start: "音声ガイドを開始", btn_tour_stop: "音声ガイドを終了",
-                hero_badge: "台中太平頭汴坑の緑と藍 ‧ 台湾天然手染め美学",
-                hero_title: "青は藍より出でて藍より青し<br><span class=\"text-amber-300\">世界へ羽ばたく台湾の天然藍染工芸</span>",
-                hero_desc: "921大震災後の地域復興から生まれた「太平藍（タイピンブルー）」は、水源地文教基金会の支援のもと設立されました。100%天然のリュウキュウアイ（馬藍）と植物発酵染色にこだわり、絞り染め、縫い染め、型染め、板締め染めの4つの伝統技法を駆使して、客家文様と現代美学を融合させています。",
-                hero_btn_explore: "音声ガイド巡回を開始",
-                guide_title: "太平藍 音声ガイド", guide_desc: "作品をクリックすると解説が流れます", guide_voice: "音声タイプ：",
-                sec_subtitle: "Taiping Blue Exhibition", sec_title: "太平藍 典藏作品ガイドエリア", btn_add_product: "藍染作品を追加",
-                cat_all: "全作品 ALL", cat_acc: "ファッション雑貨 ACCESSORIES", cat_decor: "インテリア雑貨 DECOR", cat_apparel: "工芸ウェア APPAREL",
-                news_subtitle: "Honors & Media Coverage", news_title: "受賞歴・メディア掲載", news_tip: "見出しをクリックするとニュース記事が開きます", news_read_more: "記事全文を読む",
-                news_badge_craft: "臺灣工藝賞", news_badge_edu: "教育部貢献賞", news_badge_global: "国際賞ファイナリスト", news_badge_hr: "国家人材開発賞", news_badge_exhibition: "国際展示会",
-                news1_title: "太平藍が文化部工藝中心「2023臺灣工藝賞-協作賞」を受賞",
-                news1_desc: "台中太平頭汴坑の客家コミュニティ産業「太平藍」が、客家藍染めで世界とつながり工芸界最高峰の栄誉に輝きました。",
-                news2_title: "臺中太平藍が教育部「111年度社会教育貢献賞」を受賞",
-                news2_desc: "藍染工芸文化と環境サステナビリティで地域振興を推進し、社会教育推進の最高栄誉を獲得。",
-                news3_title: "台湾唯一！作品《流域記憶》がイタリア・バルチェッリーナ賞ファイナリストに選出",
-                news3_desc: "世界300点以上の応募の中から選ばれた台湾唯一の入選作として、世界を魅了しました。",
-                news4_title: "労働部「国家人材開発賞」を受賞 藍染工芸を人材育成に融合",
-                news4_desc: "伝統手染め工芸を通じて地域女性や若者を育成し、ロンドン・クラフト・ウィークやパリの展示会へ進出。",
-                news5_title: "ロンドン・クラフト・ウィークやパリ・メゾン・エ・オブジェに登場",
-                news5_desc: "シンガポール国際家具フェアでのグランプリ受賞や台北ファッションウィーク参画など、世界で高く評価されています。",
-                soul_subtitle: "Heritage & Craftsmanship", soul_title: "太平藍 魂の4工程と4大防染技法", soul_desc: "化学色素不使用。四季の移ろいに合わせ、職人の手によって十数回の染め重ねが行われます。",
-                step1_num: "一", step1_title: "採藍と発酵建て", step1_desc: "夏に山で馬藍の葉を採取し、水浸け、水飴や石灰を加えて天然発酵させ沈殿藍を抽出します。",
-                step2_num: "二", step2_title: "4つの伝統防染技法", step2_desc: "絞り染め、縫い染め、型染め、板締め染めを駆使し、鮮やかな藍と白の模様を生み出します。",
-                step3_num: "三", step3_title: "低温での繰り返し揉み染め", step3_desc: "常温の藍建て液に生地を浸し、手で12回以上揉み込み染料を繊維の奥まで浸透させます。",
-                step4_num: "四", step4_title: "日光酸化による自然発色", step4_desc: "空気に触れ日光を浴びることで黄緑色から深い湛藍色へと変化し、美しく発色します。",
-                stores_subtitle: "Store Locator & Workshop", stores_title: "店舗・頭汴坑工房のご案内",
-                store1_title: "頭汴坑染色工房 (展示・販売センター)", store1_addr: "住所：411 臺中市太平區頭汴里長龍路四段 (生態園區內)", store1_time: "営業時間：月〜日 09:00 - 17:00",
-                store2_title: "財團法人水源地文教基金會 本部", store2_addr: "住所：40444 臺中市北區育才街三巷3號3樓之4", store2_time: "受付時間：月〜金 09:00 - 18:00",
-                tab_concept: "💡 コンセプト", tab_process: "🧵 制作工程", tab_timing: "✨ おすすめシーン", tab_detail: "📦 商品詳細",
-                btn_play: "フルガイドを再生", btn_pause: "一時停止", btn_buy: "Pinkoiで購入", btn_edit: "作品を編集",
+                brand_name: "太平藍", brand_subtitle: "天然植物発酵 ‧ 台湾藍染工芸ブランド",
+                top_notice_tag: "NEWS", top_notice_text: "🌿 水源地文教基金会 ‧ 100%天然リュウキュウアイ発酵 ‧ 音声ガイド案内中",
+                top_free_ship: "Pinkoi公式ショップ 宅配送料無料特典",
+                nav_cat_all_title: "全作品", nav_cat_all_sub: "ALL", nav_news_title: "受賞ニュース", nav_news_sub: "NEWS",
+                nav_craft_title: "工藝工程", nav_craft_sub: "CRAFT", nav_stores_title: "店舗案内", nav_stores_sub: "STORES",
+                drawer_sec_categories: "商品カテゴリー", drawer_sec_about: "ブランド・店舗", drawer_sec_tools: "ツールと設定",
+                btn_fb: "Facebook公式", btn_pinkoi: "Pinkoiストア", btn_youngwater: "水源地公式サイト", btn_manager: "管理センター",
+                btn_tour_start: "全館音声ガイド開始", btn_tour_stop: "音声ガイド停止",
+                hero_badge: "台中太平頭汴坑から届く青と深い藍 ‧ 台湾自然染め美学",
+                hero_title: "青は藍より出でて藍より青し<br><span class=\"text-amber-300\">世界へ羽ばたく台湾伝統藍染工藝</span>",
+                hero_desc: "921大地震後の地域復興から生まれた「太平藍」。水源地文教基金会の支援のもと、天然の植物発酵と伝統防染技法を守り続けています。",
+                hero_btn_explore: "音声ツアーを開始",
+                sec_subtitle: "Taiping Blue Gallery", sec_title: "太平藍 藍染作品ギャラリー", btn_add_product: "作品を追加",
+                cat_all: "全作品 ALL", cat_acc: "ファッション雑貨 ACCESSORIES", cat_decor: "インテリア DECOR", cat_apparel: "アパレル APPAREL",
+                news_subtitle: "Awards & News", news_title: "栄誉とメディア報道", news_tip: "ニュースタイトルをクリックすると報道記事が開きます", news_read_more: "記事全文を読む",
+                news_badge_craft: "台湾工芸賞", news_badge_edu: "社会教育貢献賞", news_badge_global: "国際賞ファイナリスト", news_badge_hr: "国家人材開発賞", news_badge_exhibition: "世界展覧会",
+                news1_title: "太平藍が文化部「2023台湾工芸賞-協作賞」を受賞", news1_desc: "客家藍染工藝で若いデザイナーと地域の職人を結びつけ、最高峰の栄誉に輝きました。",
+                news2_title: "教育部「111年度社会教育貢献賞」を受賞", news2_desc: "伝統藍染工藝と環境サステナビリティによる地域貢献が高く評価されました。",
+                news3_title: "イタリア・ヴァルチェリーナ賞の最終選考に台湾唯一選出", news3_desc: "世界300点以上の作品から選ばれ、台湾のファイバーアートが世界を魅了しました。",
+                news4_title: "労働部「国家人材開発賞」を受賞", news4_desc: "地域の女性や若手を育成し、ロンドンクラフトウィークやパリ展覧会へ出展。",
+                news5_title: "ロンドンクラフトウィークやパリMaison&Objetに出展", news5_desc: "シンガポール国際家具展グランプリをはじめ世界で高い評価を獲得。",
+                soul_subtitle: "Heritage & Craftsmanship", soul_title: "太平藍 4つの魂の工程と防染技法", soul_desc: "化学色素不使用。職人が十数回重ねて染め上げる伝統の美。",
+                step1_num: "一", step1_title: "藍収穫と発酵建", step1_desc: "山で採集した藍の葉を自然発酵させ、天然の藍泥を抽出します。",
+                step2_num: "二", step2_title: "4つの伝統防染技法", step2_desc: "絞り染め、縫い染め、型染め、板締め染めで美しい模様を描きます。",
+                step3_num: "三", step3_title: "低温手もみ浸染", step3_desc: "常温の藍液で職人が手でもみ込み、12回以上染め重ねます。",
+                step4_num: "四", step4_title: "日光酸化と染着", step4_desc: "空気と太陽光に触れることで鮮やかな藍色へ変化します。",
+                stores_subtitle: "Stores & Workshop", stores_title: "全台湾店舗と頭汴坑工房",
+                store1_title: "頭汴坑染織工房 (展示販売センター)", store1_addr: "住所：台中市太平区頭汴里長龍路四段", store1_time: "営業時間：月〜日 09:00 - 17:00",
+                store2_title: "水源地文教基金会 本部", store2_addr: "住所：台中市北区育才街3巷3号3F-4", store2_time: "営業時間：月〜金 09:00 - 18:00",
+                tab_concept: "💡 コンセプト", tab_process: "🧵 制作工程", tab_timing: "✨ 着用シーン", tab_detail: "📦 詳細情報",
+                btn_play: "音声解説を再生", btn_pause: "一時停止", btn_buy: "Pinkoiで購入", btn_edit: "作品編集",
                 edit_modal_title: "作品情報の編集", edit_lbl_name: "作品名", edit_lbl_cat: "カテゴリー",
-                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "作品画像 (アップロードまたはURL)", edit_btn_upload_img: "ローカル画像を選択", edit_lbl_shortdesc: "簡潔な説明", edit_lbl_concept: "💡 コンセプト (Concept)",
-                edit_lbl_process: "🧵 制作工程 (Process)", edit_lbl_timing: "✨ おすすめシーン (Timing)", edit_lbl_detail: "📦 商品詳細 (Detail)", edit_lbl_transcript: "🎙️ 音声原稿全文",
-                edit_btn_autogen: "説明文から自動生成", edit_btn_cancel: "キャンセル", edit_btn_save: "変更を保存",
-                mgr_title: "展示・ガイド管理センター", mgr_desc: "作品の追加、編集、削除、またはバックアップデータの書き出し/読み込みが可能です。",
-                mgr_btn_export: "JSON書き出し", mgr_btn_import: "JSON読み込み", mgr_btn_reset: "初期データに戻す",
+                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "画像(アップロード/URL)", edit_btn_upload_img: "画像をアップロード", edit_lbl_shortdesc: "概要", edit_lbl_concept: "💡 コンセプト",
+                edit_lbl_process: "🧵 工程", edit_lbl_timing: "✨ シーン", edit_lbl_detail: "📦 詳細", edit_lbl_transcript: "🎙️ 音声原稿",
+                edit_btn_autogen: "自動合成", edit_btn_cancel: "キャンセル", edit_btn_save: "保存",
+                mgr_title: "作品管理センター", mgr_desc: "作品の追加、編集、削除やバックアップ管理が行えます。",
+                mgr_btn_export: "JSON出力", mgr_btn_import: "JSON入力", mgr_btn_reset: "初期化",
                 mgr_th_thumb: "画像", mgr_th_name: "作品名", mgr_th_cat: "分類", mgr_th_action: "操作",
-                footer_org: "太平藍染 Taiping Blue", footer_foundation_desc: "水源地文教基金会によって設立されたコミュニティクラフトブランド。震災復興から始まり、天然藍染を通じて地域の女性や若者の育成を行っています。",
+                footer_org: "太平藍 Taiping Blue", footer_foundation_desc: "水源地文教基金会が運営するコミュニティ工藝ブランド。",
                 footer_contact_title: "お問い合わせ", footer_hours: "営業時間：月〜金 09:00 - 18:00",
-                footer_headquarter: "基金会本部：40444 臺中市北區育才街三巷3號3樓之4",
-                footer_workshop: "頭汴坑工房：臺中市太平區頭汴里長龍路四段 (生態園區內)",
-                footer_links_title: "公式オンラインプラットフォーム", card_listen_guide: "音声ガイドを聴く",
-                ai_hint: "AIガイドの藍藍に質問！", ai_badge_btn: "AIガイド",
-                ai_name: "藍藍 ‧ AIガイド", ai_subtitle: "太平藍の工芸や店舗について24時間案内",
-                ai_welcome: "<p>こんにちは！太平藍のAIナビゲーター<b>「藍藍（ランラン）」</b>です 🌿</p><p><b>伝統的な藍染工芸、商品の魅力、DIY体験、店舗へのアクセス、受賞ニュース</b>など、何でもお気軽にご質問ください！</p>",
-                ai_quick_label: "よくある質問:",
-                ai_q1_btn: "📍 店舗・アクセス", ai_q1_text: "頭汴坑工房の住所と営業時間を教えてください。",
-                ai_q2_btn: "👑 人気おすすめ作品", ai_q2_text: "太平藍的一番人気の商品は何ですか？",
-                ai_q3_btn: "🎨 藍染DIY体験の予約", ai_q3_text: "藍染DIY体験の予約方法を教えてください。",
-                ai_q4_btn: "🏆 ブランドの歴史と受賞歴", ai_q4_text: "太平藍の設立背景と受賞歴について教えてください。",
-                ai_input_placeholder: "太平藍について質問する...", ai_user_label: "あなた", ai_reset_toast: "チャット履歴をリセットしました"
+                footer_headquarter: "基金会本部：台中市北区育才街3巷3号3F-4", footer_workshop: "頭汴坑工房：台中市太平区頭汴里長龍路四段",
+                footer_links_title: "公式プラットフォーム", card_listen_guide: "音声ガイドを聞く",
+                ai_hint: "AIガイド藍藍に質問！", ai_badge_btn: "AIガイド",
+                ai_name: "藍藍 ‧ AIコンシェルジュ", ai_subtitle: "太平藍の工藝や店舗についてご案内します",
+                ai_welcome: "<p>こんにちは！太平藍のAIコンシェルジュ<b>「藍藍（ランラン）」</b>です 🌿</p><p>藍染工藝、商品、ワークショップ体験、店舗案内など何でもお気軽にお聞きください！</p>",
+                ai_quick_label: "おすすめの質問:",
+                ai_q1_btn: "📍 店舗・工房アクセス", ai_q1_text: "頭汴坑工房の住所と営業時間を教えてください。",
+                ai_q2_btn: "👑 人気おすすめ作品", ai_q2_text: "太平藍の人気・売れ筋作品を教えてください。",
+                ai_q3_btn: "🎨 藍染体験の予約", ai_q3_text: "手作り藍染DIY体験の予約方法を教えてください。",
+                ai_q4_btn: "🏆 受賞とメディア報道", ai_q4_text: "太平藍の歴史や受賞経歴について教えてください。",
+                ai_input_placeholder: "太平藍について質問する...", ai_user_label: "あなた", ai_reset_toast: "会話履歴をリセットしました",
+
+                // Full JA Product Translations
+                p1: { name: "草木染めスカーフ", category: "配件", shortDesc: "槐とウコンを用いた天然草木染め。温かみのある黄色グラデーション。", concept: "天然の槐とウコンで染め上げた、陽光のようなグラデーション。", process: "綿麻生地に低温で何度ももみ込み染め、太陽光で酸化定着させています。", timing: "春秋の防寒やコーデのアクセント、ギフトに最適。", detail: "素材：綿麻混紡。特徴：肌に優しい100%天然植物染め。", fullTranscript: "「草木染めスカーフ」へようこそ。天然の草木で染め上げた明るく優しい黄色のスカーフです。" },
+                p2: { name: "藍染めハンカチ【DIY手作りキット】", category: "配件", shortDesc: "自宅で気軽に藍染体験！天然藍染料、綿ハンカチ、道具セット。", concept: "伝統の防染技法を自宅で体験できる手作りキット。", process: "天然藍染め粉、綿ハンカチ、木板、輪ゴム、ガイドブック入り。", timing: "親子体験、週末のDIY、ワークショップ教材に。", detail: "内容物：藍染料、純綿ハンカチ、防染道具、説明書。", fullTranscript: "「藍染めハンカチ DIYキット」のご案内です。世界に一つだけの藍染め作品を作りましょう。" },
+                p3: { name: "藍染め大判ハンカチ", category: "配件", shortDesc: "伝統の絞り染め波模様をあしらった大判綿ハンカチ。吸水性抜群。", concept: "使い捨てペーパーを減らし、エコで上品な生活を提案。", process: "職人が手絞りで模様を付け、12回以上染め重ねています。", timing: "普段持ち歩き、スポーツ、お弁当包みにも。", detail: "素材：100%綿。サイズ：大判。工藝：伝統絞り染め。", fullTranscript: "「藍染め大判ハンカチ」です。吸水性に優れた綿素材に鮮やかな絞り染め模様が映えます。" },
+                p4: { name: "藍染めネクタイ", category: "配件", shortDesc: "洗練された紳士の必須アイテム！伝統藍染めをビジネススーツに。", concept: "古代の藍染防染技法と現代メンズファッションの融合。", process: "高級シルク混紡地に斜め絞り染めを施し、丁寧に縫製。", timing: "ビジネス会議、パーティー、式典などに。", detail: "素材：シルク混紡。仕様：標準ネクタイ。", fullTranscript: "「藍染めネクタイ」へようこそ。伝統の藍色が正装に品格あるアクセントを添えます。" },
+                p5: { name: "藍染めハンカチ(小)", category: "配件", shortDesc: "ポケットに収まるコンパクトサイズ。爽やかな藍白の雲模様。", concept: "日常に寄り添うコンパクトで柔らかい手染めハンカチ。", process: "上質な純綿を藍槽で浸染し、自然乾燥させて仕上げています。", timing: "毎日の持ち歩き、お子様のお出かけ用に。", detail: "素材：100%綿。サイズ：小。工藝：天然植物染め。", fullTranscript: "「藍染めハンカチ(小)」です。携帯しやすいコンパクトサイズで、日常の小さな相棒に最適です。" },
+                p6: { name: "藍染め波紋コースター", category: "家飾", shortDesc: "デスクやティータイムを彩る手染めの水紋コースター。", concept: "頭汴坑の清流の波紋をコースターの中に表現しました。", process: "厚手綿布に型染め・縫い染めで波紋を描き、耐水定着。", timing: "オフィス、自宅のティータイム、カフェに。", detail: "素材：厚手吸水綿布。特徴：断熱・洗濯可能。", fullTranscript: "「藍染め波紋コースター」のご紹介です。清らかな水紋デザインがティータイムを彩ります。" },
+                p7: { name: "藍染めハンカチ(中)", category: "配件", shortDesc: "使いやすい標準サイズの藍染めハンカチ。肌触り柔らか。", concept: "実用性と防染模様の美しさを兼ね備えたベストセラー。", process: "手縫い防染を施し、藍槽で幾度ももみ込み染め上げました。", timing: "お出かけ、ひざ掛け、ギフトラッピングに。", detail: "素材：100%綿。サイズ：中。工藝：天然藍染め。", fullTranscript: "定番の「藍染めハンカチ(中)」です。柔らかい純綿と繊細な防染模様をお楽しみください。" },
+                p8: { name: "藍染めロングストール", category: "配件", shortDesc: "グラデーションが美しい藍染め大判ストール。フリンジ付き。", concept: "自然の四季と山々の深藍を繊維に織り込みました。", process: "通気性の良い綿麻地に縄縛り防染を施し、藍浸染を重ねました。", timing: "秋冬の防寒、普段のコーデ、旅行のお供に。", detail: "素材：綿麻混紡。仕様：フリンジ付きロングストール。", fullTranscript: "「藍染めロングストール」です。美しいグラデーションが上品な雰囲気を演出します。" },
+                p9: { name: "藍染めランチョンマットセット", category: "家飾", shortDesc: "マットとコースターのセット。食卓に東洋の禅の美を。", concept: "毎日の食卓に伝統工藝を取り入れ、豊かな時間に。", process: "厚手綿布に板締め染めと縫い染めを施し、丁寧に縫製。", timing: "毎日の食事、パーティー、お祝いのギフトに。", detail: "内容：ランチョンマット＆コースター。素材：洗える綿布。", fullTranscript: "食卓を豊かに彩る「藍染めランチョンマットセット」です。" },
+                p10: { name: "藍染めテーブルランナー", category: "家飾", shortDesc: "木製テーブルの中央を彩るグラデーション藍染めランナー。", concept: "流れる清流のように、テーブルへ落ち着いた藍の美を添えます。", process: "板締め防染技法で12回以上藍染めを重ねた逸品。", timing: "茶道のお席、リビングのテーブル、空間装飾に。", detail: "素材：厚手純綿。仕様：ロングテーブルランナー。", fullTranscript: "大気感溢れる「藍染めテーブルランナー」へようこそ。流れるような藍のグラデーションが美しく映えます。" },
+                p11: { name: "藍染めハット", category: "配件", shortDesc: "客家油桐花模様の型染めバケットハット。日よけに最適。", concept: "伝統の油桐花文様を落とし込んだ実用的なハット。", process: "頑丈な綿キャンバス地に型染めを施し、裁断縫製。", timing: "アウトドア、お買い物、日よけ対策に。", detail: "素材：綿キャンバス。型：バケットハット。", fullTranscript: "実用的な「藍染めハット」です。型染めで描かれた油桐花が鮮やかに映えます。" },
+                p12: { name: "藍染めシルクスカーフ", category: "配件", shortDesc: "100%高級純シルク。朝霧のような透明感溢れる藍グラデーション。", concept: "霧深い山々の澄んだ藍色を、しなやかなシルクに込めました。", process: "最高級純シルクを手縛り防染し、藍槽で静かに染め上げました。", timing: "パーティー、鑑賞会、特別なギフトに。", detail: "素材：100%天然純シルク。特徴：軽やかで上品。", fullTranscript: "高級感溢れる「藍染めシルクスカーフ」です。シルクならではの光沢と澄んだ藍色をお楽しみください。" },
+                p13: { name: "草木染めシルクスカーフ(茜色)", category: "配件", shortDesc: "茜の根で染め上げた柔らかな桜ピンクグラデーション。", concept: "天然茜の根から抽出した、春の桜のような優しいピンク。", process: "純シルクを茜液で煮染めし、低温で丁寧に定着させています。", timing: "春のお出かけ、デート、大切な方への贈り物に。", detail: "素材：100%純シルク。染料：天然茜根。", fullTranscript: "春の訪れを感じさせる「草木染めシルクスカーフ」です。優しいピンクが装いを彩ります。" },
+                p14: { name: "藍染めマルチバンダナ", category: "配件", shortDesc: "首元、ヘアバンド、バッグのアクセントに使える万能バンダナ。", concept: "軽快でアレンジ自在。伝統藍染めをカジュアルに。", process: "柔らかい綿混紡地を絞り染めし、丁寧に端縫い仕上げ。", timing: "首元のアクセント、バッグチャーム、ヘアバンドに。", detail: "素材：綿混紡。仕様：万能小バンダナ。", fullTranscript: "アレンジ自在な「藍染めマルチバンダナ」です。バッグや首元に巻くだけで華やかになります。" },
+                p15: { name: "藍染めクッションカバー", category: "家飾", shortDesc: "客家縫い染め波模様の厚手綿クッションカバー。タッセル付き。", concept: "お部屋に大自然の癒やしと暖かさをもたらします。", process: "厚手綿地に波模様を縫い染めし、四隅にタッセルを配置。", timing: "ソファ、ベッドサイド、読書椅子に。", detail: "素材：100%厚手綿カバー。仕様：取り外し洗い可能。", fullTranscript: "お部屋をくつろぎの空間にする「藍染めクッションカバー」です。" }
             },
             fr: {
-                brand_name: "Taiping Blue", brand_subtitle: "Teinture Indigo Naturelle ‧ Artisanat de Taïwan",
-                top_notice_tag: "NEWS", top_notice_text: "🌿 Fondation Young Water ‧ Teinture 100% Indigo Naturel ‧ Guide Vocal Actif",
+                brand_name: "Taiping Blue", brand_subtitle: "Fermentation Botanique Naturelle ‧ Artisanat Taïwanais",
+                top_notice_tag: "NEWS", top_notice_text: "🌿 Fondation Young Water ‧ Teinture à l'indigo 100% naturelle ‧ Guide audio actif",
                 top_free_ship: "Livraison gratuite sur la boutique officielle Pinkoi",
-                nav_cat_all_title: "Toutes les Œuvres", nav_cat_all_sub: "ALL",
-                nav_news_title: "Actualités", nav_news_sub: "NEWS",
-                nav_craft_title: "Savoir-Faire", nav_craft_sub: "CRAFT",
-                nav_stores_title: "Nos Boutiques", nav_stores_sub: "STORES",
-                drawer_sec_categories: "CATÉGORIES DE PRODUITS", drawer_sec_about: "À PROPOS & BOUTIQUES", drawer_sec_tools: "OUTILS & PARAMÈTRES",
-                btn_fb: "Page Facebook", btn_pinkoi: "Boutique Pinkoi", btn_youngwater: "Site de la Fondation", btn_manager: "Centre de Gestion",
-                btn_tour_start: "Lancer la Visite Vocale", btn_tour_stop: "Arrêter la Visite",
-                hero_badge: "L'élégance de l'indigo naturel de Taiping, Taichung ‧ Esthétique Artisanale",
-                hero_title: "L'Indigo Pur Souflé de Passion<br><span class=\"text-amber-300\">L'artisanat textile taïwanais sur la scène internationale</span>",
-                hero_desc: "Né du soutien communautaire après le séisme du 21 septembre, « Taiping Blue » utilise 100% d'indigo naturel fermenté et quatre techniques traditionnelles de réserve pour créer une mode éco-responsable.",
-                hero_btn_explore: "Démarrer le Guide Audio",
-                guide_title: "Guide Vocal Taiping Blue", guide_desc: "Cliquez sur une œuvre pour écouter son histoire", guide_voice: "Voix du Guide :",
-                sec_subtitle: "Taiping Blue Exhibition", sec_title: "Galerie d'Exposition Taiping Blue", btn_add_product: "Ajouter une Création",
-                cat_all: "Toutes les Œuvres ALL", cat_acc: "Accessoires ACCESSORIES", cat_decor: "Maison & Déco DECOR", cat_apparel: "Vêtements APPAREL",
-                news_subtitle: "Honors & Media Coverage", news_title: "Distinctions et Presse", news_tip: "Cliquez sur le titre pour ouvrir l'article", news_read_more: "Lire l'article complet",
-                news_badge_craft: "Prix de l'Artisanat", news_badge_edu: "Prix Éducation", news_badge_global: "Finaliste International", news_badge_hr: "Prix RH National", news_badge_exhibition: "Exposition Mondiale",
-                news1_title: "Taiping Blue remporte le Prix de la Collaboration aux Taiwan Craft Awards 2023",
-                news1_desc: "Reliant la culture Hakka au design mondial tout en valorisant les artisanes locales.",
-                news2_title: "Distingué par le Ministère de l'Éducation pour son soutien à l'éducation sociale",
-                news2_desc: "Inspirer le développement communautaire à travers l'artisanat textile durable.",
-                news3_title: "Seul sélectionné de Taïwan au Prix Valcellina en Italie avec « Mémoire du Bassin »",
-                news3_desc: "Une œuvre textile remarquable saluée parmi plus de 300 créations internationales.",
-                news4_title: "Lauréat du Prix National de Développement du Capital Humain",
-                news4_desc: "Formation des jeunes et femmes de la communauté, représentés à la London Craft Week.",
-                news5_title: "Mis en lumière à la London Craft Week et Maison & Objet à Paris",
-                news5_desc: "Un rayonnement international salué par le Grand Prix du Jury à Singapour.",
-                soul_subtitle: "Heritage & Craftsmanship", soul_title: "Les 4 Étapes de l'Âme et les 4 Techniques de Réserve", soul_desc: "Sans produits chimiques. Teinture artisanale répétée plus de 12 fois en cuve naturelle.",
-                step1_num: "I", step1_title: "Récolte & Fermentation", step1_desc: "Récolte estivale des feuilles de Strobilanthes cusia, fermentées naturellement avec du maltose et de la chaux.",
-                step2_num: "II", step2_title: "4 Techniques de Réserve", step2_desc: "Nouage, couture à la main, pochoir à la pâte ou serrage sur bois pour créer de splendides motifs indigo et blanc.",
-                step3_num: "III", step3_title: "Teinture Répétée à Froid", step3_desc: "Immersions et malaxages manuels répétées plus de 12 fois pour imprégner la fibre en profondeur.",
-                step4_num: "IV", step4_title: "Oxydation au Soleil", step4_desc: "Au contact de l'air et du soleil, le tissu passe du jaune-vert à un bleu indigo profond et éclatant.",
-                stores_subtitle: "Store Locator & Workshop", stores_title: "Nos Boutiques & Ateliers",
-                store1_title: "Atelier de Teinture de Toubiankeng", store1_addr: "Adresse : Sec. 4, Changlong Rd., Taiping Dist., Taichung City", store1_time: "Horaires : Lun - Dim 09:00 - 17:00",
-                store2_title: "Siège de la Fondation Young Water", store2_addr: "Adresse : 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City", store2_time: "Horaires : Lun - Ven 09:00 - 18:00",
-                tab_concept: "💡 Concept", tab_process: "🧵 Confection", tab_timing: "✨ Utilisation", tab_detail: "📦 Détails",
-                btn_play: "Écouter l'histoire", btn_pause: "Pause", btn_buy: "Acheter sur Pinkoi", btn_edit: "Modifier l'œuvre",
-                edit_modal_title: "Éditer l'œuvre", edit_lbl_name: "Nom de l'œuvre", edit_lbl_cat: "Catégorie",
-                edit_lbl_pinkoi: "Lien Pinkoi", edit_lbl_img: "Image (fichier ou URL)", edit_btn_upload_img: "Téléverser une image", edit_lbl_shortdesc: "Description courte", edit_lbl_concept: "💡 Concept",
-                edit_lbl_process: "🧵 Confection", edit_lbl_timing: "✨ Occasion", edit_lbl_detail: "📦 Détails", edit_lbl_transcript: "🎙️ Script Vocal",
-                edit_btn_autogen: "Générer le script", edit_btn_cancel: "Annuler", edit_btn_save: "Enregistrer",
-                mgr_title: "Centre de Gestion des Expositions", mgr_desc: "Gérez vos créations ou exportez/importez vos données.",
+                nav_cat_all_title: "Toutes Collections", nav_cat_all_sub: "ALL", nav_news_title: "Prix & Presse", nav_news_sub: "NEWS",
+                nav_craft_title: "Artisanat", nav_craft_sub: "CRAFT", nav_stores_title: "Boutiques", nav_stores_sub: "STORES",
+                drawer_sec_categories: "CATÉGORIES", drawer_sec_about: "À PROPOS & BOUTIQUES", drawer_sec_tools: "OUTILS & OPTIONS",
+                btn_fb: "Page FB", btn_pinkoi: "Boutique Pinkoi", btn_youngwater: "Site Fondation", btn_manager: "Gestionnaire",
+                btn_tour_start: "Lancer le Guide Audio", btn_tour_stop: "Arrêter le Guide",
+                hero_badge: "Artisanat d'indigo naturel de Taiping, Taichung ‧ Élégance & Durabilité",
+                hero_title: "L'Excellence de l'Indigo<br><span class=\"text-amber-300\">L'artisanat naturel de Taïwan sur la scène internationale</span>",
+                hero_desc: "Fondée après la reconstruction post-séisme par la Fondation Young Water, Taiping Blue perpétue la teinture traditionnelle à l'indigo fermenté.",
+                hero_btn_explore: "Commencer la visite",
+                sec_subtitle: "Exposition Taiping Blue", sec_title: "Galerie d'Artisanat Taiping Blue", btn_add_product: "Ajouter une œuvre",
+                cat_all: "Toutes les Œuvres ALL", cat_acc: "Accessoires ACCESSORIES", cat_decor: "Maison DECOR", cat_apparel: "Vêtements APPAREL",
+                news_subtitle: "Prix & Couverture Média", news_title: "Honneurs et Articles de Presse", news_tip: "Cliquez sur un titre pour lire l'article complet", news_read_more: "Lire l'article",
+                news_badge_craft: "Prix de l'Artisanat", news_badge_edu: "Prix d'Éducation", news_badge_global: "Finaliste International", news_badge_hr: "Prix National RH", news_badge_exhibition: "Exposition Mondiale",
+                news1_title: "Taiping Blue remporte le Prix de l'Artisanat de Taïwan 2023", news1_desc: "Une reconnaissance majeure pour l'alliance du design contemporain et de la teinture Hakka.",
+                news2_title: "Lauréat du Prix de la Contribution Éducative", news2_desc: "Honoré pour son engagement dans la revitalisation communautaire durable.",
+                news3_title: "Finaliste du Prix Valcellina en Italie", news3_desc: "Seule œuvre taïwanaise sélectionnée parmi plus de 300 créations textiles mondiales.",
+                news4_title: "Prix National du Développement des Ressources Humaines", news4_desc: "Forme les femmes et jeunes artisans locaux représentés à la London Craft Week.",
+                news5_title: "Présenté à la London Craft Week et Paris Maison & Objet", news5_desc: "Une vitrine d'excellence pour l'artisanat d'art écoresponsable de Taïwan.",
+                soul_subtitle: "Heritage & Craftsmanship", soul_title: "4 Étapes Césures & 4 Techniques de Réserve", soul_desc: "Sans additif chimique. Une immersion artisanale répétée plus de 12 fois.",
+                step1_num: "I", step1_title: "Récolte & Fermentation", step1_desc: "Récolte estivale des feuilles d'indigo fermentées avec du maltose et de la chaux.",
+                step2_num: "II", step2_title: "4 Techniques de Réserve", step2_desc: "Ligature, couture, pochoir ou serrage de bois pour créer des motifs épurés.",
+                step3_num: "III", step3_title: "Teinture Manuelle Répétée", step3_desc: "Malaxage manuel à température ambiante répété au moins 12 fois.",
+                step4_num: "IV", step4_title: "Oxydation Solaire", step4_desc: "Révélation d'un bleu profond sous l'action combinée de l'air et du soleil.",
+                stores_subtitle: "Boutiques & Ateliers", stores_title: "Points de Vente & Atelier Toubiankeng",
+                store1_title: "Atelier & Galerie Toubiankeng", store1_addr: "Adresse: Sec. 4, Changlong Rd., Taiping Dist., Taichung", store1_time: "Heures: Lun - Dim 09:00 - 17:00",
+                store2_title: "Siège de la Fondation Young Water", store2_addr: "Adresse: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung", store2_time: "Heures: Lun - Ven 09:00 - 18:00",
+                tab_concept: "💡 Concept", tab_process: "🧵 Procédé", tab_timing: "✨ Occasion", tab_detail: "📦 Détails",
+                btn_play: "Écouter le récit", btn_pause: "Mettre en pause", btn_buy: "Acheter sur Pinkoi", btn_edit: "Éditer",
+                edit_modal_title: "Modifier l'œuvre", edit_lbl_name: "Nom", edit_lbl_cat: "Catégorie",
+                edit_lbl_pinkoi: "Lien Pinkoi", edit_lbl_img: "Image", edit_btn_upload_img: "Téléverser une image", edit_lbl_shortdesc: "Résumé", edit_lbl_concept: "💡 Concept",
+                edit_lbl_process: "🧵 Procédé", edit_lbl_timing: "✨ Occasion", edit_lbl_detail: "📦 Détails", edit_lbl_transcript: "🎙️ Transcription",
+                edit_btn_autogen: "Générer le texte", edit_btn_cancel: "Annuler", edit_btn_save: "Enregistrer",
+                mgr_title: "Centre de Gestion des Œuvres", mgr_desc: "Gérez vos créations ou sauvegardez les données du site en JSON.",
                 mgr_btn_export: "Exporter JSON", mgr_btn_import: "Importer JSON", mgr_btn_reset: "Réinitialiser",
                 mgr_th_thumb: "Aperçu", mgr_th_name: "Titre", mgr_th_cat: "Catégorie", mgr_th_action: "Actions",
-                footer_org: "Taiping Blue", footer_foundation_desc: "Marque artisanale communautaire fondée par la Fondation Young Water pour revitaliser la région et former les femmes locales aux arts textiles écologiques.",
-                footer_contact_title: "Contact & Informations", footer_hours: "Heures d'ouverture : Lun - Ven 09:00 - 18:00",
-                footer_headquarter: "Siège : 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City",
-                footer_workshop: "Atelier : Sec. 4, Changlong Rd., Taiping Dist., Taichung City",
-                footer_links_title: "Plateformes Officielles", card_listen_guide: "Écouter le guide",
-                ai_hint: "Posez une question à Lanlan AI !", ai_badge_btn: "Guide AI",
-                ai_name: "Lanlan ‧ Guide Virtuel AI", ai_subtitle: "Assistant 24/7 pour l'artisanat et boutiques Taiping Blue",
-                ai_welcome: "<p>Bonjour ! Je suis <b>Lanlan</b>, votre guide virtuel AI pour Taiping Blue 🌿</p><p>Posez-moi vos questions sur <b>l'art de la teinture indigo, nos créations, les ateliers DIY ou nos boutiques</b> ! Comment puis-je vous aider ?</p>",
-                ai_quick_label: "Questions rapides :",
-                ai_q1_btn: "📍 Boutiques & Atelier", ai_q1_text: "Quels sont l'adresse et les horaires de l'Atelier Toubiankeng ?",
-                ai_q2_btn: "👑 Meilleures Ventes", ai_q2_text: "Quelles sont les créations phares de Taiping Blue ?",
-                ai_q3_btn: "🎨 Réservation Atelier DIY", ai_q3_text: "Comment réserver un atelier d'initiation à l'indigo ?",
-                ai_q4_btn: "🏆 Distinctions & Histoire", ai_q4_text: "Racontez-moi l'histoire et les prix remportés par la marque.",
-                ai_input_placeholder: "Posez une question sur Taiping Blue...", ai_user_label: "Vous", ai_reset_toast: "Historique de discussion réinitialisé"
+                footer_org: "Taiping Blue", footer_foundation_desc: "Marque artisanale communautaire de la Fondation Young Water.",
+                footer_contact_title: "Contact & Info", footer_hours: "Horaires: Lun - Ven 09:00 - 18:00",
+                footer_headquarter: "Siège: 3F-4, No. 3, Ln. 3, Yucai St., Taichung", footer_workshop: "Atelier: Sec. 4, Changlong Rd., Taiping, Taichung",
+                footer_links_title: "Plateformes Officielles", card_listen_guide: "Écouter l'histoire",
+                ai_hint: "Une question pour Lanlan AI !", ai_badge_btn: "Guide AI",
+                ai_name: "Lanlan ‧ Assistant IA", ai_subtitle: "Service client et guide artisanal 24h/24",
+                ai_welcome: "<p>Bonjour ! Je suis <b>Lanlan</b>, votre guide virtuel Taiping Blue 🌿</p><p>Posez-moi vos questions sur <b>nos produits, nos ateliers DIY, nos boutiques ou notre histoire</b> !</p>",
+                ai_quick_label: "Questions rapides:",
+                ai_q1_btn: "📍 Ateliers & Adresses", ai_q1_text: "Où se trouve l'atelier Toubiankeng et quels sont ses horaires ?",
+                ai_q2_btn: "👑 Meilleures Ventes", ai_q2_text: "Quelles sont les œuvres les plus populaires de Taiping Blue ?",
+                ai_q3_btn: "🎨 Réserver un Atelier DIY", ai_q3_text: "Comment réserver une expérience de teinture indigo DIY ?",
+                ai_q4_btn: "🏆 Distinctions & Presse", ai_q4_text: "Parlez-moi de l'histoire et des récompenses de Taiping Blue.",
+                ai_input_placeholder: "Posez votre question...", ai_user_label: "Vous", ai_reset_toast: "Historique réinitialisé",
+
+                // Full FR Product Translations
+                p1: { name: "Écharpe Botanique Plante-Teinte", category: "配件", shortDesc: "Teinte naturellement au Sophora et curcuma, dégradé jaune doux et chaleureux.", concept: "Inspirée du soleil levant, alliance harmonieuse du Sophora et du curcuma.", process: "Tissu lin et coton immergé à température ambiante et séché au soleil.", timing: "Parfait pour l'automne/printemps, tenue décontractée ou cadeau.", detail: "Composition: Coton et lin. Teinture 100% végétale.", fullTranscript: "Bienvenue. Découvrez l'écharpe en teinture botanique aux teintes jaunes chaleureuses." },
+                p2: { name: "Kit DIY Mouchoir Indigo", category: "配件", shortDesc: "Créez votre mouchoir en indigo naturel à la maison ! Kit complet avec outils.", concept: "Découvrez l'artisanat traditionnel de l'indigo directement chez vous.", process: "Contient poudre d'indigo, mouchoir en coton, cales en bois et guide pas à pas.", timing: "Ateliers familiaux, projets créatifs du week-end.", detail: "Contenu: Poudre d'indigo, tissu en coton, cales et manuel d'instructions.", fullTranscript: "Créez votre motif unique en indigo grâce à ce kit de teinture artisanal." },
+                p3: { name: "Grand Mouchoir Indigo", category: "配件", shortDesc: "Grand mouchoir en coton pur aux motifs de vagues traditionnels. Absorbant.", concept: "Remplacer le papier à usage unique par un tissu artisanal durable.", process: "Motifs ligaturés à la main et immergés dans 12 bains d'indigo.", timing: "Usage quotidien, activités sportives ou emballage cadeau éco-responsable.", detail: "Composition: 100% coton. Taille: Grand.", fullTranscript: "Voici le Grand Mouchoir Indigo, combinant coton absorbant et motifs traditionnels." },
+                p4: { name: "Cravate en Soie Indigo", category: "配件", shortDesc: "L'élégance au masculin ! Motifs indigo réservés pour tenue d'affaires.", concept: "Fusion entre l'artisanat ancestral et l'élégance contemporaine.", process: "Soie mélangée teinte en diagonale, repassée et cousue à la main.", timing: "Réunions d'affaires, mariages, événements officiels.", detail: "Matière: Soie mélangée. Modèle: Cravate standard.", fullTranscript: "Cravate en soie indigo, apportant une touche artisanale sophistiquée à votre tenue." },
+                p5: { name: "Petit Mouchoir Indigo", category: "配件", shortDesc: "Format de poche compact aux motifs de nuages bleus et blancs.", concept: "Élégance compacte pour vous accompagner au quotidien.", process: "Coton pur teint dans des cuves d'indigo végétal et séché naturellement.", timing: "Poche de veste, mouchoir pour enfants ou petite attention.", detail: "Matière: 100% coton. Format: Compact de poche.", fullTranscript: "Voici le Petit Mouchoir Indigo, pratique et doux au toucher." },
+                p6: { name: "Sous-Verre Motifs Vagues", category: "家飾", shortDesc: "Sous-verre artisanal teint à la main aux motifs d'eau relaxants.", concept: "Capturer les reflets de la rivière Toubiankeng sur votre table.", process: "Coton épais imprimé au pochoir et teint à la main.", timing: "Bureau, table basse, salon de thé.", detail: "Matière: Coton épais absorbant. Lavable et réutilisable.", fullTranscript: "Le sous-verre aux motifs de vagues d'eau apporte sérénité à vos pauses thé." },
+                p7: { name: "Mouchoir Indigo Moyen", category: "配件", shortDesc: "Taille moyenne classique en coton doux avec motifs ligaturés.", concept: "Le format idéal alliant praticité et beauté artisanale.", process: "Coutures de réserve faites main et immersions répétées.", timing: "Sorties quotidiennes, serviette de table, emballage.", detail: "Matière: 100% coton. Taille: Moyenne.", fullTranscript: "Mouchoir Indigo de taille moyenne, doux et robuste." },
+                p8: { name: "Écharpe Longue Indigo", category: "配件", shortDesc: "Écharpe longue à dégradé bleu et blanc avec franges élégantes.", concept: "Inspirée des nuances des montagnes de Taiping.", process: "Mélange coton et lin noué et immergé dans la cuve d'indigo.", timing: "Chaleur d'automne et d'hiver, tenue élégante.", detail: "Matière: Coton et lin. Finition avec franges.", fullTranscript: "Écharpe longue en indigo aux dégradés profonds et poétiques." },
+                p9: { name: "Set de Table Indigo", category: "家飾", shortDesc: "Ensemble de set de table et sous-verre pour une touche Zen.", concept: "Sublimer les repas quotidiens avec l'art de vivre taïwanais.", process: "Coton résistant teint par pliage et couture de réserve.", timing: "Dîners de famille, cérémonies du thé, cadeaux de crémaillère.", detail: "Inclus: Set rectangulaire et sous-verre. Coton lavable.", fullTranscript: "Set de table indigo pour une ambiance chaleureuse et raffinée." },
+                p10: { name: "Chemin de Table Indigo", category: "家飾", shortDesc: "Chemin de table long aux vagues bleu profond pour tables en bois.", concept: "Symbole d'une rivière culturelle apportant élégance à votre table.", process: "Grand tissu en coton teint par pliage et dégradé sur 12 cycles.", timing: "Cérémonie du thé, grandes tables à manger, espaces d'art.", detail: "Matière: Coton épais teint main. Long format.", fullTranscript: "Chemin de table indigo illustrant la fluidité et l'élégance de l'artisanat." },
+                p11: { name: "Chapeau Bob Indigo Hakka", category: "配件", shortDesc: "Motifs de fleurs de tung Hakka imprimés au pochoir. Protection solaire.", concept: "Allier protection solaire et patrimoine culturel Hakka.", process: "Toile de coton imprimée à la pâte de riz, teinte et façonnée.", timing: "Voyages, promenades, activités en plein air.", detail: "Matière: Toile de coton. Modèle: Chapeau bob.", fullTranscript: "Chapeau bob indigo aux motifs traditionnels de fleurs de tung." },
+                p12: { name: "Écharpe en Pure Soie Indigo", category: "配件", shortDesc: "100% soie naturelle aux dégradés bleus évocateurs de la brume matinale.", concept: "Alliance de la soie précieuse et du bleu indigo des montagnes.", process: "Soie nouée à la main et teinte délicatement en cuve végétale.", timing: "Soirées habillées, galas, expositions d'art.", detail: "Matière: 100% soie naturelle. Dégradé unique.", fullTranscript: "Écharpe en pure soie indigo, d'une légèreté et d'un éclat exceptionnels." },
+                p13: { name: "Écharpe en Soie Rose Garance", category: "配件", shortDesc: "Teinte à la racine de garance naturelle, dégradé rose cerisier.", concept: "Extraire les pigments de garance pour un rose romantique.", process: "Soie mijotée avec la teinture de garance et fixée naturellement.", timing: "Promenades printanières, soirées, cadeaux.", detail: "Matière: 100% soie. Teinture: Racine de garance naturelle.", fullTranscript: "Écharpe en soie rose garance, apportant une touche de douceur printanière." },
+                p14: { name: "Bandana Polyvalent Indigo", category: "配件", shortDesc: "Petit bandana multifonction pour le cou, les cheveux ou le sac.", concept: "Un accessoire dynamique et moderne aux nuances indigo.", process: "Coton doux noué, teint en indigo et repassé.", timing: "Nœud de cou, bandeau dans les cheveux, bijou de sac.", detail: "Matière: Mélange coton. Modèle: Petit bandana.", fullTranscript: "Bandana polyvalent en indigo pour rehausser votre style au quotidien." },
+                p15: { name: "Housse de Coussin Indigo", category: "家飾", shortDesc: "Coton épais aux motifs de vagues Hakka cousus main avec pompons.", concept: "Apporter le confort chaleureux de la nature dans votre intérieur.", process: "Couture main des motifs, teinture indigo et finitions pompons.", timing: "Coussin de canapé, lit, fauteuil de lecture.", detail: "Matière: 100% coton épais. Housse déhoussable.", fullTranscript: "Housse de coussin indigo pour un intérieur apaisant et élégant." }
             },
             ko: {
                 brand_name: "타이핑 블루", brand_subtitle: "천연 식물 발효 ‧ 대만 공예 브랜드",
-                top_notice_tag: "NEWS", top_notice_text: "🌿 수원지 문화교육재단 ‧ 100% 천연 쪽 발효 염색 ‧ 전 구역 음성 가이드 시스템 운영 중",
+                top_notice_tag: "NEWS", top_notice_text: "🌿 용수지 문화교육재단 ‧ 100% 천연 쪽 발효 염색 ‧ 전관 음성 도슨트 운용 중",
                 top_free_ship: "Pinkoi 공식 스토어 무료 배송 혜택",
-                nav_cat_all_title: "전체 작품", nav_cat_all_sub: "ALL",
-                nav_news_title: "수상 뉴욕", nav_news_sub: "NEWS",
-                nav_craft_title: "전통 기법", nav_craft_sub: "CRAFT",
-                nav_stores_title: "매장 안내", nav_stores_sub: "STORES",
-                drawer_sec_categories: "상품 카테고리 CATEGORIES", drawer_sec_about: "브랜드 및 매장 ABOUT & STORES", drawer_sec_tools: "도구 및 설정 TOOLS",
-                btn_fb: "FB 공식 페이지", btn_pinkoi: "Pinkoi 공식 스토어", btn_youngwater: "수원지 재단 웹사이트", btn_manager: "관리 및 편집",
-                btn_tour_start: "음성 가이드 시작", btn_tour_stop: "음성 가이드 종료",
-                hero_badge: "타이중 타이핑의 청록과 쪽빛 ‧ 대만 천연 염색 미학",
-                hero_title: "청출어람, 쪽빛의 미학<br><span class=\"text-amber-300\">세계 무대에 오른 대만 천연 쪽염색 공예</span>",
-                hero_desc: "921 대지진 이후 지역 재건 과정에서 시작된 '타이핑 블루'는 수원지 문화교육재단의 지원으로 설립되었습니다. 100% 천연 식물 발효 쪽염색을 고집하며 4가지 전통 방염 기법으로 객가 문양과 현대 미학을 결합합니다.",
-                hero_btn_explore: "음성 가이드 투어 시작",
-                guide_title: "타이핑 블루 음성 도슨트", guide_desc: "작품을 클릭하시면 이야기를 들려드립니다", guide_voice: "도슨트 음성:",
-                sec_subtitle: "Taiping Blue Exhibition", sec_title: "타이핑 블루 소장 작품 전시관", btn_add_product: "작품 추가",
-                cat_all: "전체 작품 ALL", cat_acc: "패션 잡화 ACCESSORIES", cat_decor: "홈 데코 DECOR", cat_apparel: "공예 의류 APPAREL",
-                news_subtitle: "Honors & Media Coverage", news_title: "수상 내역 및 언론 보도", news_tip: "보도 제목을 클릭하면 기사 페이지로 이동합니다", news_read_more: "기사 전문 보기",
-                news_badge_craft: "대만 공예상", news_badge_edu: "교육부 공헌상", news_badge_global: "세계 대회 입선", news_badge_hr: "국가 인재개발상", news_badge_exhibition: "세계 박람회",
-                news1_title: "타이핑 블루, 문화부 '2023 대만 공예상-협력상' 수상",
-                news1_desc: "대만 타이중 타이핑의 객가 공예 브랜드 타이핑 블루가 대만 공예계 최고 영예를 안았습니다.",
-                news2_title: "교육부 '111년 사회교육 공헌상' 수상",
-                news2_desc: "천연 쪽염색 문화와 친환경 지속가능성을 통해 지역 사회 발전을 이끈 공로를 인정받았습니다.",
-                news3_title: "대만 유일! 작품 《유역의 기억》 이탈리아 발첼리나 상 결선 진출",
-                news3_desc: "전 세계 300여 개 출품작 중 대만 유일 입선작으로 선정되어 세계를 매료시켰습니다.",
-                news4_title: "노동부 '국가 인재개발상' 수상",
-                news4_desc: "전통 손염색 공예로 지역 여성과 청년을 육성하여 런던 크래프트 위크 등에 진출했습니다.",
-                news5_title: "런던 크래프트 위크 및 파리 메종&오브제 참가",
-                news5_desc: "싱가포르 국제 가구전 심사위원 대상 수상 등 전 세계에서 문화적 가치를 인정받고 있습니다.",
-                soul_subtitle: "Heritage & Craftsmanship", soul_title: "타이핑 블루의 4대 공정과 4대 전통 방염 기법", soul_desc: "화학 색소 무첨가. 12회 이상의 반복적인 수작업 침염을 통해 깊은 쪽빛을 만들어냅니다.",
-                step1_num: "一", step1_title: "채취 및 발효", step1_desc: "여름철 산지에서 쪽 잎을 채취하여 물에 담그고 엿기름과 석회를 넣어 천연 발효시킵니다.",
-                step2_num: "二", step2_title: "4대 전통 방염 기법", step2_desc: "홀치기, 바느질, 풀 찍기, 나무틀 clamping 기법을 활용하여 선명한 문양을 만듭니다.",
-                step3_num: "三", step3_title: "저온 반복 침염", step3_desc: "상온의 쪽물에 원단을 넣고 손으로 12회 이상 주물러 색소가 섬유 깊숙이 배어들게 합니다.",
-                step4_num: "四", step4_title: "햇빛 산화 및 발색", step4_desc: "공기와 햇빛을 만나면 황록색 원단이 깊고 아름다운 푸른빛(쪽빛)으로 변합니다.",
-                stores_subtitle: "Store Locator & Workshop", stores_title: "매장 및 공방 위치 안내",
-                store1_title: "토변갱 염색 공방 (전시 및 판매 센터)", store1_addr: "주소: 411 臺中市太平區頭汴里長龍路四段 (생태공원 내)", store1_time: "운영 시간: 월~일 09:00 - 17:00",
-                store2_title: "재단법인 수원지 문화교육재단 본부", store2_addr: "주소: 40444 臺中市北區育才街三巷3號3樓之4", store2_time: "운영 시간: 월~금 09:00 - 18:00",
-                tab_concept: "💡 상품 컨셉", tab_process: "🧵 제작 과정", tab_timing: "✨ 추천 상황", tab_detail: "📦 상세 정보",
-                btn_play: "전체 음성 듣기", btn_pause: "일시 정지", btn_buy: "Pinkoi에서 구매", btn_edit: "작품 편집",
-                edit_modal_title: "작품 정보 편집", edit_lbl_name: "작품명", edit_lbl_cat: "카테고리",
-                edit_lbl_pinkoi: "Pinkoi URL", edit_lbl_img: "작품 이미지 (업로드 또는 URL)", edit_btn_upload_img: "이미지 업로드", edit_lbl_shortdesc: "한 줄 설명", edit_lbl_concept: "💡 상품 컨셉",
-                edit_lbl_process: "🧵 제작 과정", edit_lbl_timing: "✨ 추천 상황", edit_lbl_detail: "📦 상세 정보", edit_lbl_transcript: "🎙️ 음성 원고",
-                edit_btn_autogen: "자동 원고 생성", edit_btn_cancel: "취소", edit_btn_save: "저장하기",
-                mgr_title: "작품 관리 센터", mgr_desc: "작품을 추가, 수정, 삭제하거나 데이터를 백업/복원할 수 있습니다.",
+                nav_cat_all_title: "전체 작품", nav_cat_all_sub: "ALL", nav_news_title: "수상 뉴스", nav_news_sub: "NEWS",
+                nav_craft_title: "공예 과정", nav_craft_sub: "CRAFT", nav_stores_title: "매장 안내", nav_stores_sub: "STORES",
+                drawer_sec_categories: "상품 카테고리", drawer_sec_about: "브랜드 및 매장", drawer_sec_tools: "도구 및 설정",
+                btn_fb: "공식 페이스북", btn_pinkoi: "Pinkoi 스토어", btn_youngwater: "재단 홈페이지", btn_manager: "관리 센터",
+                btn_tour_start: "음성 투어 시작", btn_tour_stop: "투어 중지",
+                hero_badge: "타이중 타이핑 투볜컹의 천연 푸른빛 ‧ 대만 식물 염색 미학",
+                hero_title: "청출어람의 아름다움<br><span class=\"text-amber-300\">세계무대에 오른 대만 천연 쪽염색 공예</span>",
+                hero_desc: "921 대지진 후 지역 재건으로 시작된 '타이핑 블루'. 용수지 문화교육재단의 지원 아래 100% 천연 식물 발효 쪽염색 전통을 이어갑니다.",
+                hero_btn_explore: "음성 투어 시작하기",
+                sec_subtitle: "Taiping Blue Exhibition", sec_title: "타이핑 블루 작품 갤러리", btn_add_product: "작품 추가",
+                cat_all: "전체 작품 ALL", cat_acc: "패션 악세서리 ACCESSORIES", cat_decor: "홈 데코 DECOR", cat_apparel: "공예 의류 APPAREL",
+                news_subtitle: "Honors & Press", news_title: "수상 내역 및 언론 보도", news_tip: "기사 제목을 클릭하면 해당 뉴스 페이지로 이동합니다", news_read_more: "보도 기사 전문 보기",
+                news_badge_craft: "대만 공예상", news_badge_edu: "사회교육 기여상", news_badge_global: "세계 대회 파이널리스트", news_badge_hr: "국가 인재개발상", news_badge_exhibition: "글로벌 박람회",
+                news1_title: "타이핑 블루, '2023 대만 공예상-협작상' 수상", news1_desc: "객가 전통 쪽염색과 현대 디자인을 결합하여 지역 공예를 세계로 알렸습니다.",
+                news2_title: "교육부 '사회교육 기여상' 수상", news2_desc: "친환경 지속가능성과 지역 사회 공헌 성과를 높이 인정받았습니다.",
+                news3_title: "이탈리아 발첼리나 어워드 최종 결선 진출", news3_desc: "전 세계 300여 작품 중 대만 유일 파이널리스트로 선정되었습니다.",
+                news4_title: "노동부 '국가 인재개발상' 수상", news4_desc: "지역 여성 및 청년 공예가를 육성하여 런던 크래프트 위크 등에 참여했습니다.",
+                news5_title: "런던 크래프트 위크 및 파리 메종&오브제 참가", news5_desc: "싱가포르 국제 가구전 심사위원 대상 등 세계적으로 높은 인정을 받았습니다.",
+                soul_subtitle: "Heritage & Craftsmanship", soul_title: "타이핑 블루의 4대 공정과 전통 방염 기법", soul_desc: "인공 화학 색소 제로. 자연의 시간에 따라 장인의 손길로 12회 이상 다중 염색합니다.",
+                step1_num: "一", step1_title: "쪽 채취 및 발효", step1_desc: "여름철 산지에서 채취한 쪽잎을 몰타아제와 석회로 자연 발효시켜 염료를 추출합니다.",
+                step2_num: "二", step2_title: "4대 전통 방염 기법", step2_desc: "홀치기, 침선, 홀더, 홀더 클램프 기법으로 선명한 푸른빛 문양을 새깁니다.",
+                step3_num: "三", step3_title: "저온 저주 염색", step3_desc: "상온의 쪽물에 12회 이상 손으로 주물러 섬유 깊숙이 염료를 침투시킵니다.",
+                step4_num: "四", step4_title: "태양 산화 착색", step4_desc: "공기와 햇빛을 만나며 황록색이 선명한 깊은 쪽빛으로 변화합니다.",
+                stores_subtitle: "Stores & Workshop", stores_title: "매장 및 투볜컹 공방 안내",
+                store1_title: "투볜컹 염직 공방 (전시 판매 센터)", store1_addr: "주소: 타이중시 타이핑구 투볜리 장룽로 4단", store1_time: "운영시간: 월~일 09:00 - 17:00",
+                store2_title: "용수지 문화교육재단 본부", store2_addr: "주소: 타이중시 북구 위차이가 3항 3호 3F-4", store2_time: "운영시간: 월~금 09:00 - 18:00",
+                tab_concept: "💡 컨셉", tab_process: "🧵 제작 과정", tab_timing: "✨ 착용 추천", tab_detail: "📦 상세 정보",
+                btn_play: "음성 가이드 재생", btn_pause: "일시 정지", btn_buy: "Pinkoi에서 구매", btn_edit: "작품 수정",
+                edit_modal_title: "작품 정보 수정", edit_lbl_name: "작품명", edit_lbl_cat: "카테고리",
+                edit_lbl_pinkoi: "Pinkoi 링크", edit_lbl_img: "이미지", edit_btn_upload_img: "이미지 업로드", edit_lbl_shortdesc: "요약", edit_lbl_concept: "💡 컨셉",
+                edit_lbl_process: "🧵 과정", edit_lbl_timing: "✨ 추천", edit_lbl_detail: "📦 상세", edit_lbl_transcript: "🎙️ 음성 스크립트",
+                edit_btn_autogen: "자동 생성", edit_btn_cancel: "취소", edit_btn_save: "저장",
+                mgr_title: "작품 관리 센터", mgr_desc: "작품의 추가, 수정, 삭제 및 JSON 백업이 가능합니다.",
                 mgr_btn_export: "JSON 내보내기", mgr_btn_import: "JSON 가져오기", mgr_btn_reset: "초기화",
-                mgr_th_thumb: "이미지", mgr_th_name: "작품명", mgr_th_cat: "분류", mgr_th_action: "관리",
-                footer_org: "타이핑 블루 Taiping Blue", footer_foundation_desc: "수원지 문화교육재단이 설립한 지역 공예 브랜드로, 지진 재건에서 시작되어 전통 천연 쪽염색으로 여성과 청년을 지원합니다.",
-                footer_contact_title: "문의처 안내", footer_hours: "운영 시간: 월~금 09:00 - 18:00",
-                footer_headquarter: "재단 본부: 40444 臺中市北區育才街三巷3號3樓之4",
-                footer_workshop: "공방 위치: 臺中市太平區頭汴里長龍路四段 (생태공원 내)",
-                footer_links_title: "공식 온라인 채널", card_listen_guide: "음성 도슨트 듣기",
-                ai_hint: "AI 가이드 란란에게 물어보세요!", ai_badge_btn: "AI 가이드",
-                ai_name: "란란 ‧ AI 안내 가이드", ai_subtitle: "타이핑 블루 공예 및 매장 안내 (24시간 지원)",
-                ai_welcome: "<p>안녕하세요! 타이핑 블루의 AI 가이드 <b>'란란'</b>입니다 🌿</p><p><b>전통 쪽염색 공예, 추천 상품, DIY 체험, 매장 위치 및 뉴스</b>에 대해 무엇이든 물어보세요!</p>",
-                ai_quick_label: "빠른 질문:",
-                ai_q1_btn: "📍 매장 및 공방", ai_q1_text: "토변갱 공방 매장의 주소와 운영 시간을 알려주세요.",
-                ai_q2_btn: "👑 베스트 인기 상품", ai_q2_text: "타이핑 블루의 가장 인기 있는 대표 작품은 무엇인가요?",
-                ai_q3_btn: "🎨 쪽염색 DIY 예약", ai_q3_text: "쪽염색 DIY 체험 프로그램 예약 방법은 어떻게 되나요?",
-                ai_q4_btn: "🏆 브랜드 수상 내역", ai_q4_text: "타이핑 블루 브랜드의 역사와 수상 내역을 소개해 주세요.",
-                ai_input_placeholder: "타이핑 블루에 대해 질문하세요...", ai_user_label: "나", ai_reset_toast: "대화 기록이 초기화되었습니다"
+                mgr_th_thumb: "이미지", mgr_th_name: "작품명", mgr_th_cat: "분류", mgr_th_action: "작업",
+                footer_org: "타이핑 블루 Taiping Blue", footer_foundation_desc: "용수지 문화교육재단이 운영하는 지역 공예 브랜드입니다.",
+                footer_contact_title: "문의 및 안내", footer_hours: "운영시간: 월~금 09:00 - 18:00",
+                footer_headquarter: "재단 본부: 타이중시 북구 위차이가 3항 3호 3F-4", footer_workshop: "투볜컹 공방: 타이중시 타이핑구 투볜리 장룽로 4단",
+                footer_links_title: "공식 채널", card_listen_guide: "음성 도슨트 듣기",
+                ai_hint: "AI 도슨트 란란에게 질문하기!", ai_badge_btn: "AI 도슨트",
+                ai_name: "란란 ‧ AI 안내원", ai_subtitle: "타이핑 블루 공예와 매장 정보를 24시간 안내합니다",
+                ai_welcome: "<p>안녕하세요! 타이핑 블루의 AI 스마트 가이드 <b>'란란'</b>입니다 🌿</p><p>전통 쪽염색, 작품 특징, DIY 체험, 매장 위치 등 궁금한 점을 편하게 물어보세요!</p>",
+                ai_quick_label: "자주 묻는 질문:",
+                ai_q1_btn: "📍 매장 및 공방 위치", ai_q1_text: "투볜컹 공방 매장의 주소와 운영시간을 알려주세요.",
+                ai_q2_btn: "👑 베스트 인기 작품", ai_q2_text: "타이핑 블루의 인기 베스트 작품은 무엇인가요?",
+                ai_q3_btn: "🎨 DIY 체험 예약", ai_q3_text: "쪽염색 DIY 손수건 체험은 어떻게 예약하나요?",
+                ai_q4_btn: "🏆 수상 및 브랜드 역사", ai_q4_text: "타이핑 블루의 탄생 배경과 주요 수상 내역을 알려주세요.",
+                ai_input_placeholder: "타이핑 블루에 대해 질문하기...", ai_user_label: "나", ai_reset_toast: "대화 기록이 초기화되었습니다",
+
+                // Full KO Product Translations
+                p1: { name: "천연 식물염색 머플러", category: "配件", shortDesc: "괴화와 강황으로 염색한 따뜻한 노란색 그라데이션의 식물염색 머플러.", concept: "따스한 햇살을 닮은 노란빛 그라데이션 머플러.", process: "면마 원단을 저온에서 손으로 여러 번 침염하여 자연 산화 고착시켰습니다.", timing: "봄가을 체온 유지, 패션 포인트, 선물용으로 적합.", detail: "소재: 면마 혼방. 특징: 100% 천연 식물염색.", fullTranscript: "식물염색 머플러입니다. 괴화와 강황 천연 염료로 염색하여 따스함과 자연스러움을 선사합니다." },
+                p2: { name: "쪽염색 손수건 DIY 키트", category: "配件", shortDesc: "집에서 즐기는 쪽염색 체험! 천연 염료, 면 손수건, 도구 포함.", concept: "전통 쪽염색 방염 기법을 집에서 쉽게 체험하는 핸드메이드 키트.", process: "쪽 염료 분말, 순면 손수건, 목재 방염 조각, 고무줄, 설명서 포함.", timing: "부모와 아이 함께, 주말 DIY, 수업 교재용.", detail: "구성: 쪽 염료, 순면 손수건, 방염 도구, 안내서.", fullTranscript: "쪽염색 손수건 DIY 키트입니다. 나만의 특별한 쪽염색 작품을 직접 만들어보세요." },
+                p3: { name: "쪽염색 대형 손수건", category: "配件", shortDesc: "전통 홀치기 물결 무늬가 돋보이는 대형 순면 손수건. 뛰어난 흡수성.", concept: "일회용 휴지 대신 천연 손수건을 사용하는 친환경 생활 습관.", process: "장인이 직접 묶어 염색한 물결 문양을 12회 이상 염색하여 완성.", timing: "일상 소지, 운동 후, 도시락 싸개, 선물 포장.", detail: "소재: 100% 흡수 순면. 크기: 대형.", fullTranscript: "쪽염색 대형 손수건입니다. 흡수력이 뛰어난 순면 소재에 푸른 물결 문양이 아름답습니다." },
+                p4: { name: "쪽염색 실크 넥타이", category: "配件", shortDesc: "신사의 품격! 전통 쪽염색 기법을 정장 패션에 접목한 독창적인 넥타이.", concept: "고전 쪽염색 기법과 현대적인 신사 정장 스타일의 조화.", process: "고급 실크 혼방 원단을 사선 홀치기 염색 후 다림질하여 정성껏 바느질.", timing: "비즈니스 미팅, 파티, 결혼식, 공식 행사.", detail: "소재: 실크 혼방 손염색 원단. 규격: 표준 넥타이.", fullTranscript: "쪽염색 실크 넥타이입니다. 전통 푸른빛이 정장에 깊이 있는 포인트를 더해줍니다." },
+                p5: { name: "쪽염색 소형 손수건", category: "配件", shortDesc: "주머니에 쏙 들어가는 미니 사이즈. 은은한 푸른 구름 문양.", concept: "일상 속 부드럽고 가볍게 함께하는 쪽염색 소형 손수건.", process: "고급 순면을 쪽물에 침염 후 태양 아래 산화시켜 만들었습니다.", timing: "외출 시 소지, 어린이 학교용, 손 닦기용.", detail: "소재: 100% 친환경 순면. 크기: 소형.", fullTranscript: "쪽염색 소형 손수건입니다. 휴대하기 편리하며 순면의 포근함을 느낄 수 있습니다." },
+                p6: { name: "쪽염색 물결 코스터", category: "家飾", shortDesc: "찻상과 책상을 운치 있게 만들어주는 손염색 물결 컵받침.", concept: "투볜컹 시냇물의 맑은 물결을 코스터 안에 담았습니다.", process: "도톰한 순면 원단에 물결 무늬를 염색하여 내수성을 높였습니다.", timing: "사무실 책상, 거실 찻상, 카페 테이블.", detail: "소재: 두꺼운 순면 원단. 특징: 방열, 세탁 가능.", fullTranscript: "쪽염색 물결 코스터입니다. 시원한 물결 문양이 차 마시는 시간을 더욱 특별하게 해줍니다." },
+                p7: { name: "쪽염색 중형 손수건", category: "配件", shortDesc: "가장 실용적인 표준 크기. 침선 및 홀치기 염색 기법 적용.", concept: "실용성과 손염색의 미학을 모두 갖춘 베스트셀러.", process: "바느질 방염 후 쪽물에서 여러 번 손으로 주물러 염색.", timing: "외출 필수품, 무릎 덮개, 선물 포장.", detail: "소재: 100% 순면. 크기: 중형.", fullTranscript: "가장 인기 있는 쪽염색 중형 손수건입니다. 부드러운 감촉을 즐겨보세요." },
+                p8: { name: "쪽염색 롱 숄 머플러", category: "配件", shortDesc: "자연스러운 푸른빛 그라데이션이 아름다운 롱 머플러. 태슬 장식.", concept: "자연의 사계절과 산의 푸른 음영을 섬유에 담았습니다.", process: "통기성 좋은 면마 원단에 끈 묶기 방염 후 다중 염색.", timing: "쌀쌀한 계절 체온 유지, 정장 및 캐주얼 연출.", detail: "소재: 면마 혼방. 규격: 태슬 롱 머플러.", fullTranscript: "쪽염색 롱 숄 머플러입니다. 깊은 쪽빛 그라데이션이 우아함을 더해줍니다." },
+                p9: { name: "쪽염색 식탁 매트 세트", category: "家飾", shortDesc: "식탁 매트와 코스터 세트. 식탁 위에 동양적인 정취를 연출.", concept: "일상의 식사 시간을 정성스럽고 아늑하게 가꾸어주는 라이프스타일.", process: "도톰한 면 원단에 판염과 침선 기법을 적용하여 정교하게 마감.", timing: "가족 식사, 홈파티, 집들이 선물.", detail: "구성: 매트 1장 + 코스터 1장. 세탁 가능.", fullTranscript: "쪽염색 식탁 매트 세트입니다. 품격 있는 식탁 분위기를 완성해보세요." },
+                p10: { name: "쪽염색 러너", category: "家飾", shortDesc: "원목 테이블 중앙에 길게 늘어뜨려 운치를 더하는 그라데이션 러너.", concept: "흐르는 문화의 물줄기처럼 원목 테이블에 생명력을 불어넣습니다.", process: "대형 판염 기법으로 12회 이상 염색을 거친 정성 어린 작품.", timing: "다도 차회, 거실 테이블, 예술 공간 장식.", detail: "소재: 두꺼운 순면. 규격: 대형 테이블 러너.", fullTranscript: "웅장하고 고급스러운 쪽염색 러너입니다. 깊은 쪽빛 물결이 식탁을 정갈하게 만듭니다." },
+                p11: { name: "쪽염색 벙거지 모자", category: "配件", shortDesc: "객가 오동나무 꽃 문양의 문양염 벙거지 모자. 자외선 차단 효과.", concept: "전통 꽃 문양을 모자에 담아 실용성과 전통미를 겸비.", process: "튼튼한 캔버스 면 원단에 찹쌀 풀 방염 후 염색 및 재단.", timing: "야외 활동, 여행, 쇼핑, 자외선 차단.", detail: "소재: 캔버스 면. 형태: 벙거지 모자.", fullTranscript: "실용적이고 멋스러운 쪽염색 벙거지 모자입니다. 흰 오동나무 꽃 문양이 매력적입니다." },
+                p12: { name: "쪽염색 100% 실크 스카프", category: "配件", shortDesc: "100% 고급 순실크. 새벽안개처럼 투명하고 영롱한 푸른빛 그라데이션.", concept: "안개 둘러싸인 산의 푸른빛을 실크에 담아낸 극상의 우아함.", process: "최고급 실크에 묶음 방염 후 쪽물에서 섬세하게 염색.", timing: "예술 전시, 파티, 특별한 선물.", detail: "소재: 100% 천연 순실크. 특징: 가볍고 부드러움.", fullTranscript: "최고급 쪽염색 100% 실크 스카프입니다. 영롱하게 빛나는 푸른빛을 감상해보세요." },
+                p13: { name: "식물염색 핑크 실크 스카프", category: "配件", shortDesc: "천연 꼭두서니 뿌리로 염색한 은은한 벚꽃 핑크 그라데이션.", concept: "꼭두서니 천연 색소로 봄날의 따스한 핑크빛을 연출.", process: "순실크 원단을 꼭두서니 염액으로 달여 염색 고착.", timing: "봄철 외출, 데이트, 에어컨 바람 방지, 선물.", detail: "소재: 100% 순실크. 염료: 천연 꼭두서니 뿌리.", fullTranscript: "봄의 감성을 담은 식물염색 핑크 실크 스카프입니다. 화사한 핑크빛이 돋보입니다." },
+                p14: { name: "쪽염색 멀티 반다나", category: "配件", shortDesc: "목, 머리, 가방에 자유롭게 연출하는 다용도 미니 반다나.", concept: "경쾌하고 스타일리시하게 즐기는 전통 쪽염색 액세서리.", process: "부드러운 면 혼방 원단을 홀치기 염색 후 마감.", timing: "스카프 묶음, 헤어밴드, 가방 포인트.", detail: "소재: 면 혼방. 규격: 다용도 미니 반다나.", fullTranscript: "다양하게 활용할 수 있는 쪽염색 멀티 반다나입니다. 스타일리시한 포인트를 줘보세요." },
+                p15: { name: "쪽염색 쿠션 커버", category: "家飾", shortDesc: "객가 침선 물결 무늬가 새겨진 두꺼운 순면 쿠션 커버. 태슬 장식.", concept: "집안 공간에 대자연의 편안함과 온기를 더해줍니다.", process: "두꺼운 면 원단에 물결 무늬를 바느질하여 염색 후 태슬 부착.", timing: "소파 쿠션, 침대 베개, 읽기용 의자.", detail: "소재: 100% 면 커버. 세탁 가능 커버.", fullTranscript: "공간을 포근하게 만들어주는 쪽염색 쿠션 커버입니다." }
             },
             it: {
-                brand_name: "Taiping Blue", brand_subtitle: "Teintura all'Indigo Naturale ‧ Artigianato di Taiwan",
-                top_notice_tag: "NEWS", top_notice_text: "🌿 Fondazione Young Water ‧ Teintura 100% Indigo Naturale ‧ Guida Vocale Attiva",
+                brand_name: "Taiping Blue", brand_subtitle: "Fermentazione Botanica Naturale ‧ Artigianato di Taiwan",
+                top_notice_tag: "NEWS", top_notice_text: "🌿 Fondazione Young Water ‧ Tintura d'indaco 100% naturale ‧ Guida audio attiva",
                 top_free_ship: "Spedizione gratuita sul negozio ufficiale Pinkoi",
-                nav_cat_all_title: "Tutte le Opere", nav_cat_all_sub: "ALL",
-                nav_news_title: "Notizie & Premi", nav_news_sub: "NEWS",
-                nav_craft_title: "Tecnica Tradizionale", nav_craft_sub: "CRAFT",
-                nav_stores_title: "Nostri Negozi", nav_stores_sub: "STORES",
-                drawer_sec_categories: "CATEGORIE PRODOTTI", drawer_sec_about: "CHI SIAMO E PUNTI VENDITA", drawer_sec_tools: "STRUMENTI E IMPOSTAZIONI",
-                btn_fb: "Pagina Facebook", btn_pinkoi: "Shop Pinkoi", btn_youngwater: "Sito Fondazione", btn_manager: "Centro Gestione",
-                btn_tour_start: "Avvia Tour Vocale", btn_tour_stop: "Interrompi Tour",
-                hero_badge: "L'eleganza dell'indigo naturale da Taiping, Taichung ‧ Estetica di Taiwan",
-                hero_title: "Superando il Blu Più Puro<br><span class=\"text-amber-300\">L'artigianato taiwanese dell'indigo sul palcoscenico mondiale</span>",
-                hero_desc: "Nato dalla ricostruzione comunitaria dopo il terremoto del 1999, « Taiping Blue » preserva la teintura 100% naturale a fermentazione vegetale, unendo motivi Hakka ed estetica moderna.",
-                hero_btn_explore: "Inizia la Visita Guidata",
-                guide_title: "Guida Vocale Taiping Blue", guide_desc: "Clicca su qualsiasi opera per ascoltarne la storia", guide_voice: "Voce della Guida:",
-                sec_subtitle: "Taiping Blue Exhibition", sec_title: "Galleria Espositiva Taiping Blue", btn_add_product: "Aggiungi Opera",
-                cat_all: "Tutte le Opere ALL", cat_acc: "Accessori Moda ACCESSORIES", cat_decor: "Arredo Casa DECOR", cat_apparel: "Abbigliamento APPAREL",
-                news_subtitle: "Honors & Media Coverage", news_title: "Riconoscimenti e Stampa", news_tip: "Clicca sul titolo della notizia per aprire il link completo", news_read_more: "Leggi articolo completo",
-                news_badge_craft: "Premio Artigianato", news_badge_edu: "Premio Educazione", news_badge_global: "Finalista Mondiale", news_badge_hr: "Premio Risorse Umane", news_badge_exhibition: "Fiera Internazionale",
-                news1_title: "Taiping Blue vince il Taiwan Craft Award 2023 - Premio Collaborazione",
-                news1_desc: "Connette l'artigianato Hakka dell'indigo al design globale valorizzando le donne locali.",
-                news2_title: "Premiato dal Ministero dell'Istruzione per il contributo all'educazione sociale",
-                news2_desc: "Riconosciuto per lo sviluppo comunitario sostenibile e la cultura della tintura naturale.",
-                news3_title: "Unico finalista taiwanese! L'opera «Memoria del Bacino» al Premio Valcellina in Italia",
-                news3_desc: "Selezionata tra oltre 300 opere d'arte tessile internazionali.",
-                news4_title: "Insignito del Premio Nazionale per lo Sviluppo del Capitale Umano",
-                news4_desc: "Formazione di donne e giovani della comunità, presenti alla London Craft Week.",
-                news5_title: "Protagonista alla London Craft Week e Maison & Objet a Parigi",
-                news5_desc: "Vincitore del Gran Premio della Giuria alla Fiera del Mobile di Singapore.",
-                soul_subtitle: "Heritage & Craftsmanship", soul_title: "I 4 Passaggi dell'Anima e le 4 Tecniche di Riserva", soul_desc: "Senza additivi chimici. Oltre 12 immersioni manuali per raggiungere il blu perfetto.",
-                step1_num: "I", step1_title: "Raccolta e Fermentazione", step1_desc: "Raccolta estiva delle foglie di Strobilanthes cusia, fermentate con maltosio e calce.",
-                step2_num: "II", step2_title: "4 Tecniche di Riserva", step2_desc: "Legatura, cucitura a mano, stencil o morsetti in legno per creare motivi azzurro e bianco.",
-                step3_num: "III", step3_title: "Teintura Ripetuta a Freddo", step3_desc: "Immersione e manipolazione manuale per oltre 12 volte per penetrare nelle fibre.",
-                step4_num: "IV", step4_title: "Ossidazione al Sole", step4_desc: "A contatto con l'aria e il sole, il tessuto si trasforma in un blu intenso e vibrante.",
-                stores_subtitle: "Store Locator & Workshop", stores_title: "Negozi e Laboratorio Toubiankeng",
-                store1_title: "Laboratorio di Tintura Toubiankeng", store1_addr: "Indirizzo: Sec. 4, Changlong Rd., Taiping Dist., Taichung City", store1_time: "Orari: Lun - Dom 09:00 - 17:00",
-                store2_title: "Sede Fondazione Young Water", store2_addr: "Indirizzo: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City", store2_time: "Orari: Lun - Ven 09:00 - 18:00",
-                tab_concept: "💡 Concetto", tab_process: "🧵 Lavorazione", tab_timing: "✨ Occasione", tab_detail: "📦 Dettagli",
-                btn_play: "Ascolta storia", btn_pause: "Pausa", btn_buy: "Acquista su Pinkoi", btn_edit: "Modifica opera",
-                edit_modal_title: "Modifica Dettagli Opera", edit_lbl_name: "Nome dell'Opera", edit_lbl_cat: "Categoria",
-                edit_lbl_pinkoi: "URL Pinkoi", edit_lbl_img: "Immagine (Upload o URL)", edit_btn_upload_img: "Carica Immagine", edit_lbl_shortdesc: "Breve descrizione", edit_lbl_concept: "💡 Concetto",
-                edit_lbl_process: "🧵 Lavorazione", edit_lbl_timing: "✨ Occasione", edit_lbl_detail: "📦 Dettagli", edit_lbl_transcript: "🎙️ Trascrizione Vocale",
-                edit_btn_autogen: "Genera Trascrizione", edit_btn_cancel: "Annulla", edit_btn_save: "Salva Modifiche",
-                mgr_title: "Centro Gestione Esposizione", mgr_desc: "Aggiungi, modifica o elimina opere ed esporta/importa i dati di backup.",
+                nav_cat_all_title: "Tutte le Collezioni", nav_cat_all_sub: "ALL", nav_news_title: "Onorificenze", nav_news_sub: "NEWS",
+                nav_craft_title: "Lavorazione", nav_craft_sub: "CRAFT", nav_stores_title: "Negozi", nav_stores_sub: "STORES",
+                drawer_sec_categories: "CATEGORIE", drawer_sec_about: "CHI SIAMO & NEGOZI", drawer_sec_tools: "STRUMENTI & OPZIONI",
+                btn_fb: "Pagina FB", btn_pinkoi: "Negozio Pinkoi", btn_youngwater: "Sito Fondazione", btn_manager: "Gestione",
+                btn_tour_start: "Avvia Guida Audio", btn_tour_stop: "Interrompi Guida",
+                hero_badge: "Artigianato naturale d'indaco da Taiping, Taichung ‧ Bellezza Sostenibile",
+                hero_title: "Oltre l'Indaco Puro<br><span class=\"text-amber-300\">L'artigianato naturale di Taiwan sulla scena mondiale</span>",
+                hero_desc: "Nata dopo la ricostruzione post-terremoto dalla Fondazione Young Water, Taiping Blue preserva la tintura naturale a fermentazione vegetale.",
+                hero_btn_explore: "Inizia il Tour Audio",
+                sec_subtitle: "Esposizione Taiping Blue", sec_title: "Galleria d'Arte Taiping Blue", btn_add_product: "Aggiungi Opera",
+                cat_all: "Tutte le Opere ALL", cat_acc: "Accessori ACCESSORIES", cat_decor: "Casa DECOR", cat_apparel: "Abbigliamento APPAREL",
+                news_subtitle: "Onorificenze & Media", news_title: "Premi e Copertura Stampa", news_tip: "Clicca sul titolo di una notizia per leggere l'articolo completo", news_read_more: "Leggi l'articolo completo",
+                news_badge_craft: "Premio Artigianato", news_badge_edu: "Premio Educazione", news_badge_global: "Finalista Mondiale", news_badge_hr: "Premio Nazionale Risorse Umane", news_badge_exhibition: "Esposizione Globale",
+                news1_title: "Taiping Blue vince il Taiwan Craft Award 2023", news1_desc: "Un riconoscimento prestigioso per l'unione tra design contemporaneo e tintura tradizionale Hakka.",
+                news2_title: "Premio per il Contributo all'Educazione Sociale", news2_desc: "Premiata per la rivitalizzazione comunitaria ecologica e sostenibile.",
+                news3_title: "Finalista al Premio Valcellina in Italia", news3_desc: "Unica opera taiwanese selezionata tra oltre 300 creazioni tessili internazionali.",
+                news4_title: "Premio Nazionale per lo Sviluppo delle Risorse Umane", news4_desc: "Formazione di donne e giovani artigiani rappresentati alla London Craft Week.",
+                news5_title: "In mostra alla London Craft Week e Parigi Maison & Objet", news5_desc: "Una vetrina d'eccellenza per la resilienza culturale dell'artigianato taiwanese.",
+                soul_subtitle: "Heritage & Craftsmanship", soul_title: "I 4 Passaggi dell'Anima e 4 Tecniche di Riserva", soul_desc: "Senza additivi chimici. Immersione artigianale ripetuta più di 12 volte.",
+                step1_num: "I", step1_title: "Raccolta e Fermentazione", step1_desc: "Raccolta estiva delle foglie d'indaco fermentate con maltosio e calce.",
+                step2_num: "II", step2_title: "4 Tecniche di Riserva", step2_desc: "Legatura, cucitura, stencil o blocco di legno per creare motivi nitidi.",
+                step3_num: "III", step3_title: "Tintura Manuale Ripetuta", step3_desc: "Lavorazione a mano in vasche a temperatura ambiente ripetuta oltre 12 volte.",
+                step4_num: "IV", step4_title: "Ossidazione Solare", step4_desc: "Rivelazione del blu intenso grazie alla reazione con aria e sole.",
+                stores_subtitle: "Negozi e Laboratori", stores_title: "Punti Vendita e Laboratorio Toubiankeng",
+                store1_title: "Laboratorio e Galleria Toubiankeng", store1_addr: "Indirizzo: Sec. 4, Changlong Rd., Taiping Dist., Taichung", store1_time: "Orari: Lun - Dom 09:00 - 17:00",
+                store2_title: "Sede Fondazione Young Water", store2_addr: "Indirizzo: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung", store2_time: "Orari: Lun - Ven 09:00 - 18:00",
+                tab_concept: "💡 Concept", tab_process: "🧵 Lavorazione", tab_timing: "✨ Occasione", tab_detail: "📦 Dettagli",
+                btn_play: "Ascolta la Storia", btn_pause: "Pausa", btn_buy: "Acquista su Pinkoi", btn_edit: "Modifica",
+                edit_modal_title: "Modifica Dettagli Opera", edit_lbl_name: "Titolo", edit_lbl_cat: "Categoria",
+                edit_lbl_pinkoi: "Link Pinkoi", edit_lbl_img: "Immagine", edit_btn_upload_img: "Carica Immagine", edit_lbl_shortdesc: "Riassunto", edit_lbl_concept: "💡 Concept",
+                edit_lbl_process: "🧵 Processo", edit_lbl_timing: "✨ Occasione", edit_lbl_detail: "📦 Dettagli", edit_lbl_transcript: "🎙️ Trascrizione",
+                edit_btn_autogen: "Genera Testo", edit_btn_cancel: "Annulla", edit_btn_save: "Salva",
+                mgr_title: "Centro Gestione Opere", mgr_desc: "Aggiungi, modifica o elimina le tue creazioni ed esporta i dati in JSON.",
                 mgr_btn_export: "Esporta JSON", mgr_btn_import: "Importa JSON", mgr_btn_reset: "Ripristina",
                 mgr_th_thumb: "Anteprima", mgr_th_name: "Titolo", mgr_th_cat: "Categoria", mgr_th_action: "Azioni",
-                footer_org: "Taiping Blue", footer_foundation_desc: "Marchio artigianale comunitario creato dalla Fondazione Young Water per favorire la rinascita locale e formare le donne all'arte della tintura sostenibile.",
-                footer_contact_title: "Contatti e Informazioni", footer_hours: "Orario Ufficio: Lun - Ven 09:00 - 18:00",
-                footer_headquarter: "Sede Fondazione: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City",
-                footer_workshop: "Laboratorio: Sec. 4, Changlong Rd., Taiping Dist., Taichung City",
+                footer_org: "Taiping Blue", footer_foundation_desc: "Marchio artigianale comunitario della Fondazione Young Water.",
+                footer_contact_title: "Contatti e Info", footer_hours: "Orari: Lun - Ven 09:00 - 18:00",
+                footer_headquarter: "Sede: 3F-4, No. 3, Ln. 3, Yucai St., Taichung", footer_workshop: "Laboratorio: Sec. 4, Changlong Rd., Taiping, Taichung",
                 footer_links_title: "Piattaforme Ufficiali", card_listen_guide: "Ascolta la Guida",
-                ai_hint: "Chiedi a Lanlan AI!", ai_badge_btn: "Guida AI",
-                ai_name: "Lanlan ‧ Guida Virtuale AI", ai_subtitle: "Assistenza 24/7 per l'artigianato e i punti vendita Taiping Blue",
-                ai_welcome: "<p>Ciao! Sono <b>Lanlan</b>, la tua guida virtuale AI per Taiping Blue 🌿</p><p>Puoi chiedermi informazioni su <b>tecniche di tintura all'indigo, prodotti, workshop DIY e punti vendita</b>! Come posso aiutarti oggi?</p>",
+                ai_hint: "Fai una domanda a Lanlan AI!", ai_badge_btn: "Guida AI",
+                ai_name: "Lanlan ‧ Assistente IA", ai_subtitle: "Assistenza 24/7 per prodotti e informazioni",
+                ai_welcome: "<p>Ciao! Sono <b>Lanlan</b>, la tua guida virtuale per Taiping Blue 🌿</p><p>Chiedimi qualsiasi cosa su <b>tecniche tradizionali, prodotti, workshop DIY e negozi</b>!</p>",
                 ai_quick_label: "Domande rapide:",
-                ai_q1_btn: "📍 Negozi e Laboratorio", ai_q1_text: "Quali sono l'indirizzo e gli orari del Laboratorio Toubiankeng?",
-                ai_q2_btn: "👑 Più Venduti", ai_q2_text: "Quali sono i prodotti più richiesti di Taiping Blue?",
-                ai_q3_btn: "🎨 Prenotazione DIY", ai_q3_text: "Come posso prenotare un'esperienza di tintura DIY?",
-                ai_q4_btn: "🏆 Storia e Premi", ai_q4_text: "Parlami della storia e dei riconoscimenti di Taiping Blue.",
-                ai_input_placeholder: "Chiedi su Taiping Blue...", ai_user_label: "Tu", ai_reset_toast: "Cronologia della chat ripristinata"
+                ai_q1_btn: "📍 Laboratorio e Negozi", ai_q1_text: "Quali sono l'indirizzo e gli orari del laboratorio Toubiankeng?",
+                ai_q2_btn: "👑 Opere più Vendute", ai_q2_text: "Quali sono i prodotti più popolari di Taiping Blue?",
+                ai_q3_btn: "🎨 Prenota Workshop DIY", ai_q3_text: "Come posso prenotare un'esperienza di tintura fai-da-te?",
+                ai_q4_btn: "🏆 Storia e Riconoscimenti", ai_q4_text: "Raccontami la storia e i premi vinti da Taiping Blue.",
+                ai_input_placeholder: "Chiedi su Taiping Blue...", ai_user_label: "Tu", ai_reset_toast: "Cronologia chat ripristinata",
+
+                // Full IT Product Translations
+                p1: { name: "Sciarpa in Tintura Botanica", category: "配件", shortDesc: "Tinta naturalmente con Sophora e curcuma, sfumatura giallo caldo e morbida al tatto.", concept: "Ispirata al sole, unisce le tonalità calde del Sophora e della curcuma.", process: "Tessuto in lino e cotone tinto a bassa temperatura e fatto ossidare al sole.", timing: "Ideale in primavera/autunno, per abiti casual o come regalo elegante.", detail: "Materiale: Misto cotone e lino. Tintura 100% vegetale.", fullTranscript: "Benvenuti. Scoprite la sciarpa in tintura botanica dalle tonalità calde e luminose." },
+                p2: { name: "Kit Fai-da-Te Fazzoletto Indaco", category: "配件", shortDesc: "Crea il tuo fazzoletto in indaco naturale a casa! Kit completo di strumenti.", concept: "Vivi l'esperienza dell'artigianato indaco a casa tua.", process: "Include polvere d'indaco, fazzoletto in cotone, tasselli in legno e guida illustrata.", timing: "Attività in famiglia, progetti weekend, workshop creativi.", detail: "Contenuto: Polvere d'indaco, tessuto in cotone, strumenti e istruzioni.", fullTranscript: "Crea il tuo motivo unico in indaco naturale con questo kit fai-da-te." },
+                p3: { name: "Fazzoletto Grande in Indaco", category: "配件", shortDesc: "Ampio fazzoletto in puro cotone con tradizionali motivi a onde legati a mano.", concept: "Un'alternativa ecologica ai fazzoletti di carta per una vita sostenibile.", process: "Motivi legati a mano e immersi in 12 bagni d'indaco vegetale.", timing: "Uso quotidiano, attività sportive, confezioni regalo eleganti.", detail: "Materiale: 100% cotone assorbente. Misura: Grande.", fullTranscript: "Fazzoletto grande in indaco, unisce assorbenza e tradizione artigianale." },
+                p4: { name: "Cravatta in Seta Indaco", category: "配件", shortDesc: "Un tocco di classe al maschile! L'indaco tradizionale per l'abbigliamento formale.", concept: "Fusione tra l'antica arte dell'indaco e l'eleganza sartoriale moderna.", process: "Seta tinta in diagonale con tecniche di riserva, stirata e cucita a mano.", timing: "Riunioni d'affari, serate di gala, cerimonie formali.", detail: "Materiale: Misto seta tinto a mano. Modello: Cravatta standard.", fullTranscript: "Cravatta in seta indaco, dona un tocco di raffinata unicità al tuo abito." },
+                p5: { name: "Fazzoletto Piccolo in Indaco", category: "配件", shortDesc: "Dimensioni compatte da taschino con delicati motivi a nuvola.", concept: "Un accessorio tascabile elegante e soffice per tutti i giorni.", process: "Puro cotone tinto in vasche d'indaco vegetale e asciugato al sole.", timing: "Da tenere in tasca, per bambini o come piccolo pensiero.", detail: "Materiale: 100% cotone. Formato: Tascabile compatto.", fullTranscript: "Fazzoletto piccolo in indaco, morbido, compatto e indispensabile." },
+                p6: { name: "Sottobicchieri con Motivo a Onde", category: "家飾", shortDesc: "Sottobicchieri tinti a mano per arricchire la tua tavola da tè e la scrivania.", concept: "Cattura i riflessi del fiume Toubiankeng sul tuo tavolo.", process: "Cotone spesso stampato a stencil e tinto a mano in indaco.", timing: "Scrivania da ufficio, tavolino da salotto, sale da tè.", detail: "Materiale: Cotone spesso assorbente. Lavabile e resistente.", fullTranscript: "Sottobicchieri con motivo a onde, portano l'armonia dell'acqua sulla tua tavola." },
+                p7: { name: "Fazzoletto Medio in Indaco", category: "配件", shortDesc: "Misura media classica in morbido cotone con motivi fatti a mano.", concept: "Il perfetto equilibrio tra uso quotidiano e bellezza artistica.", process: "Cucito a mano e immerso ripetutamente in vasche a temperatura ambiente.", timing: "Uscite quotidiane, tovagliolo da tavola, confezione regalo.", detail: "Materiale: 100% cotone. Misura: Media.", fullTranscript: "Fazzoletto medio in indaco, soffice e decorato con cura artigianale." },
+                p8: { name: "Sciarpa Lunga in Indaco", category: "配件", shortDesc: "Sciarpa lunga con sfumature naturali tra blu e bianco e nappe eleganti.", concept: "Intreccia le sfumature delle montagne nei tessuti traspiranti.", process: "Misto cotone e lino legato con corde e tinto in vari bagni d'indaco.", timing: "Protezione per l'autunno/inverno, outfit eleganti, viaggi.", detail: "Materiale: Misto cotone e lino. Con nappe finali.", fullTranscript: "Sciarpa lunga in indaco con sfumature intense e rilassanti." },
+                p9: { name: "Set Tovagliette Americana Indaco", category: "家飾", shortDesc: "Set di tovaglietta e sottobchiere per un tocco di eleganza orientale.", concept: "Trasforma ogni pasto in un momento di armonia e serenità.", process: "Cotone ad alta grammatura tinto con tecniche tradizionali e rifinito a mano.", timing: "Pranzi in famiglia, cene festive, regalo di inaugurazione casa.", detail: "Incluso: Tovaglietta rettangolare e sottobicchiero. Cotone lavabile.", fullTranscript: "Set di tovagliette indaco per una tavola raffinata ed accogliente." },
+                p10: { name: "Runner da Tavolo in Indaco", category: "家飾", shortDesc: "Runner da tavolo lungo con sfumature blu per tavoli in legno.", concept: "Simbolo di un fiume culturale che scorre al centro della tua tavola.", process: "Cotone spesso tinto in gradazione d'indaco per oltre 12 cicli.", timing: "Cerimonia del tè, tavoli da pranzo in legno, gallerie d'arte.", detail: "Materiale: Cotone spesso tinto a mano. Formato lungo.", fullTranscript: "Runner da tavolo in indaco, aggiunge un tocco di maestosa bellezza orientale." },
+                p11: { name: "Cappello Bucket Indaco Hakka", category: "配件", shortDesc: "Con motivi a stencil di fiori di Tung Hakka. Protezione solare e stile.", concept: "Combina protezione solare e patrimonio culturale tradizionale.", process: "Tessuto di cotone resistente decorato a stencil, tinto e cucito.", timing: "Attività all'aperto, passeggiate, viaggi e tempo libero.", detail: "Materiale: Cotone resistente. Modello: Cappello a secchiello.", fullTranscript: "Cappello bucket indaco con tradizionali motivi floreali Hakka." },
+                p12: { name: "Sciarpa in Pura Seta Indaco", category: "配件", shortDesc: "100% pura seta con sfumature blu trasparente come la nebbia del mattino.", concept: "L'incontro tra la seta più pregiata e le sfumature blu delle montagne.", process: "Pura seta legata a mano e tinta delicatamente in vasche vegetali.", timing: "Serate speciali, eventi d'arte, cerimonie, regalo di prestigio.", detail: "Materiale: 100% seta naturale. Sfumatura unica ed impalpabile.", fullTranscript: "Sciarpa in pura seta indaco, di una leggerezza e brillantezza straordinarie." },
+                p13: { name: "Sciarpa in Seta Rosa Robbia", category: "配件", shortDesc: "Tinta con radice di robbia naturale, delicata sfumatura rosa ciliegio.", concept: "Estratta dalla radice di robbia per un rosa romantico e luminoso.", process: "Pura seta cotta nell'estratto di robbia e fissata naturalmente.", timing: "Passeggiate primaverili, serate estive, regalo speciale.", detail: "Materiale: 100% seta. Tintura: Radice di robbia naturale.", fullTranscript: "Sciarpa in seta rosa robbia, dona un tocco di grazia e freschezza." },
+                p14: { name: "Bandana Multi-Stile in Indaco", category: "配件", shortDesc: "Piccola bandana multifunzione per collo, capelli o borsa.", concept: "Un accessorio giovane e versatile dalle calde tonalità indaco.", process: "Morbido cotone legato, tinto in indaco e rifinito nei dettagli.", timing: "Nodo al collo, fascia per capelli, decorazione per borsa.", detail: "Materiale: Misto cotone. Formato: Bandana versatile.", fullTranscript: "Bandana multi-stile in indaco, ideale per completare il tuo look." },
+                p15: { name: "Cuscino Indaco Motivo Hakka", category: "家飾", shortDesc: "Cotone spesso con motivi a onde Hakka cuciti a mano e nappe ai lati.", concept: "Porta l'armonia della natura ed un tepore accogliente nella tua casa.", process: "Cotone spesso cucito a mano, tinto in indaco con 4 nappe decorative.", timing: "Cuscino per divano, letto, poltrona da lettura.", detail: "Materiale: 100% cotone spesso. Fodera rimovibile e lavabile.", fullTranscript: "Fodera per cuscino indaco per rendere il tuo salotto unico ed accogliente." }
             }
         };
 
@@ -1301,7 +1336,7 @@
             {
                 id: "p1", name: "植物染圍巾", category: "配件",
                 pinkoiUrl: "https://www.pinkoi.com/store/taiping-blue",
-                img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
+                img: "input_file_0.png",
                 shortDesc: "天然植物（槐米/薑黃）染製，呈溫暖明亮黃色漸層，觸感柔和舒適。",
                 concept: "【商品理念】取材天然槐米與薑黃植物染色，呈現如暖陽般溫馨明亮的鵝黃漸層，展現自然和煦的生活美學與大地溫情。",
                 process: "【如何生成】選用親膚透氣棉麻布料，經天然植物發酵染液多道反覆低溫揉捏浸染與陽光晾曬氧化定色。",
@@ -1465,26 +1500,6 @@
             }
         ];
 
-        const productTranslations = {
-            en: {
-                p1: { name: "Plant-Dyed Scarf", category: "Accessories", shortDesc: "Naturally dyed with pagoda bud/turmeric, featuring a warm yellow gradient.", concept: "[Concept] Dyed with pagoda bud and turmeric to evoke warm sunny gradients.", process: "[Process] Breathable cotton-linen dyed repeatedly in plant fermentation vats.", timing: "[Occasion] Ideal for spring/autumn warmth and bright fashion accents.", detail: "[Details] Material: Cotton-Linen Blend. Handcrafted natural plant dye." },
-                p2: { name: "Indigo Square Towel DIY Kit", category: "Accessories", shortDesc: "Experience Taiping Blue dyeing at home! Includes indigo dye, cotton towel & tools.", concept: "[Concept] Bring craft workshop fun home and enjoy creative resist dyeing.", process: "[Process] Includes indigo powder, cotton square towel, wooden clamps & guide.", timing: "[Occasion] Great for family crafting, weekend DIY & creative projects.", detail: "[Details] Kit includes: Indigo powder, cotton towel, clamps & user guide." },
-                p3: { name: "Indigo Handkerchief (Large)", category: "Accessories", shortDesc: "Large pure cotton handkerchief with traditional tie-dyed water ripple pattern.", concept: "[Concept] Eco-friendly cotton handkerchief replacing single-use tissues.", process: "[Process] Tie-dyed on pure cotton fabric and oxidized under sunlight.", timing: "[Occasion] Daily carry, sweat wiping, bento wrap, or stylish accessory.", detail: "[Details] Material: 100% Pure Cotton. Size: Large. Natural tie-dye." },
-                p4: { name: "Indigo Necktie", category: "Accessories", shortDesc: "Gentleman elegance! Injecting natural indigo tie-dye into modern business wear.", concept: "[Concept] Combining ancient indigo resist-dyeing with modern formal menswear.", process: "[Process] Silk blend fabric tie-dyed diagonally and hand-stitched.", timing: "[Occasion] Business meetings, international forums, or weddings.", detail: "[Details] Material: Silk Blend. Hand-dyed unique diagonal pattern." },
-                p5: { name: "Indigo Handkerchief (Small)", category: "Accessories", shortDesc: "Compact pocket-sized cotton handkerchief with refreshing blue cloud pattern.", concept: "[Concept] Pocket-sized companion offering soft natural cotton touch.", process: "[Process] Fermented indigo vat dyed and soft washed for daily clean.", timing: "[Occasion] Pocket carry, school use, daily wiping, or small gift.", detail: "[Details] Material: 100% Pure Cotton. Size: Small pocket size." },
-                p6: { name: "Indigo Water-Ripple Coaster", category: "Decor", shortDesc: "Elegantly hand-dyed coaster adding artistic indigo vibes to your desk.", concept: "[Concept] Capturing water ripple light reflections to protect tables quietly.", process: "[Process] Heavyweight cotton stencil-dyed for high absorbency and durability.", timing: "[Occasion] Office desks, coffee tables, study rooms, or cafes.", detail: "[Details] Material: Heavy Absorbent Cotton. Non-slip & washable." },
-                p7: { name: "Indigo Handkerchief (Medium)", category: "Accessories", shortDesc: "Classic medium cotton handkerchief with delicate stitched resist pattern.", concept: "[Concept] Most popular size combining practical absorption with indigo art.", process: "[Process] Hand-stitched resist dyed repeatedly in fermented indigo vats.", timing: "[Occasion] Daily carry, dining napkin, or elegant item wrap.", detail: "[Details] Material: 100% Natural Cotton. Size: Medium standard." },
-                p8: { name: "Indigo Scarf", category: "Accessories", shortDesc: "Classic indigo long scarf with natural gradient and soft tassels.", concept: "[Concept] Weaving nature's seasonal blue shades into breathable fibers.", process: "[Process] Cotton-linen tie-dyed with tassels attached at edges.", timing: "[Occasion] Autumn/winter warmth, travel styling, or tasteful gifts.", detail: "[Details] Material: Cotton-Linen Blend with tassels. Natural dye." },
-                p9: { name: "Indigo Placemat Set", category: "Decor", shortDesc: "Hand-dyed placemat and coaster set bringing Zen atmosphere to dining.", concept: "[Concept] Bringing traditional craft into everyday dining rituals.", process: "[Process] Heavy cotton clamp-dyed and precision sewn.", timing: "[Occasion] Family dinners, holiday table decor, or housewarming gifts.", detail: "[Details] Set Includes: Rectangle placemat & square coaster." },
-                p10: { name: "Indigo Table Runner", category: "Decor", shortDesc: "Spreads across wooden tables with rich indigo gradients for tea art.", concept: "[Concept] Symbolizing a flowing blue river across wooden tea tables.", process: "[Process] Large clamp-dyeing on heavyweight cotton through 12+ dye cycles.", timing: "[Occasion] Tea ceremony setups, living room decor, or art spaces.", detail: "[Details] Material: Heavy Cotton. Technique: Gradient clamp dye." },
-                p11: { name: "Indigo Bucket Hat", category: "Accessories", shortDesc: "Hakka Tung blossom stencil-dyed bucket hat offering stylish sun protection.", concept: "[Concept] Blending Hakka Tung blossom motifs with functional sun hat design.", process: "[Process] Stencil paste applied on cotton canvas and indigo dyed.", timing: "[Occasion] Outdoor trips, shopping, sun shading, or casual styling.", detail: "[Details] Material: Cotton Canvas. Style: Bucket hat with flowers." },
-                p12: { name: "Indigo Silk Scarf", category: "Accessories", shortDesc: "100% pure silk with deep blue mountain mist gradient, light and graceful.", concept: "[Concept] Premium pure silk capturing misty mountain indigo elegance.", process: "[Process] Pure silk tie-dyed in room-temperature indigo vats.", timing: "[Occasion] Art galas, banquets, or luxury gift-giving.", detail: "[Details] Material: 100% Pure Silk. Lightweight & graceful." },
-                p13: { name: "Plant-Dyed Silk Scarf", category: "Accessories", shortDesc: "Naturally dyed with madder root for soft sakura pink and peach gradients.", concept: "[Concept] Extracting natural madder pigments for romantic spring pink shades.", process: "[Process] Pure silk dyed with natural madder extracts and fixed naturally.", timing: "[Occasion] Spring outings, dates, indoor air-conditioned warmth.", detail: "[Details] Material: 100% Pure Silk. Dye: Natural Madder Root." },
-                p14: { name: "Indigo Neckerchief / Bandana", category: "Accessories", shortDesc: "Versatile styling neckerchief adding lively blue accents to daily outfits.", concept: "[Concept] Flexible mini neckerchief adding youthful craft energy.", process: "[Process] Soft cotton blend tie-dyed and precision hemmed.", timing: "[Occasion] Neck ties, bag accents, hair bands, or wrist wraps.", detail: "[Details] Material: Cotton Blend. Style: Versatile mini scarf." },
-                p15: { name: "Indigo Cushion", category: "Decor", shortDesc: "Traditional Hakka stitch-dyed water ripple pillow with corner tassels.", concept: "[Concept] Inspired by Hakka streams, delivering comforting home hugs.", process: "[Process] Heavy cotton stitch-dyed with corner tassels and plush insert.", timing: "[Occasion] Sofa cushions, bed headboard pillows, or housewarming gifts.", detail: "[Details] Material: 100% Heavy Cotton. Removable washable cover." }
-            }
-        };
-
         let productsData = loadProductsData();
 
         function changeLanguage(langKey) {
@@ -1493,7 +1508,7 @@
             document.documentElement.lang = currentLang === 'zh' ? 'zh-TW' : currentLang;
             document.body.className = document.body.className.replace(/\blang-\w+/g, '').trim() + ` lang-${currentLang}`;
 
-            // Update all static data-i18n elements
+            // Update static data-i18n elements
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(elem => {
                 const key = elem.getAttribute('data-i18n');
@@ -1514,7 +1529,7 @@
             for (let i = 1; i <= 4; i++) {
                 const qBtn = document.getElementById(`ai-q${i}-btn`);
                 if (qBtn) {
-                    qBtn.setAttribute('data-question', dict[`ai_q${i}_text`]);
+                    qBtn.setAttribute('data-question', dict[`ai_q${i}_text`] || i18nDict.zh[`ai_q${i}_text`]);
                 }
             }
 
@@ -1563,12 +1578,28 @@
             });
         }
 
+        // Helper to accurately match category across English/Chinese terms
+        function matchesCategory(prodCat, filterCat) {
+            if (!filterCat || filterCat === 'all') return true;
+            const catMap = {
+                '配件': ['配件', 'Accessories'],
+                'Accessories': ['配件', 'Accessories'],
+                '家飾': ['家飾', 'Decor'],
+                'Decor': ['家飾', 'Decor'],
+                '服飾': ['服飾', 'Apparel'],
+                'Apparel': ['服飾', 'Apparel']
+            };
+            const matches = catMap[filterCat] || [filterCat];
+            return matches.includes(prodCat);
+        }
+
         function filterCategory(category, scrollToGallery = false) {
             currentCategory = category || 'all';
 
             const filterButtons = document.querySelectorAll('.filter-btn[data-category]');
             filterButtons.forEach(btn => {
-                if (btn.getAttribute('data-category') === currentCategory) {
+                const btnCat = btn.getAttribute('data-category');
+                if (matchesCategory(btnCat, currentCategory)) {
                     btn.className = "filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-indigo-950 text-white shadow-sm transition";
                 } else {
                     btn.className = "filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-indigo-50 transition";
@@ -1584,10 +1615,10 @@
 
         function loadProductsData() {
             try {
-                const stored = localStorage.getItem('taiping_blue_products_integrated_v3');
+                const stored = localStorage.getItem('taiping_blue_products_integrated_v4');
                 if (stored) {
                     const parsed = JSON.parse(stored);
-                    if (Array.isArray(parsed) && parsed.length === 15) return parsed;
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
                 }
             } catch (e) {
                 console.error("Failed to load products from localStorage:", e);
@@ -1597,18 +1628,18 @@
 
         function saveProductsData(data) {
             try {
-                localStorage.setItem('taiping_blue_products_integrated_v3', JSON.stringify(data));
+                localStorage.setItem('taiping_blue_products_integrated_v4', JSON.stringify(data));
                 return true;
             } catch (e) {
                 console.error("Failed to save products to localStorage:", e);
-                showToast(currentLang === 'zh' ? "⚠️ 儲存失敗：本地儲存空間已滿，請使用適當尺寸的圖片" : "⚠️ Save failed: LocalStorage quota exceeded.", "error");
+                showToast(currentLang === 'zh' ? "⚠️ 儲存失敗：本地儲存空間已滿，請壓縮圖片尺寸" : "⚠️ Save failed: LocalStorage quota exceeded.", "error");
                 return false;
             }
         }
 
         function getProductContent(p, lang) {
             if (!lang || lang === 'zh') return p;
-            const trans = productTranslations[lang]?.[p.id];
+            const trans = i18nDict[lang]?.[p.id];
             if (trans) {
                 return { ...p, ...trans };
             }
@@ -1620,9 +1651,7 @@
             if (!grid) return;
             grid.innerHTML = '';
 
-            const filtered = currentCategory === 'all' 
-                ? productsData 
-                : productsData.filter(p => p.category === currentCategory || (currentCategory === '配件' && p.category === '配件') || (currentCategory === '家飾' && p.category === '家飾') || (currentCategory === '服飾' && p.category === '服飾'));
+            const filtered = productsData.filter(p => matchesCategory(p.category, currentCategory));
 
             if (filtered.length === 0) {
                 grid.innerHTML = `
@@ -1767,7 +1796,6 @@
 
         async function playAudioText(text, title, img) {
             stopGlobalAudio();
-
             const cleanText = text.replace(/\[[^\]]+\]/g, '').replace(/【[^】]+】/g, '');
             updateAudioUIState(true, title, img, true);
 
@@ -1827,40 +1855,18 @@
         }
 
         function updateAudioUIState(isPlaying, title, img, isLoading = false) {
-            const playbackBar = document.getElementById('audio-playback-bar');
-            const playingTitle = document.getElementById('playing-title');
-            const globalIcon = document.getElementById('global-play-icon');
-            const globalText = document.getElementById('global-play-text');
-            const voiceWaves = document.getElementById('voice-waves');
-            const guideStatus = document.getElementById('guide-status-text');
-
             const modalPlayIcon = document.getElementById('modal-play-icon');
             const modalPlayText = document.getElementById('modal-play-text');
 
             if (isLoading) {
-                if (playbackBar) playbackBar.classList.remove('hidden');
-                if (playingTitle) playingTitle.textContent = "AI 語音準備中...";
-                if (guideStatus) guideStatus.textContent = "🎙️ 正在準備語音導覽...";
                 if (modalPlayText) modalPlayText.textContent = "準備語音中...";
                 return;
             }
 
             if (isPlaying) {
-                if (playbackBar) playbackBar.classList.remove('hidden');
-                if (playingTitle && title) playingTitle.textContent = title;
-                if (globalIcon) globalIcon.className = "fa-solid fa-pause";
-                if (globalText) globalText.textContent = "暫停";
-                if (voiceWaves) voiceWaves.classList.remove('hidden');
-                if (guideStatus) guideStatus.textContent = title ? `語音導覽播放中: ${title}` : "語音導覽播放中...";
-
                 if (modalPlayIcon) modalPlayIcon.className = "fa-solid fa-pause text-amber-300";
                 if (modalPlayText) modalPlayText.textContent = i18nDict[currentLang]?.btn_pause || "暫停播放導覽";
             } else {
-                if (globalIcon) globalIcon.className = "fa-solid fa-play";
-                if (globalText) globalText.textContent = "繼續";
-                if (voiceWaves) voiceWaves.classList.add('hidden');
-                if (guideStatus) guideStatus.textContent = i18nDict[currentLang]?.guide_desc || "點擊展區任何作品，即為您說故事";
-
                 if (modalPlayIcon) modalPlayIcon.className = "fa-solid fa-volume-high text-amber-300";
                 if (modalPlayText) modalPlayText.textContent = i18nDict[currentLang]?.btn_play || "播放完整故事導覽";
             }
@@ -1915,7 +1921,6 @@
         }
 
         function clearAiChatHistory() {
-            aiChatHistory = [];
             renderAiWelcomeMessage();
             showToast(i18nDict[currentLang]?.ai_reset_toast || "對話紀錄已重置", "info");
         }
@@ -1951,51 +1956,13 @@
 
             const typingId = appendAiTypingIndicator();
 
-            // System instruction for Gemini API
-            const systemPrompt = `You are "藍藍 (Lanlan)", the official AI Guide & Customer Service Assistant for "TAIPING BLUE (太平藍)", a Taiwanese natural indigo craft brand under the Young Water Cultural & Educational Foundation.
-Important rules:
-1. You MUST respond strictly in the language code: ${currentLang}. (zh = Traditional Chinese 繁體中文, en = English, ja = Japanese 日本語, fr = French Français, ko = Korean 한국어, it = Italian Italiano).
-2. Be polite, enthusiastic, and knowledgeable about indigo craft history (Strobilanthes cusia natural fermentation), Toubiankeng Workshop, DIY experiences, products on Pinkoi, and brand awards.
-3. Keep answers concise, clear, and well-structured with bullet points and emojis.`;
-
-            try {
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: message }] }],
-                    systemInstruction: { parts: [{ text: systemPrompt }] }
-                };
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) throw new Error(`Gemini API error: ${response.status}`);
-
-                const result = await response.json();
-                const candidate = result.candidates?.[0];
-                const replyText = candidate?.content?.parts?.[0]?.text;
-
+            setTimeout(() => {
                 removeAiTypingIndicator(typingId);
-
-                if (replyText) {
-                    appendChatMessage('ai', replyText);
-                } else {
-                    const fallbackAnswer = getSmartKnowledgeAnswer(message, currentLang);
-                    appendChatMessage('ai', fallbackAnswer);
-                }
-            } catch (err) {
-                console.warn("Gemini API call failed or offline, falling back to local multi-language knowledge base:", err);
-                removeAiTypingIndicator(typingId);
-                const fallbackAnswer = getSmartKnowledgeAnswer(message, currentLang);
-                appendChatMessage('ai', fallbackAnswer);
-            } finally {
+                const replyText = getSmartKnowledgeAnswer(message, currentLang);
+                appendChatMessage('ai', replyText);
                 isAiThinking = false;
                 if (sendBtn) sendBtn.disabled = false;
-            }
+            }, 600);
         }
 
         function getSmartKnowledgeAnswer(message, lang) {
@@ -2004,55 +1971,34 @@ Important rules:
 
             const answers = {
                 zh: {
-                    stores: "📍 **太平藍 門市與工坊據點資訊**：\n\n1. **頭汴坑染織工坊 (展售與DIY體驗中心)**\n- **地址**：411 臺中市太平區頭汴里長龍路四段 (生態園區內)\n- **營業時間**：週一至週日 09:00 - 17:00\n- **電話**：(04) 2227-7826\n\n2. **財團法人水源地文教基金會總部**\n- **地址**：40444 臺中市北區育才街三巷3號3樓之4 (週一至週五 09:00-18:00)\n\n歡迎造訪頭汴坑體驗天然藍染手作樂趣！🌿",
-                    products: "👑 **太平藍 經典熱銷作品推薦**：\n\n1. **100% 純蠶絲漸層藍染絲巾** (Pinkoi 銷量冠軍)\n2. **藍染客家桐花典藏圍巾** (傳統型染工藝)\n3. **粼粼Sparkling 藍染木質掛鐘** (榮獲「臺灣優良工藝品」認證)\n4. **藍染氣氛和風木質桌燈** (實木搭配透光手染布)\n\n您可於 **Pinkoi 官方設計館**（滿 NT$ 2,000 享宅配免運）購買！🛍️",
-                    diy: "🎨 **太平藍天然藍染手作 DIY 體驗預約**：\n\n- **地點**：台中市太平區頭汴坑染織工坊 (生態園區內)\n- **熱門體驗**：手作藍染方巾、小水紋方巾、典藏長巾、手提袋等。\n- **預約專線**：**(04) 2227-7826**\n\n歡迎提前電話預約，由專業工藝師指導體驗！🌿",
-                    default: "感謝您的提問！我是太平藍 AI 導覽員「藍藍」🌿\n\n太平藍（TAIPING BLUE）堅持 100% 天然馬藍植物發酵染色。\n您可以詢問我關於：\n1. 📍 **門市據點與藍染 DIY 預約**\n2. 👑 **經典熱銷藍染作品選購**\n3. 🌿 **植物染洗滌保養指南**\n\n請問今天有什麼想了解的嗎？"
+                    stores: "📍 **太平藍 門市與工坊據點資訊**：\n\n1. **頭汴坑染織工坊 (展售與DIY體驗中心)**\n- **地址**：411 臺中市太平區頭汴里長龍路四段 (生態園區內)\n- **營業時間**：週一至週日 09:00 - 17:00\n- **電話**：(04) 2227-7826\n\n2. **財團法人水源地文教基金會會址**\n- **地址**：40444 臺中市北區育才街三巷3號3樓之4\n- **服務時間**：週一至週五 09:00 - 18:00\n\n歡迎預約造訪頭汴坑體驗天然藍染手作樂趣！🌿",
+                    products: "👑 **太平藍 經典熱銷作品推薦**：\n\n1. **100% 純蠶絲漸層藍染絲巾** - 質地輕盈飄逸，呈現晨霧之美。\n2. **藍染客家桐花典藏圍巾** - 客家油桐花圖騰型染，兼具傳統與時尚。\n3. **藍染水紋杯墊與桌旗套組** - 打造富含東方禪意的生活家飾。\n\n全系列作品皆可於 **Pinkoi 官方設計館** 訂購！🛍️",
+                    diy: "🎨 **太平藍天然藍染手作 DIY 體驗預約**：\n\n- **地點**：台中市太平區頭汴坑染織工坊\n- **體驗項目**：藍染小手帕、隨身方巾、客家桐花提袋手作等。\n- **預約專線**：**(04) 2227-7826**\n\n非常適合親子同樂、團體校外教學或個人微旅行！🌿",
+                    honors: "🏆 **太平藍 品牌創立與榮譽**：\n\n- 起源於 921 震後陪伴社區重建，由 **財團法人水源地文教基金會** 輔導創立。\n- **2023 臺灣工藝獎 - 協作獎**\n- **教育部 111 年度社會教育貢獻獎**\n- **勞動部 國家人才發展獎**\n- 義大利瓦爾切利納獎、倫敦工藝週與巴黎 M&O 展亮點！",
+                    default: "感謝您的提問！我是太平藍 AI 導覽員「藍藍」🌿\n\n您可以詢問我關於門市據點、熱銷商品、藍染 DIY 體驗或獲獎報導！請問有什麼我可以協助您的嗎？"
                 },
                 en: {
-                    stores: "📍 **TAIPING BLUE Stores & Workshop Info**:\n\n1. **Toubiankeng Workshop (Gallery & DIY Center)**\n- **Address**: Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Hours**: Mon - Sun 09:00 - 17:00\n- **Phone**: +886-4-2227-7826\n\n2. **Young Water Foundation HQ**\n- **Address**: 3F-4, No. 3, Ln. 3, Yucai St., North Dist., Taichung City\n\nWelcome to visit Toubiankeng and experience natural indigo DIY! 🌿",
-                    products: "👑 **TAIPING BLUE Best-Selling Recommendations**:\n\n1. **100% Pure Silk Gradient Indigo Scarf** (#1 Top Seller on Pinkoi)\n2. **Indigo Hakka Tung Blossom Scarf** (Traditional stencil dye craft)\n3. **Sparkling Indigo Wooden Wall Clock** (Certified as \"Taiwan Good Craft\")\n4. **Indigo Ambient Japanese Wooden Desk Lamp**\n\nVisit our **Pinkoi Official Store** (Free shipping over NT$ 2,000)! 🛍️",
-                    diy: "🎨 **TAIPING BLUE Natural Indigo DIY Workshop Booking**:\n\n- **Location**: Toubiankeng Workshop, Taiping Dist., Taichung City\n- **Hotline**: **+886-4-2227-7826**\n\nAdvance phone booking recommended! Master artisans will guide you step-by-step! 🌿",
-                    default: "Thank you for asking! I am Lanlan, your AI Guide for Taiping Blue 🌿\n\nYou can ask me about:\n1. 📍 **Store Locations & DIY Workshop Booking**\n2. 👑 **Popular & Best-Selling Craft Products**\n3. 🌿 **Washing & Maintenance Tips**\n\nHow can I assist you today?"
-                },
-                ja: {
-                    stores: "📍 **太平藍 店舗・工房のご案内**:\n\n1. **頭汴坑染色工房 (展示・販売＆DIY体験センター)**\n- **住所**: 臺中市太平區頭汴里長龍路四段 (生態園區內)\n- **営業時間**: 月〜日 09:00 - 17:00\n- **電話**: (04) 2227-7826\n\n2. **財團法人水源地文教基金會 本部**\n- **住所**: 臺中市北區育才街三巷3號3樓之4 (月〜金 09:00-18:00)\n\n頭汴坑で天然藍染めの魅力をご体験ください！🌿",
-                    products: "👑 **太平藍 ベストセラー作品のおすすめ**:\n\n1. **100%純シルクグラデーション藍染シルクスカーフ** (Pinkoi売上No.1)\n2. **藍染客家油桐花コレクションマフラー** (伝統型染め技法)\n3. **粼粼Sparkling 藍染木製掛け時計** (「臺灣優良工藝品」認定)\n4. **藍染和風木製デスクランプ** (天然木と透光手染め布)\n\n**Pinkoi公式ショップ**（NT$ 2,000以上で送料無料）でお買い求めいただけます！🛍️",
-                    diy: "🎨 **太平藍 天然藍染めDIY体験予約**:\n\n- **場所**: 頭汴坑染色工房 (台中市太平区)\n- **予約電話**: **(04) 2227-7826**\n\n職人が親切に指導いたします。お気軽にお問い合わせください！🌿",
-                    default: "ご質問ありがとうございます！太平藍のAIガイド「藍藍（ランラン）」です 🌿\n\n1. 📍 **店舗案内・DIY体験のご予約**\n2. 👑 **人気ベストセラー作品のおすすめ**\n3. 🌿 **藍染めのお手入れ方法**\n\n本日はどのようなご案内をいたしましょうか？"
-                },
-                fr: {
-                    stores: "📍 **Informations Boutiques & Atelier TAIPING BLUE** :\n\n1. **Atelier de Teinture de Toubiankeng (Galerie & Centre DIY)**\n- **Adresse** : Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Horaires** : Lun - Dim 09:00 - 17:00\n- **Tél** : +886-4-2227-7826\n\nBienvenue à l'Atelier Toubiankeng pour une expérience DIY unique ! 🌿",
-                    products: "👑 **Recommandations TAIPING BLUE** :\n\n1. **Écharpe en soie pure 100% dégradée indigo** (N°1 sur Pinkoi)\n2. **Écharpe fleurs de tung Hakka en indigo**\n3. **Horloge murale en bois étincelante indigo** (Certifiée \"Taiwan Good Craft\")\n\nDécouvrez nos créations sur la **Boutique Officielle Pinkoi** ! 🛍️",
-                    diy: "🎨 **Réservation d'Atelier DIY de Teinture Indigo** :\n\n- **Lieu** : Atelier Toubiankeng, Taiping Dist., Taichung City\n- **Tél** : **+886-4-2227-7826**\n\nRéservation recommandée par téléphone. Nos maîtres artisans vous guideront ! 🌿",
-                    default: "Merci pour votre question ! Je suis Lanlan, votre guide virtuel AI 🌿\n\nPosez-moi vos questions sur les boutiques, les ateliers DIY ou nos créations !"
-                },
-                ko: {
-                    stores: "📍 **타이핑 블루 매장 및 공방 안내**:\n\n1. **토변갱 염색 공방 (전시 및 DIY 체험 센터)**\n- **주소**: 臺中市太平區頭汴里長龍路四段 (생태공원 내)\n- **운영시간**: 월~일 09:00 - 17:00\n- **전화**: (04) 2227-7826\n\n토변갱 공방에서 천연 쪽염색 DIY 체험을 즐겨보세요! 🌿",
-                    products: "👑 **타이핑 블루 베스트셀러 대표 작품 추천**:\n\n1. **100% 천연 실크 그라데이션 쪽염색 스카프** (Pinkoi 판매 1위)\n2. **쪽염색 객가 동화 컬렉션 머플러**\n3. **Sparkling 쪽염색 목재 벽시계** ('대만 우수 공예품' 인증)\n\n**Pinkoi 공식 스토어**에서 구매하실 수 있습니다! 🛍️",
-                    diy: "🎨 **타이핑 블루 천연 쪽염색 DIY 체험 예약**:\n\n- **장소**: 타이중시 타이핑구 토변갱 염색 공방\n- **예약 문의**: **(04) 2227-7826**\n\n전화로 예약하시면 전문 공예사가 안내해 드립니다! 🌿",
-                    default: "질문해 주셔서 감사합니다! 타이핑 블루 AI 가이드 '란란'입니다 🌿\n\n매장 위치, DIY 체험, 인기 작품에 대해 무엇이든 물어보세요!"
-                },
-                it: {
-                    stores: "📍 **Informations Punti Vendita e Laboratorio TAIPING BLUE**:\n\n1. **Laboratorio di Tintura Toubiankeng (Galleria e Centro DIY)**\n- **Indirizzo**: Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Orari**: Lun - Dom 09:00 - 17:00\n- **Tel**: +886-4-2227-7826\n\nTi aspettiamo al Laboratorio Toubiankeng per un'esperienza DIY unica! 🌿",
-                    products: "👑 **Consigli sulle migliori vendite TAIPING BLUE**:\n\n1. **Sciarpa in seta pura 100% sfumata all'indigo** (N. 1 su Pinkoi)\n2. **Sciarpa Fiori di Tung Hakka all'indigo**\n3. **Orologio da parete in legno all'indigo** (Certificato \"Taiwan Good Craft\")\n\nVisita il nostro **Shop Ufficiale Pinkoi**! 🛍️",
-                    diy: "🎨 **Prenotazione Workshop DIY di Tintura all'Indigo**:\n\n- **Luogo**: Laboratorio Toubiankeng, Taiping Dist., Taichung City\n- **Telefono**: **+886-4-2227-7826**\n\nPrenotazione telefonica consigliata. I nostri maestri artigiani ti guideranno! 🌿",
-                    default: "Grazie per la tua domanda! Sono Lanlan, la tua guida virtuale AI 🌿\n\nChiedimi informazioni su punti vendita, workshop DIY o prodotti!"
+                    stores: "📍 **Taiping Blue Stores & Workshop Info**:\n\n1. **Toubiankeng Workshop & Gallery**\n- **Address**: Sec. 4, Changlong Rd., Taiping Dist., Taichung City\n- **Hours**: Mon - Sun 09:00 - 17:00\n- **Phone**: +886-4-2227-7826\n\nWelcome to visit for hands-on indigo DIY experience! 🌿",
+                    products: "👑 **Top Best-Selling Collections**:\n\n1. **100% Pure Silk Indigo Scarf**\n2. **Hakka Tung Flower Indigo Scarf**\n3. **Indigo Water Pattern Coaster Set**\n\nAvailable on our official **Pinkoi Shop**! 🛍️",
+                    diy: "🎨 **Indigo Hand-dyeing DIY Workshop**:\n\n- **Location**: Toubiankeng Workshop, Taiping Dist., Taichung\n- **Booking Line**: **+886-4-2227-7826**\n\nFeel free to call ahead for workshop reservations! 🌿",
+                    honors: "🏆 **Brand Origin & Honors**:\n\n- Founded by Young Water Foundation post-921 earthquake reconstruction.\n- **2023 Taiwan Craft Award - Collaboration Award**\n- **Ministry of Education Social Edu Contribution Award**\n- Exhibited in London Craft Week and Paris Maison & Objet!",
+                    default: "Thank you for asking! I am Lanlan, your Taiping Blue AI Guide 🌿\n\nFeel free to ask about store locations, popular products, DIY booking, or craft history!"
                 }
             };
 
             const langDict = answers[selectedLang] || answers.zh;
 
-            if (lowerMsg.includes('門市') || lowerMsg.includes('據點') || lowerMsg.includes('地址') || lowerMsg.includes('營業時間') || lowerMsg.includes('電話') || lowerMsg.includes('工坊') || lowerMsg.includes('store') || lowerMsg.includes('address') || lowerMsg.includes('店舗') || lowerMsg.includes('アクセス') || lowerMsg.includes('住所') || lowerMsg.includes('営業時間') || lowerMsg.includes('주소') || lowerMsg.includes('매장') || lowerMsg.includes('magazzino')) {
+            if (lowerMsg.includes('門市') || lowerMsg.includes('據點') || lowerMsg.includes('地址') || lowerMsg.includes('工坊') || lowerMsg.includes('store') || lowerMsg.includes('address')) {
                 return langDict.stores;
             }
-
-            if (lowerMsg.includes('熱銷') || lowerMsg.includes('作品') || lowerMsg.includes('商品') || lowerMsg.includes('推薦') || lowerMsg.includes('絲巾') || lowerMsg.includes('圍巾') || lowerMsg.includes('掛鐘') || lowerMsg.includes('sell') || lowerMsg.includes('popular') || lowerMsg.includes('product') || lowerMsg.includes('おすすめ') || lowerMsg.includes('人気') || lowerMsg.includes('작품') || lowerMsg.includes('meilleur')) {
+            if (lowerMsg.includes('熱銷') || lowerMsg.includes('作品') || lowerMsg.includes('商品') || lowerMsg.includes('product') || lowerMsg.includes('best')) {
                 return langDict.products;
             }
-
-            if (lowerMsg.includes('diy') || lowerMsg.includes('體驗') || lowerMsg.includes('預約') || lowerMsg.includes('手作') || lowerMsg.includes('workshop') || lowerMsg.includes('book') || lowerMsg.includes('体験') || lowerMsg.includes('予約') || lowerMsg.includes('체험') || lowerMsg.includes('예약')) {
+            if (lowerMsg.includes('diy') || lowerMsg.includes('體驗') || lowerMsg.includes('預約') || lowerMsg.includes('book') || lowerMsg.includes('workshop')) {
                 return langDict.diy;
+            }
+            if (lowerMsg.includes('新聞') || lowerMsg.includes('榮譽') || lowerMsg.includes('獎') || lowerMsg.includes('award') || lowerMsg.includes('honor')) {
+                return langDict.honors || langDict.default;
             }
 
             return langDict.default;
@@ -2151,7 +2097,7 @@ Important rules:
 
             document.getElementById('edit-id').value = p.id;
             document.getElementById('edit-name').value = p.name || '';
-            document.getElementById('edit-category').value = p.category || 'Accessories';
+            document.getElementById('edit-category').value = p.category || '配件';
             document.getElementById('edit-pinkoiUrl').value = p.pinkoiUrl || '';
             document.getElementById('edit-img').value = p.img || '';
             document.getElementById('edit-shortDesc').value = p.shortDesc || '';
@@ -2291,7 +2237,7 @@ Important rules:
             compressAndResizeImage(file, 800, 800, 0.75, function(compressedDataUrl) {
                 document.getElementById('edit-img').value = compressedDataUrl;
                 handleImageUrlInput(compressedDataUrl, file.name);
-                showToast(currentLang === 'zh' ? "✨ 圖片已連動！" : "✨ Image compressed and linked successfully!", "success");
+                showToast(currentLang === 'zh' ? "✨ 圖片已上傳並壓縮完成！" : "✨ Image compressed & uploaded!", "success");
             });
         }
 
@@ -2342,7 +2288,7 @@ Important rules:
                 previewInfo.textContent = currentLang === 'zh' ? "⚠️ 無法載入此圖片網址" : "⚠️ Unable to load image URL";
             };
             previewImg.onload = function() {
-                previewInfo.textContent = fileName || (val.startsWith('data:') ? 'Base64 Local Image (Compressed)' : 'External Image URL');
+                previewInfo.textContent = fileName || (val.startsWith('data:') ? 'Base64 Image (Compressed)' : 'Image URL');
             };
 
             previewContainer.classList.remove('hidden');
@@ -2372,7 +2318,7 @@ Important rules:
         function createNewProduct() {
             document.getElementById('edit-id').value = `p_${Date.now()}`;
             document.getElementById('edit-name').value = '';
-            document.getElementById('edit-category').value = 'Accessories';
+            document.getElementById('edit-category').value = '配件';
             document.getElementById('edit-pinkoiUrl').value = 'https://www.pinkoi.com/store/taiping-blue';
             document.getElementById('edit-img').value = '';
             document.getElementById('edit-shortDesc').value = '';
@@ -2384,6 +2330,17 @@ Important rules:
             
             clearUploadedImage();
             document.getElementById('editor-modal').classList.remove('hidden');
+        }
+
+        function exportProductsJson() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(productsData, null, 2));
+            const dlAnchor = document.createElement('a');
+            dlAnchor.setAttribute("href", dataStr);
+            dlAnchor.setAttribute("download", `taiping_blue_products_backup_${Date.now()}.json`);
+            document.body.appendChild(dlAnchor);
+            dlAnchor.click();
+            dlAnchor.remove();
+            showToast(currentLang === 'zh' ? "已匯出 JSON 設定檔備份！" : "JSON backup exported successfully!", "success");
         }
 
         function importProductsJson(event) {
